@@ -9,5 +9,6 @@
 
 <!-- Css file link -->
 <link rel="stylesheet" href="{{ asset("css/main.css") }}">
+<link rel="stylesheet" href="{{ asset("css/responsive.css") }}">
 
 @stack("css")
