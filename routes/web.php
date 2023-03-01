@@ -17,5 +17,9 @@ Route::get('/', function () {
     return view('index');
 });
 
+// login 
 Route::get('/login', [\App\Http\Controllers\Auth\AuthController::class, "login"]);
 Route::post('/loginStore', [\App\Http\Controllers\Auth\AuthController::class, "loginStore"]);
+
+// register
+Route::get('/register', [\App\Http\Controllers\Auth\AuthController::class, "register"]);

@@ -33,48 +33,48 @@
             <h3 class="text-center">Trusted By Over 5000 Clients</h3>
             <div class="brand-info">
                 <div class="brand-logo">
-                    <img src='Assets/Images/Clients/airbus.svg' alt="airbus" />
+                    <img src='{{ asset("images/Clients/airbus.svg") }}' alt="airbus" />
                 </div>
 
                 <div class="brand-logo">
-                    <img src='Assets/Images/Clients/amazon.svg' alt="amazon" />
+                    <img src='{{ asset("images/Clients/amazon.svg") }}' alt="amazon" />
                 </div>
                 <div class="brand-logo">
-                    <img src='Assets/Images/Clients/deloitte.svg' alt="deloitte" />
+                    <img src='{{ asset("images/Clients/deloitte.svg") }}' alt="deloitte" />
                 </div>
                 <div class="brand-logo">
-                    <img src='Assets/Images/Clients/facebook.svg' alt="facebook" />
+                    <img src='{{ asset("images/Clients/facebook.svg") }}' alt="facebook" />
                 </div>
                 <div class="brand-logo">
-                    <img src='Assets/Images/Clients/google.svg' alt="google" />
+                    <img src='{{ asset("images/Clients/google.svg") }}' alt="google" />
                 </div>
                 <div class="brand-logo">
-                    <img src='Assets/Images/Clients/netflix.svg' alt="netflix" />
+                    <img src='{{ asset("images/Clients/netflix.svg") }}' alt="netflix" />
                 </div>
                 <div class="brand-logo">
-                    <img src='Assets/Images/Clients/paypal.svg' alt="paypal" />
+                    <img src='{{ asset("images/Clients/paypal.svg") }}' alt="paypal" />
                 </div>
                 <div class="brand-logo">
-                    <img src='Assets/Images/Clients/airbus.svg' alt="airbus" />
+                    <img src='{{ asset("images/Clients/airbus.svg") }}' alt="airbus" />
                 </div>
 
                 <div class="brand-logo">
-                    <img src='Assets/Images/Clients/amazon.svg' alt="amazon" />
+                    <img src='{{ asset("images/Clients/amazon.svg") }}' alt="amazon" />
                 </div>
                 <div class="brand-logo">
-                    <img src='Assets/Images/Clients/deloitte.svg' alt="deloitte" />
+                    <img src='{{ asset("images/Clients/deloitte.svg") }}' alt="deloitte" />
                 </div>
                 <div class="brand-logo">
-                    <img src='Assets/Images/Clients/facebook.svg' alt="facebook" />
+                    <img src='{{ asset("images/Clients/facebook.svg") }}' alt="facebook" />
                 </div>
                 <div class="brand-logo">
-                    <img src='Assets/Images/Clients/google.svg' alt="google" />
+                    <img src='{{ asset("images/Clients/google.svg") }}' alt="google" />
                 </div>
                 <div class="brand-logo">
-                    <img src='Assets/Images/Clients/netflix.svg' alt="netflix" />
+                    <img src='{{ asset("images/Clients/netflix.svg") }}' alt="netflix" />
                 </div>
                 <div class="brand-logo">
-                    <img src='Assets/Images/Clients/paypal.svg' alt="paypal" />
+                    <img src='{{ asset("images/Clients/paypal.svg") }}' alt="paypal" />
                 </div>
             </div>
         </div>
@@ -120,7 +120,7 @@
                 <div class="row g-4">
                     <div class="col-12 col-sm-6 col-lg-3">
                         <div class="card mx-auto">
-                            <img src="Assets/Images/Category/web-design.jpg" class="card-img-top" alt="Web Design">
+                            <img src="{{ asset("images/Category/web-design.jpg") }}" class="card-img-top" alt="Web Design">
                             <div class="card-body pt-4">
                                 <h4 class="card-title fw-semibold">Web Design</h4>
                                 <p class="card-text">₹ 2500 In 1 Day</p>
@@ -129,7 +129,7 @@
                     </div>
                     <div class="col-12 col-sm-6 col-lg-3">
                         <div class="card mx-auto">
-                            <img src="Assets/Images/Category/ui-ux.jpg" class="card-img-top" alt="App Devloper">
+                            <img src="{{ asset("images/Category/ui-ux.jpg") }}" class="card-img-top" alt="App Devloper">
                             <div class="card-body pt-4">
                                 <h4 class="card-title fw-semibold">App Devloper</h4>
                                 <p class="card-text">₹ 3000 In 1 Day</p>
@@ -138,7 +138,7 @@
                     </div>
                     <div class="col-12 col-sm-6 col-lg-3">
                         <div class="card mx-auto">
-                            <img src="Assets/Images/Category//graphic-design.jpg" class="card-img-top"
+                            <img src="{{ asset("images/Category/graphic-design.jpg") }}" class="card-img-top"
                                 alt="Graphic Design">
                             <div class="card-body pt-4">
                                 <h4 class="card-title fw-semibold">Graphic Design</h4>
@@ -148,7 +148,7 @@
                     </div>
                     <div class="col-12 col-sm-6 col-lg-3">
                         <div class="card mx-auto">
-                            <img src="Assets/Images/Category/web-development.jpg" class="card-img-top"
+                            <img src="{{ asset("images/Category/web-development.jpg") }}" class="card-img-top"
                                 alt="Web Development">
                             <div class="card-body pt-4">
                                 <h4 class="card-title fw-semibold">Web Devloper</h4>
@@ -234,7 +234,7 @@
                     <a href="login.html" class="btn al-btn mt-5">Get Started</a>
                 </div>
                 <div class="col-12 col-lg-6 ps-md-5 d-none d-md-block pt-5 pt-lg-0 order-0 order-lg-1">
-                    <img src="Assets/Images/Banner/about.webp" alt="">
+                    <img src="{{ asset("images/Banner/about.webp") }}" alt="">
                 </div>
             </div>
         </div>
@@ -257,7 +257,7 @@
                     </div>
                     <div class="swiper-client-data">
                         <figure class=''>
-                            <img src="Assets/Images/Users/user1.jpg" alt="Client Review" />
+                            <img src="{{ asset("images/Users/user1.jpg") }}" alt="Client Review" />
                         </figure>
                     </div>
                     <div class="client-data-detail col-7">
@@ -271,7 +271,7 @@
                     </div>
                     <div class="swiper-client-data">
                         <figure class=''>
-                            <img src="Assets/Images/Users/user2.jpg" alt="Client Review" />
+                            <img src="{{ asset("images/Users/user2.jpg") }}" alt="Client Review" />
                         </figure>
                     </div>
                     <div class="client-data-detail col-7">
@@ -285,7 +285,7 @@
                     </div>
                     <div class="swiper-client-data">
                         <figure class=''>
-                            <img src="Assets/Images/Users/user3.jpg" alt="Client Review" />
+                            <img src="{{ asset("images/Users/user3.jpg") }}" alt="Client Review" />
                         </figure>
                     </div>
                     <div class="client-data-detail col-7">
@@ -299,7 +299,7 @@
                     </div>
                     <div class="swiper-client-data">
                         <figure class=''>
-                            <img src="Assets/Images/Users/user4.jpg" alt="Client Review" />
+                            <img src="{{ asset("images/Users/user4.jpg") }}" alt="Client Review" />
                         </figure>
                     </div>
                     <div class="client-data-detail col-7">
@@ -314,3 +314,43 @@
     </section>
     <!-- Testimonial Section End -->
 @endsection
+
+@push('js')
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+@endpush

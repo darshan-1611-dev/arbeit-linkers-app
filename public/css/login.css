@@ -1,60 +1,29 @@
-/* Google Poppins Font CDN Link */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-}
-
-/* Variables */
-:root{
-    --primary-font-family: 'Poppins', sans-serif;
-    --light-white:#f5f8fa;
-    --gray:#5e6278;
-    --gray-1:#e3e3e3;
-    --text-black: #222325;
-    --text-dark-gray: #404145;
-    --bg-dark-blue: #0d084d;
-}
-body{
-    font-family:var(--primary-font-family);
-    font-size: 14px;
-} 
-
-/* Main CSS */ 
-
-.wrapper .logo img{
-    max-width:40%;
-    
-}
-
-.fw-bolder{
-    color:var(--text-black);
-}
 .fw-bold{
     color: var(--text-dark-gray);
 }
 
-.wrapper input{
-    background-color: var(--light-white);
-    border-color: var(--light-white);
-    color: var(--gray); 
-}
-.wrapper input:focus{ 
-    box-shadow: none;
-}
-.wrapper .submit_btn{
-    padding:15px;
-    font-weight: 500;
-    background: var(--bg-dark-blue);
-    color: white;
-    
-}
-
-.wrapper .submit_btn:focus{
+.login input:focus{ 
     box-shadow: none;
 }
 
-        
-      
+.line-heading::before{
+    background-color: #8f8e8e;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 15%;
+    right: 10px;
+}
+
+.line-heading::after{
+    background-color: #8f8e8e;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 15%;
+    left: 10px;
+}
