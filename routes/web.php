@@ -23,3 +23,4 @@ Route::post('/loginStore', [\App\Http\Controllers\Auth\AuthController::class, "l
 
 // register
 Route::get('/register', [\App\Http\Controllers\Auth\AuthController::class, "register"]);
+Route::post('/registerStore', [\App\Http\Controllers\Auth\AuthController::class, "registerStore"]);

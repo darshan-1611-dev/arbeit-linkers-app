@@ -22,9 +22,9 @@ class AuthController extends Controller
     /**
      * Login Store process
     */
-    public function loginStore(Request $request): \Illuminate\Routing\Redirector|\Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse
+    public function loginStore(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        $request->validate([
             'email' => 'required',
             'password' => 'required',
         ]);
@@ -34,17 +34,33 @@ class AuthController extends Controller
             // Authentication passed...
             return redirect('/');
         } else {
-            return back()->with(["success" => false, "message" => "email or password incorrect"]);
+            return back()->withErrors(["success" => false, "message" => "email or password incorrect"]);
         }
     }
 
+    // Register
     public function register()
     {
         return view('auth.register');
     }
 
-    public function registerStore()
+    // Store Register Data
+    public function registerStore(Request $request)
     {
+        $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required',
+            'mobile_no' => 'required',
+            'user_type' => 'required',
+            'password' => 'required',
+            'confirm_password' => 'required'
+        ]);
 
+        if($request->post('password') != $request->post('confirm_password')){
+            return back()->withErrors(["success" => false, "message" => "passwoed and confrim password must be same"]);
+        }
+
+        
     }
 }

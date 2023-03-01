@@ -60,15 +60,17 @@
                         <h2>Log In</h2>
                     </div>
 
-                    <!-- @if ($errors->any())
+                    @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
                         @foreach ($errors->all() as $error)
+                        <li>
                             <span class="text-danger fs-5">{{ $error }}</span>
+                            </li>
                         @endforeach
                         </ul>
                         </div>
-                    @endif -->
+                    @endif
 
                     <form action="{{ url('loginStore') }}" method="post">
                     @csrf

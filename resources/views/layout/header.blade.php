@@ -31,10 +31,10 @@
                                 <hr class="d-lg-none">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a href="login.html" class="nav-link">Log In</a>
+                                        <a href="{{ url('login') }}" class="nav-link">Log In</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="sign_up.html" class="nav-link">Sign
+                                        <a href="{{ url('register') }}" class="nav-link">Sign
                                             Up</a>
                                     </li>
                                 </ul>

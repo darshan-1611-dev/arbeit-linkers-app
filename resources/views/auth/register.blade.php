@@ -58,17 +58,32 @@
 					<div>
 						<h2>Sign Up</h2>
 					</div>
-					<form action="" method="post" class="row">
+
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>
+                            <span class="text-danger fs-5">* {{ $error }}</span>
+                            </li>
+                        @endforeach
+                        </ul>
+                        </div>
+                    @endif
+
+
+					<form action="{{ url('registerStore') }}" method="post" class="row">
+                    @csrf
 						<div class="mb-4 col-sm-6">
-							<input type="text" class="form-control fs-4 py-3" name="name" placeholder="First Name">
+							<input type="text" class="form-control fs-4 py-3" value="{{ old('first_name') }}" name="first_name" placeholder="First Name">
 							<!-- <span class="text-danger fs-5">* Please Enter your First Name</span> -->
 						</div>
 						<div class="mb-4 col-sm-6">
-							<input type="text" class="form-control fs-4 py-3" name="name" placeholder="Last Name">
+							<input type="text" class="form-control fs-4 py-3" value="{{ old('last_name') }}" name="last_name" placeholder="Last Name">
 							<!-- <span class="text-danger fs-5">* Please Enter your Last Name</span> -->
 						</div>
 						<div class="mb-4">
-							<input type="email" class="form-control fs-4 py-3" name="email"
+							<input type="email" class="form-control fs-4 py-3" value="{{ old('email') }}" name="email"
 								placeholder="name@example.com">
 							<!-- <span class="text-danger fs-5">* Please Enter your Email Id</span> -->
 						</div>
@@ -317,25 +332,25 @@
 							</select>
 						</div>
 						<div class="mb-4 col-9 col-lg-10">
-							<input type="text" class="form-control fs-4 py-3" name="number" placeholder="Mobile No">
+							<input type="number" class="form-control fs-4 py-3" value="{{ old('mobile_no') }}" name="mobile_no" placeholder="Mobile No">
 							<!-- <span class="text-danger fs-5">* Please Enter your Mobile No</span> -->
 						</div>
 						<div class="mb-4">
-							<input type="radio" name="user-type" id="" class="form-check-input me-2 mt-0 mt-sm-1"
+							<input type="radio" name="user_type" id="" value="{{ old('user_type') }}" class="form-check-input me-2 mt-0 mt-sm-1"
 								style="width: 1.5rem; height: 1.5rem;"><label for="form-check-lable"
 								class="fs-4 me-2 me-sm-4">Join as Client</label>
-							<input type="radio" name="user-type" id="" class="form-check-input me-2 mt-0 mt-sm-1"
+							<input type="radio" name="user_type" id="" value="{{ old('user_type') }}" class="form-check-input me-2 mt-0 mt-sm-1"
 								style="width: 1.5rem; height: 1.5rem;"><label for="form-check-lable" class="fs-4">Join as
 								Freelancer</label>
 							<!-- <span class="text-danger fs-5 d-block">* Please Select User Type</span> -->
 						</div>
 						<div class="mb-4">
-							<input type="password" class="form-control fs-4 py-3" name="password"
+							<input type="password" class="form-control fs-4 py-3" value="{{ old('password') }}" name="password"
 								placeholder="Password">
 							<!-- <span class="text-danger fs-5">* Please Enter your Password</span> -->
 						</div>
 						<div class="mb-4">
-							<input type="password" class="form-control fs-4 py-3" name="cpassword"
+							<input type="password" class="form-control fs-4 py-3" value="{{ old('confirm_password') }}" name="confirm_password"
 								placeholder="Confirm Password">
 							<!-- <span class="text-danger fs-5">* Password does not match</span> -->
 						</div>
