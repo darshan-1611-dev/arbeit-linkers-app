@@ -1,57 +1,90 @@
 @extends('layout.main')
 
 @section("body")
-    <!-- hero section -->
-    <section id="home" class="banner_wrapper">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 my-5 my-md-0 text-center text-md-start">
-                    <p class="banner-subtitle">Social Media Akash</p>
-                    <h1 class="banner-title">Start <span>connecting</span> with your online customers</h1>
-                    <p class="banner-title-text">Hashtag is a bright and results driven social media marketing
-                        drive customers, grow your audience and expand your reach.</p>
+     <!-- Hero Section Start -->
+     <section class="banner px-5">
+        <div class="container py-5 px-md-0">
+            <div class="row align-items-center my-5 py-5">
+                <div class="col-12 col-md-6">
+                    <h1 class="">Get Professional Freelancer</h1>
+                    <h3 class="">For Your Business</h3>
+                    <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam dolorum doloribus
+                        ratione
+                        obcaecati
+                        quas quis, atque facere porro veritatis magnam!</p>
+                    <a href="login.html" class="btn al-btn mt-5">Get Freelancers</a>
                 </div>
-                <div class="col-md-6 header-img-section">
-                    <img src='{{ asset("images/header-img.svg") }}' class="img-fluid" alt="Banner"/>
+                <div class="col-md-6 d-none d-md-block">
+                    <div class="container">
+                        <figure>
+                            <img src="{{ asset("images/Banner/index_banner.svg") }}" alt="banner">
+                        </figure>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- Hero Section End -->
 
-    <!-- brand section -->
-    <div class="brands">
-        <h4>Trusted By:</h4>
-        <div class="brand-info">
-            <div class="brand-logo">
-                <img src='{{ asset("images/brand-logo/airbus.svg") }}' alt="" width="250" height="100"/>
-            </div>
-            <div class="brand-logo">
-                <img src='{{ asset("images/brand-logo/amazon.svg") }}' alt="" width="250" height="100"/>
-            </div>
-            <div class="brand-logo">
-                <img src='{{ asset("images/brand-logo/deloitte.svg") }}' alt="" width="250" height="100"/>
-            </div>
-            <div class="brand-logo">
-                <img src='{{ asset("images/brand-logo/facebook.svg") }}' alt="" width="250" height="100"/>
-            </div>
-            <div class="brand-logo">
-                <img src='{{ asset("images/brand-logo/google.svg") }}' alt="" width="250" height="100"/>
-            </div>
-            <div class="brand-logo">
-                <img src='{{ asset("images/brand-logo/ibm.svg") }}' alt="" width="250" height="100"/>
-            </div>
-            <div class="brand-logo">
-                <img src='{{ asset("images/brand-logo/netflix.svg") }}' alt="" width="250" height="100"/>
-            </div>
-            <div class="brand-logo">
-                <img src='{{ asset("images/brand-logo/paypal.svg") }}' alt="" width="250" height="100"/>
+
+    <!-- Client Section Start -->
+    <section>
+        <div class="brands">
+            <h3 class="text-center">Trusted By Over 5000 Clients</h3>
+            <div class="brand-info">
+                <div class="brand-logo">
+                    <img src='Assets/Images/Clients/airbus.svg' alt="airbus" />
+                </div>
+
+                <div class="brand-logo">
+                    <img src='Assets/Images/Clients/amazon.svg' alt="amazon" />
+                </div>
+                <div class="brand-logo">
+                    <img src='Assets/Images/Clients/deloitte.svg' alt="deloitte" />
+                </div>
+                <div class="brand-logo">
+                    <img src='Assets/Images/Clients/facebook.svg' alt="facebook" />
+                </div>
+                <div class="brand-logo">
+                    <img src='Assets/Images/Clients/google.svg' alt="google" />
+                </div>
+                <div class="brand-logo">
+                    <img src='Assets/Images/Clients/netflix.svg' alt="netflix" />
+                </div>
+                <div class="brand-logo">
+                    <img src='Assets/Images/Clients/paypal.svg' alt="paypal" />
+                </div>
+                <div class="brand-logo">
+                    <img src='Assets/Images/Clients/airbus.svg' alt="airbus" />
+                </div>
+
+                <div class="brand-logo">
+                    <img src='Assets/Images/Clients/amazon.svg' alt="amazon" />
+                </div>
+                <div class="brand-logo">
+                    <img src='Assets/Images/Clients/deloitte.svg' alt="deloitte" />
+                </div>
+                <div class="brand-logo">
+                    <img src='Assets/Images/Clients/facebook.svg' alt="facebook" />
+                </div>
+                <div class="brand-logo">
+                    <img src='Assets/Images/Clients/google.svg' alt="google" />
+                </div>
+                <div class="brand-logo">
+                    <img src='Assets/Images/Clients/netflix.svg' alt="netflix" />
+                </div>
+                <div class="brand-logo">
+                    <img src='Assets/Images/Clients/paypal.svg' alt="paypal" />
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+    <!-- Client Section End -->
 
-    <!-- project section -->
-    <section id="about" class="about_wrapper">
-        <div class="projects">
+
+    <!-- Facts Section Start -->
+    <section class="facts">
+        <div>
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-lg-3 text-center">
@@ -59,7 +92,7 @@
                         <p>Completed Projects</p>
                     </div>
                     <div class="col-sm-6 col-lg-3 text-center">
-                        <h2>9,470</h2>
+                        <h2>9,470 </h2>
                         <p>Happy Clients</p>
                     </div>
                     <div class="col-sm-6 col-lg-3 text-center">
@@ -74,131 +107,210 @@
             </div>
         </div>
     </section>
+    <!-- Facts Section End -->
 
-    <!-- talent category   -->
-    <div class="card-row">
-        <div class="container">
-            <h2 class="text-center mt-5 pt-5 pb-3 card-heading">Browse talent by category</h2>
 
-            <div class="card-info">
-
-                <div class="card-col">
-                    <div class='card'>
-                        <div class="card-img">
-                            <img src='{{ asset("images/web-design.jpg") }}' alt=""/>
+    <!-- Category Section Start -->
+    <section>
+        <div class="category">
+            <div class="">
+                <div class="text-center">
+                    <h2>Browse Talent By Category</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card mx-auto">
+                            <img src="Assets/Images/Category/web-design.jpg" class="card-img-top" alt="Web Design">
+                            <div class="card-body pt-4">
+                                <h4 class="card-title fw-semibold">Web Design</h4>
+                                <p class="card-text">₹ 2500 In 1 Day</p>
+                            </div>
                         </div>
-                        <div class="card-detail">
-                            <p class='card-title'>Website Design</p>
-                            <p class='card-subtitle'>$30 USD in 1 day</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card mx-auto">
+                            <img src="Assets/Images/Category/ui-ux.jpg" class="card-img-top" alt="App Devloper">
+                            <div class="card-body pt-4">
+                                <h4 class="card-title fw-semibold">App Devloper</h4>
+                                <p class="card-text">₹ 3000 In 1 Day</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card mx-auto">
+                            <img src="Assets/Images/Category//graphic-design.jpg" class="card-img-top"
+                                alt="Graphic Design">
+                            <div class="card-body pt-4">
+                                <h4 class="card-title fw-semibold">Graphic Design</h4>
+                                <p class="card-text">₹ 1000 In 1 Day</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card mx-auto">
+                            <img src="Assets/Images/Category/web-development.jpg" class="card-img-top"
+                                alt="Web Development">
+                            <div class="card-body pt-4">
+                                <h4 class="card-title fw-semibold">Web Devloper</h4>
+                                <p class="card-text">₹ 5000 In 1 Day</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="card-col">
-                    <div class='card'>
-                        <div class="card-img">
-                            <img src='{{ asset("images/ui-ux.jpg") }}' alt=""/>
-                        </div>
-                        <div class="card-detail">
-                            <p class='card-title'>App Developer</p>
-                            <p class='card-subtitle'>$30 USD in 1 day</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-col">
-                    <div class='card'>
-                        <div class="card-img">
-                            <img src='{{ asset("images/graphic-design.jpg") }}' alt=""/>
-                        </div>
-                        <div class="card-detail">
-                            <p class='card-title'>Graphic Design</p>
-                            <p class='card-subtitle'>$30 USD in 1 day</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-col">
-                    <div class='card'>
-                        <div class="card-img">
-                            <img src='{{ asset("images/web-development.jpg") }}' alt=""/>
-                        </div>
-                        <div class="card-detail">
-                            <p class='card-title'>Web Development</p>
-                            <p class='card-subtitle'>$30 USD in 1 day</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-col">
-                    <div class='card'>
-                        <div class="card-img">
-                            <img src='{{ asset("images/digital-marketing.jpg") }}' alt=""/>
-                        </div>
-                        <div class="card-detail">
-                            <p class='card-title'>Digital Marketing</p>
-                            <p class='card-subtitle'>$30 USD in 1 day</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 text-center">
-                    <button type="button" class="btn  al-btn al-btn-dark">Show More</button>
+                <div class="text-center mt-5">
+                    <a href="#" class="btn al-btn">Show More</a>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+    <!-- Category Section End -->
 
-    <!-- features  -->
-    <section id="features" class="features_wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center mb-5">
-                    <p class="features_subtitle">So much to offer</p>
-                    <h2 class="features_title">Our automated features</h2>
+
+    <!-- Feature Section Start -->
+    <section class="features">
+        <div>
+            <div class="container">
+                <div class="text-center pb-5">
+                    <h2 class="pb-5">Our Automated Features</h2>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-sm-6 mb-5">
-                    <div class="ft-1">
-                        <h3>Consultancy</h3>
-                        <p class="features_text">Duis felis nulla, porttitor et ex a, porttitor rhoncus ex. Sed
-                            tellus turpis, finibus in elit rhoncus, varius cursus enim. Sed tempus sapien in.</p>
+                <div class="row">
+                    <div class="col-sm-6 col-lg-4 mb-5">
+                        <div class="ft-1">
+                            <h3>Consultancy</h3>
+                            <p class="features_text">Duis felis nulla, porttitor et ex a, porttitor rhoncus ex. Sed
+                                tellus turpis, finibus in elit rhoncus, varius cursus enim. Sed tempus sapien in.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-5">
-                    <div class="ft-2">
-                        <h3>Tech Solutions</h3>
-                        <p class="features_text">Duis felis nulla, porttitor et ex a, porttitor rhoncus ex. Sed
-                            tellus turpis, finibus in elit rhoncus, varius cursus enim. Sed tempus sapien in.</p>
+                    <div class="col-lg-4 col-sm-6 mb-5">
+                        <div class="ft-2">
+                            <h3>Tech Solutions</h3>
+                            <p class="features_text">Duis felis nulla, porttitor et ex a, porttitor rhoncus ex. Sed
+                                tellus turpis, finibus in elit rhoncus, varius cursus enim. Sed tempus sapien in.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-5">
-                    <div class="ft-3">
-                        <h3>User Dashboard</h3>
-                        <p class="features_text">Duis felis nulla, porttitor et ex a, porttitor rhoncus ex. Sed
-                            tellus turpis, finibus in elit rhoncus, varius cursus enim. Sed tempus sapien in.</p>
+                    <div class="col-lg-4 col-sm-6 mb-5">
+                        <div class="ft-3">
+                            <h3>User Dashboard</h3>
+                            <p class="features_text">Duis felis nulla, porttitor et ex a, porttitor rhoncus ex. Sed
+                                tellus turpis, finibus in elit rhoncus, varius cursus enim. Sed tempus sapien in.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-5">
-                    <div class="ft-4">
-                        <h3>Deadline Notifications</h3>
-                        <p class="features_text">Duis felis nulla, porttitor et ex a, porttitor rhoncus ex. Sed
-                            tellus turpis, finibus in elit rhoncus, varius cursus enim. Sed tempus sapien in.</p>
+                    <div class="col-lg-4 col-sm-6 mb-5">
+                        <div class="ft-4">
+                            <h3>Deadline Notifications</h3>
+                            <p class="features_text">Duis felis nulla, porttitor et ex a, porttitor rhoncus ex. Sed
+                                tellus turpis, finibus in elit rhoncus, varius cursus enim. Sed tempus sapien in.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-5">
-                    <div class="ft-5">
-                        <h3>Data Retrieval</h3>
-                        <p class="features_text">Duis felis nulla, porttitor et ex a, porttitor rhoncus ex. Sed
-                            tellus turpis, finibus in elit rhoncus, varius cursus enim. Sed tempus sapien in.</p>
+                    <div class="col-lg-4 col-sm-6 mb-5">
+                        <div class="ft-5">
+                            <h3>Data Retrieval</h3>
+                            <p class="features_text">Duis felis nulla, porttitor et ex a, porttitor rhoncus ex. Sed
+                                tellus turpis, finibus in elit rhoncus, varius cursus enim. Sed tempus sapien in.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-5">
-                    <div class="ft-6">
-                        <h3>Flexible System</h3>
-                        <p class="features_text">Duis felis nulla, porttitor et ex a, porttitor rhoncus ex. Sed
-                            tellus turpis, finibus in elit rhoncus, varius cursus enim. Sed tempus sapien in.</p>
+                    <div class="col-lg-4 col-sm-6 mb-5">
+                        <div class="ft-6">
+                            <h3>Flexible System</h3>
+                            <p class="features_text">Duis felis nulla, porttitor et ex a, porttitor rhoncus ex. Sed
+                                tellus turpis, finibus in elit rhoncus, varius cursus enim. Sed tempus sapien in.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- Feature Section End -->
+
+
+    <!-- About Section Start -->
+    <section class="about">
+        <div class="container my-5">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6 pe-md-5  order-1 order-lg-0">
+                    <h1 class="text-white mb-5">Find the <span>talent</span> needed to get your business
+                        <span>growing</span>.
+                    </h1>
+                    <a href="login.html" class="btn al-btn mt-5">Get Started</a>
+                </div>
+                <div class="col-12 col-lg-6 ps-md-5 d-none d-md-block pt-5 pt-lg-0 order-0 order-lg-1">
+                    <img src="Assets/Images/Banner/about.webp" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section End -->
+
+
+
+    <!-- Testimonial Section Start -->
+    <section class="section-testimonial">
+        <div class="">
+            <h2 class="al-h2 text-center">Happy Clients With Our Freelancers</h2>
+        </div>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="swiper-client-msg">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit id esse obcaecati sunt
+                            laborum nisi non in minus voluptate vel.</p>
+                    </div>
+                    <div class="swiper-client-data">
+                        <figure class=''>
+                            <img src="Assets/Images/Users/user1.jpg" alt="Client Review" />
+                        </figure>
+                    </div>
+                    <div class="client-data-detail col-7">
+                        <p>Gautam Savsaviya, Entrepreneur</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="swiper-client-msg">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit id esse obcaecati sunt
+                            laborum nisi non in minus voluptate vel.</p>
+                    </div>
+                    <div class="swiper-client-data">
+                        <figure class=''>
+                            <img src="Assets/Images/Users/user2.jpg" alt="Client Review" />
+                        </figure>
+                    </div>
+                    <div class="client-data-detail col-7">
+                        <p>Gautam Savsaviya, Entrepreneur</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="swiper-client-msg">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit id esse obcaecati sunt
+                            laborum nisi non in minus voluptate vel.</p>
+                    </div>
+                    <div class="swiper-client-data">
+                        <figure class=''>
+                            <img src="Assets/Images/Users/user3.jpg" alt="Client Review" />
+                        </figure>
+                    </div>
+                    <div class="client-data-detail col-7">
+                        <p>Gautam Savsaviya, Entrepreneur</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="swiper-client-msg">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit id esse obcaecati sunt
+                            laborum nisi non in minus voluptate vel.</p>
+                    </div>
+                    <div class="swiper-client-data">
+                        <figure class=''>
+                            <img src="Assets/Images/Users/user4.jpg" alt="Client Review" />
+                        </figure>
+                    </div>
+                    <div class="client-data-detail col-7">
+                        <p>Gautam Savsaviya, Entrepreneur</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <!-- Testimonial Section End -->
 @endsection
