@@ -336,21 +336,21 @@
 							<!-- <span class="text-danger fs-5">* Please Enter your Mobile No</span> -->
 						</div>
 						<div class="mb-4">
-							<input type="radio" name="user_type" id="" value="{{ old('user_type') }}" class="form-check-input me-2 mt-0 mt-sm-1"
+							<input type="radio" name="user_type" id="user_type" value="1" class="form-check-input me-2 mt-0 mt-sm-1"
 								style="width: 1.5rem; height: 1.5rem;"><label for="form-check-lable"
 								class="fs-4 me-2 me-sm-4">Join as Client</label>
-							<input type="radio" name="user_type" id="" value="{{ old('user_type') }}" class="form-check-input me-2 mt-0 mt-sm-1"
+							<input type="radio" name="user_type" id="user_type" value="0" class="form-check-input me-2 mt-0 mt-sm-1"
 								style="width: 1.5rem; height: 1.5rem;"><label for="form-check-lable" class="fs-4">Join as
 								Freelancer</label>
 							<!-- <span class="text-danger fs-5 d-block">* Please Select User Type</span> -->
 						</div>
 						<div class="mb-4">
-							<input type="password" class="form-control fs-4 py-3" value="{{ old('password') }}" name="password"
+							<input type="password" class="form-control fs-4 py-3" value="" name="password"
 								placeholder="Password">
 							<!-- <span class="text-danger fs-5">* Please Enter your Password</span> -->
 						</div>
 						<div class="mb-4">
-							<input type="password" class="form-control fs-4 py-3" value="{{ old('confirm_password') }}" name="confirm_password"
+							<input type="password" class="form-control fs-4 py-3" value="" name="confirm_password"
 								placeholder="Confirm Password">
 							<!-- <span class="text-danger fs-5">* Password does not match</span> -->
 						</div>

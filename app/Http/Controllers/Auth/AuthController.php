@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -13,16 +15,19 @@ class AuthController extends Controller
 {
     /**
      * view of login page.
-    */
-    public function login(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+     */
+    public function login()
     {
         return view('auth.login');
     }
 
     /**
      * Login Store process
-    */
-    public function loginStore(Request $request)
+     * @param Request $request
+     * @return RedirectResponse|Redirector
+     */
+    public
+    function loginStore(Request $request)
     {
         $request->validate([
             'email' => 'required',
@@ -39,13 +44,15 @@ class AuthController extends Controller
     }
 
     // Register
-    public function register()
+    public
+    function register()
     {
         return view('auth.register');
     }
 
     // Store Register Data
-    public function registerStore(Request $request)
+    public
+    function registerStore(Request $request)
     {
         $request->validate([
             'first_name' => 'required',
@@ -57,10 +64,11 @@ class AuthController extends Controller
             'confirm_password' => 'required'
         ]);
 
-        if($request->post('password') != $request->post('confirm_password')){
-            return back()->withErrors(["success" => false, "message" => "passwoed and confrim password must be same"]);
+        // check password and confirm password are same
+        if ($request->post('password') != $request->post('confirm_password')) {
+            return back()->withErrors(["message" => "passwoed and confrim password must be same"]);
         }
 
-        
     }
+
 }
