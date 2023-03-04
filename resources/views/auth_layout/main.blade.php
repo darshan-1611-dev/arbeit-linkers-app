@@ -8,18 +8,19 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}">
     <title>ArebitLinkers - Freelance Service Provider</title>
 
-    @include("layout.css")
+    @include("auth_layout.css")
 </head>
 
 <body>
-    @include("layout.header")
+@include("auth_layout.header")
 
-    @yield("body")
+@yield("body")
 
-    @include("layout.footer")
+{{--@include("auth_layout.footer")--}}
 </body>
 
 <script>
-    @include("layout.js")
+    @include("auth_layout.js")
 </script>
 </html>
+
