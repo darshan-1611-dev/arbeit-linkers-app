@@ -63,19 +63,26 @@
                     <div class="mb-5">
                         <label class="fw-semibold fs-4 mb-3">Title *</label>
                         <input type="text" class="form-control fs-4 py-3" name="job_title"
+                               value="{{ old("job_title") }}"
                                placeholder="Ex: Software Enginner">
-{{--                        <span class="text-danger fs-5"><i class="fas fa-exclamation-circle"></i> Add your job--}}
-{{--                            title</span>--}}
+                        @error('job_title')
+                        <span class="text-danger fs-5"><i class="fas fa-exclamation-circle"></i> {{ $message }}</span>
+                        @enderror
+
                     </div>
                     <div class="mb-5">
                         <label class="fw-semibold fs-4 mb-3">Company *</label>
-                        <input type="text" class="form-control fs-4 py-3" name="job_company" placeholder="Ex: Microsoft">
-{{--                        <span class="text-danger fs-5"><i class="fas fa-exclamation-circle"></i> Add who you worked--}}
-{{--                            for</span>--}}
+                        <input type="text" class="form-control fs-4 py-3" name="job_company"
+                               value="{{ old("job_company") }}"
+                               placeholder="Ex: Microsoft">
+                        @error('job_company')
+                        <span class="text-danger fs-5"><i class="fas fa-exclamation-circle"></i> {{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="mb-5 col-6">
                         <label class="fw-semibold fs-4 mb-3">Location</label>
-                        <input type="text" class="form-control fs-4 py-3" name="job_location" placeholder="Ex: London">
+                        <input type="text" class="form-control fs-4 py-3" name="job_location"
+                               value="{{ old("job_location") }}" placeholder="Ex: London">
                     </div>
                     <div class="mb-5 col-6">
                         <label class="fw-semibold fs-4 mb-3">Country</label>
@@ -336,8 +343,12 @@
                                 </select>
                             </div>
                         </div>
-{{--                        <span class="text-danger fs-5"><i class="fas fa-exclamation-circle"></i> Add your start--}}
-{{--                            date</span>--}}
+                        @error('job_start_month')
+                        <span class="text-danger fs-5"><i class="fas fa-exclamation-circle"></i> {{ $message }}</span>
+                        @enderror
+                        @error('job_start_year')
+                        <span class="text-danger fs-5"><i class="fas fa-exclamation-circle"></i> {{ $message }}</span>
+                        @enderror
                     </div>
 
                     <div class="mb-5">
@@ -346,9 +357,9 @@
                         <label for="form-check-lable" class="fs-4 me-2 me-sm-4">I am currently working in this
                             role</label>
                     </div>
-                    
+
                     <div class="mb-5 col-sm-6">
-                        <label class="fw-semibold fs-4 mb-3">End Date *</label>
+                        <label class="fw-semibold fs-4 mb-3">End Date</label>
                         <div class="row">
                             <div class="col-6">
                                 <select name="job_end_month" id="" class="form-select fs-4 py-3">
@@ -406,15 +417,19 @@
                                 </select>
                             </div>
                         </div>
-{{--                        <span class="text-danger fs-5"><i class="fas fa-exclamation-circle"></i> This field is--}}
-{{--                            required.</span>--}}
+                        @error('job_end_month')
+                        <span class="text-danger fs-5"><i class="fas fa-exclamation-circle"></i> {{ $message }}</span>
+                        @enderror
+                        @error('job_end_year')
+                        <span class="text-danger fs-5"><i class="fas fa-exclamation-circle"></i> {{ $message }}</span>
+                        @enderror
                     </div>
 
 
                     <div class="mb-5">
                         <label class="fw-semibold fs-4 mb-3">Description</label>
                         <textarea class="form-control fs-4 py-3" name="job_description" placeholder="" rows="5"
-                                  style="resize: none;"></textarea>
+                                  style="resize: none;">{{ old("job_description") }}</textarea>
                     </div>
                     <div class="mb-5">
                         <input type="checkbox" name="is_experience" id="" class="form-check-input me-2 mt-0 mt-sm-1"
@@ -430,9 +445,9 @@
                         <a href="{{ url("/user-detail/title") }}" class="btn al-btn al-btn-light">Back</a>
                     </div>
                     <div>
-                        <a href="{{ url("/user-detail/education") }}"><input type="submit"
-                                                                             value="Next, Add your education"
-                                                                             class="btn al-btn"></a>
+                        <input type="submit"
+                               value="Next, Add your education"
+                               class="btn al-btn">
                     </div>
                 </div>
             </div>

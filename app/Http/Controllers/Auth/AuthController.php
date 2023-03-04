@@ -154,12 +154,59 @@ class AuthController extends Controller
 
     public function workExperienceStore(Request $request)
     {
-        $request->validate([
-            'job_title' => 'required',
-            'job_company' => 'required',
-            'job_start_month' => 'required',
-            'job_start_year' => 'required',
-        ]);
+
+        if (!$request->has('is_experience')) {
+
+            if ($request->has('is_working')) {
+                $request->validate([
+                    'job_title' => 'required',
+                    'job_company' => 'required',
+                    'job_start_month' => 'required',
+                    'job_start_year' => 'required',
+                ]);
+            } else {
+                $request->validate([
+                    'job_title' => 'required',
+                    'job_company' => 'required',
+                    'job_start_month' => 'required',
+                    'job_start_year' => 'required',
+                    'job_end_month' => 'required',
+                    'job_end_year' => 'required',
+                ]);
+            }
+        }
+
+        $user_id = Session::get('register_user_id');
+
+        if ($request->has('is_experience')) {
+            UserDetail::query()->where("user_id", '=', $user_id)->update([
+                "is_experience" => 0
+            ]);
+
+        } else {
+
+            if ($request->has('is_working')) {
+                $job_end_date = null;
+                $is_working = 1;
+            } else {
+                $job_end_date = $request->post('job_end_month') . ' ' . $request->post('job_end_year');
+                $is_working = 0;
+            }
+
+            UserDetail::query()->where("user_id", '=', $user_id)->update([
+                "is_experience" => 1,
+                "job_title" => $request->post('job_title'),
+                "job_company" => $request->post('job_company'),
+                "job_location" => $request->post('job_location'),
+                "job_country" => $request->post('job_country'),
+                "job_start_date" => $request->post('job_start_month') . ' ' . $request->post('job_start_year'),
+                "job_end_date" => $job_end_date,
+                "is_working" => $is_working,
+                "job_description" => $request->post('job_description')
+            ]);
+        }
+
+        return redirect('/user-detail/education');
 
     }
 
@@ -172,7 +219,37 @@ class AuthController extends Controller
 
     public function educationStore(Request $request)
     {
+        if (!$request->has('is_education')) {
+            $request->validate([
+                'school_name' => 'required',
+                'degree_title' => 'required',
+                'field_of_study' => 'required',
+                'education_start_date' => 'required',
+                'education_end_date' => 'required',
+            ]);
+        }
 
+        $user_id = Session::get('register_user_id');
+
+        if ($request->has('is_education')) {
+            UserDetail::query()->where("user_id", '=', $user_id)->update([
+                "is_education" => 0
+            ]);
+
+        } else {
+
+            UserDetail::query()->where("user_id", '=', $user_id)->update([
+                "is_education" => 1,
+                "school_name" => $request->post('school_name'),
+                "degree_title" => $request->post('degree_title'),
+                "field_of_study" => $request->post('field_of_study'),
+                "education_start_date" => $request->post('education_start_date'),
+                "education_end_date" => $request->post('education_end_date'),
+                "education_description" => $request->post('education_description')
+            ]);
+        }
+
+        return redirect('/user-detail/languages');
     }
 
     public function languages()
@@ -184,7 +261,19 @@ class AuthController extends Controller
 
     public function languagesStore(Request $request)
     {
+        $request->validate([
+            'language' => 'required',
+            'language_proficiency' => 'required',
+        ]);
 
+        $user_id = Session::get('register_user_id');
+
+        UserDetail::query()->where("user_id", '=', $user_id)->update([
+            "language" => $request->post('language'),
+            "language_proficiency" => $request->post('language_proficiency')
+        ]);
+
+        return redirect('/user-detail/skills');
     }
 
     public function skills()
@@ -196,7 +285,17 @@ class AuthController extends Controller
 
     public function skillsStore(Request $request)
     {
+        $request->validate([
+            'skills' => 'required'
+        ]);
 
+        $user_id = Session::get('register_user_id');
+
+        UserDetail::query()->where("user_id", '=', $user_id)->update([
+            "skills" => $request->post('skills'),
+        ]);
+
+        return redirect('/user-detail/rate');
     }
 
     public function rate()
@@ -208,6 +307,17 @@ class AuthController extends Controller
 
     public function rateStore(Request $request)
     {
+        $request->validate([
+            'hourly_rate' => 'required|integer'
+        ]);
+
+        $user_id = Session::get('register_user_id');
+
+        UserDetail::query()->where("user_id", '=', $user_id)->update([
+            "hourly_rate" => $request->post('hourly_rate'),
+        ]);
+
+        return redirect('/user-detail/final_overview');
 
     }
 
@@ -220,6 +330,29 @@ class AuthController extends Controller
 
     public function finalOverviewStore(Request $request)
     {
+        $request->validate([
+            'country' => 'required',
+            'state' => 'required',
+            'city' => 'required',
+            'profile_photo_path' => 'required',
+        ]);
+
+        $user_id = Session::get('register_user_id');
+
+        // store image
+
+        $image_path = $request->file('profile_photo_path')->store('user_profiles', 'public');
+
+        UserDetail::query()->where("user_id", '=', $user_id)->update([
+            "country" => $request->post('country'),
+            "state" => $request->post('state'),
+            "city" => $request->post('city'),
+            "profile_photo_path" => $image_path,
+            "street_address" => $request->post('street_address'),
+            "postal_code" => $request->post('postal_code'),
+        ]);
+
+        return redirect('/user-detail/final_overview');
 
     }
 

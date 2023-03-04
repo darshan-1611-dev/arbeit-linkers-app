@@ -49,16 +49,19 @@
 
     <!-- Form Start -->
     <section class="container">
-        <div class="">
-            <div class="my-5">
-                <p class="fs-5 text-muted mb-4">4/10</p>
-                <h2 class="mb-0">Looking good. Next, tell us which languages you speak.</h2>
-                <p>Upwork is global, so clients are often interested to know what languages you speak. <b>English</b> is a
-                    must, but do you speak any other languages?
-                </p>
-            </div>
-            <div class="col-sm-8" style="margin-top: 5rem !important;">
-                <form action="" method="post" class="row">
+        <form action="{{ url('/user-detail/languages/store') }}" method="post" class="row">
+            @csrf
+            <div class="">
+                <div class="my-5">
+                    <p class="fs-5 text-muted mb-4">4/10</p>
+                    <h2 class="mb-0">Looking good. Next, tell us which languages you speak.</h2>
+                    <p>Upwork is global, so clients are often interested to know what languages you speak.
+                        <b>English</b> is a
+                        must, but do you speak any other languages?
+                    </p>
+                </div>
+                <div class="col-sm-8" style="margin-top: 5rem !important;">
+
                     <div class="mb-5">
                         <div class="row">
                             <label class="fw-semibold fs-4 mb-3 col-6">Language</label>
@@ -69,7 +72,7 @@
                     <div class="mb-5">
                         <div class="row">
                             <div class="col-6">
-                                <select name="" id="" class="form-select fs-4 py-3">
+                                <select name="language" id="" class="form-select fs-4 py-3">
                                     <option value="" selected>I know</option>
                                     <option value="Afrikaans">Afrikaans</option>
                                     <option value="Amharic">Amharic</option>
@@ -112,7 +115,8 @@
                                     <option value="Icelandic">Icelandic</option>
                                     <option value="Italian">Italian</option>
                                     <option value="Japanese">Japanese</option>
-                                    <option value="Syro-Palestinian Sign Language">Syro-Palestinian Sign Language</option>
+                                    <option value="Syro-Palestinian Sign Language">Syro-Palestinian Sign Language
+                                    </option>
                                     <option value="Javanese">Javanese</option>
                                     <option value="Georgian">Georgian</option>
                                     <option value="Kikuyu">Kikuyu</option>
@@ -222,34 +226,39 @@
                                     <option value="Chinese">Chinese</option>
                                     <option value="Zulu">Zulu</option>
                                 </select>
-                                <span class="text-danger fs-5"><i class="fas fa-exclamation-circle"></i> You must select language</span>
+                                @error('language')
+                                <span class="text-danger fs-5"><i class="fas fa-exclamation-circle"></i> {{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="col-6">
-                                <select name="month" id="" class="form-select fs-4 py-3">
-                                    <option value="Basic">Basic </option>
+                                <select name="language_proficiency" id="" class="form-select fs-4 py-3">
+                                    <option value="Basic">Basic</option>
                                     <option value="Conversational">Conversational</option>
                                     <option value="Fluent">Fluent</option>
                                     <option value="Native or Bilingual">Native or Bilingual</option>
                                 </select>
-                                <span class="text-danger fs-5 mt-2"><i class="fas fa-exclamation-circle"></i> You must select proficiency level.</span>
+                                @error('language_proficiency')
+                                <span class="text-danger fs-5"><i class="fas fa-exclamation-circle"></i> {{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                     </div>
                     <!-- Dynamic Add and Remove Field here -->
-                </form>
-            </div>
-        </div>
-        <div class="mt-5">
-            <div class="d-flex justify-content-between">
-                <div>
-                    <a href="{{ url("/user-detail/education") }}" class="btn al-btn al-btn-light">Back</a>
-                </div>
-                <div>
-                    <a href="{{ url("/user-detail/skills") }}"><input type="submit" value="Next, add your skills"
-                                                                         class="btn al-btn"></a>
+
                 </div>
             </div>
-        </div>
+            <div class="mt-5">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <a href="{{ url("/user-detail/education") }}" class="btn al-btn al-btn-light">Back</a>
+                    </div>
+                    <div>
+                        <input type="submit" value="Next, add your skills"
+                               class="btn al-btn">
+                    </div>
+                </div>
+            </div>
+        </form>
     </section>
     <!-- Form End -->
 @endsection

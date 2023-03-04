@@ -41,11 +41,11 @@ Route::post('/user-detail/education/store', [\App\Http\Controllers\Auth\AuthCont
 Route::get('/user-detail/languages', [\App\Http\Controllers\Auth\AuthController::class, "languages"]);
 Route::post('/user-detail/languages/store', [\App\Http\Controllers\Auth\AuthController::class, "languagesStore"]);
 
-Route::get('/user-detail/rate', [\App\Http\Controllers\Auth\AuthController::class, "rate"]);
-Route::post('/user-detail/rate/store', [\App\Http\Controllers\Auth\AuthController::class, "rateStore"]);
-
 Route::get('/user-detail/skills', [\App\Http\Controllers\Auth\AuthController::class, "skills"]);
 Route::post('/user-detail/skills/store', [\App\Http\Controllers\Auth\AuthController::class, "skillsStore"]);
+
+Route::get('/user-detail/rate', [\App\Http\Controllers\Auth\AuthController::class, "rate"]);
+Route::post('/user-detail/rate/store', [\App\Http\Controllers\Auth\AuthController::class, "rateStore"]);
 
 Route::get('/user-detail/final_overview', [\App\Http\Controllers\Auth\AuthController::class, "finalOverview"]);
 Route::post('/user-detail/final_overview/store', [\App\Http\Controllers\Auth\AuthController::class, "finalOverviewStore"]);
