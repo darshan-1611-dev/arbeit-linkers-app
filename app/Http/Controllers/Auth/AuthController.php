@@ -340,7 +340,6 @@ class AuthController extends Controller
         $user_id = Session::get('register_user_id');
 
         // store image
-
         $image_path = $request->file('profile_photo_path')->store('user_profiles', 'public');
 
         UserDetail::query()->where("user_id", '=', $user_id)->update([
@@ -353,7 +352,6 @@ class AuthController extends Controller
         ]);
 
         return redirect('/user-detail/final_overview');
-
     }
 
 }
