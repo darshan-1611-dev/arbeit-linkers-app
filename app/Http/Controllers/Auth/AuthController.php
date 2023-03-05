@@ -101,6 +101,15 @@ class AuthController extends Controller
     }
 
     /**
+     * Log Out
+    */
+    public function logOut() {
+        Session::flush();
+        Auth::logout();
+
+        return Redirect('login');
+    }
+    /**
      * get user data(name) from new register id.
      *
      * @param $id
@@ -351,7 +360,10 @@ class AuthController extends Controller
             "postal_code" => $request->post('postal_code'),
         ]);
 
-        return redirect('/user-detail/final_overview');
+        // auth user with id
+        Auth::loginUsingId($user_id);
+
+        return redirect('/');
     }
 
 }

@@ -49,3 +49,7 @@ Route::post('/user-detail/rate/store', [\App\Http\Controllers\Auth\AuthControlle
 
 Route::get('/user-detail/final_overview', [\App\Http\Controllers\Auth\AuthController::class, "finalOverview"]);
 Route::post('/user-detail/final_overview/store', [\App\Http\Controllers\Auth\AuthController::class, "finalOverviewStore"]);
+
+// log out
+Route::get('/logout', [\App\Http\Controllers\Auth\AuthController::class, "logOut"]);
+
