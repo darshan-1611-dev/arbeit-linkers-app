@@ -1,0 +1,304 @@
+.sidebar {
+	border-radius: .4rem;
+	padding: 0;
+	margin-bottom: 30px;
+	height: auto;
+}
+
+.search-sidebar_header {
+	position: relative;
+	width: 100%;
+	padding: 1rem 1.5rem;
+	display: flex;
+	align-items: center;
+}
+
+.search-sidebar_header .clear_all {
+	font-size: 14px;
+	font-weight: 600;
+	color: var(--bg-blue);
+}
+
+.search-sidebar_header .ssh_heading {
+	margin: 0;
+	flex: 1;
+	font-size: 16px;
+}
+
+.search-inner {
+	padding: 2rem 0 1rem
+}
+
+.filter-search-box .form-group .form-control {
+	box-shadow: none;
+	color: var(--text-gray-1);
+}
+
+.sidebar li .submenu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.sidebar .nav-link:hover {
+	color: var(--bs-primary);
+}
+
+.nav-link {
+	font-weight: 500;
+	color: var(--bs-dark);
+}
+
+.job-section {
+	float: left;
+	width: 100%;
+}
+
+.post-bar {
+	float: left;
+	width: 100%;
+	border: 1px solid var(--border);
+	border-radius: 4px;
+	margin-bottom: 20px;
+	padding: 20px;
+}
+
+.job_topbar {
+	float: left;
+	width: 100%;
+	position: relative;
+}
+
+.rep-post {
+	padding: 0;
+}
+
+.user-detail {
+	float: left;
+}
+
+.user-detail .profile_pic {
+	height: 5rem;
+	width: 5rem;
+	border-radius: 50%;
+
+}
+
+.user-detail img {
+	float: left;
+	border-radius: 10rem;
+	margin-top: 2px;
+}
+
+.user-name {
+	float: left;
+	margin-left: 15px;
+}
+
+.user-name h3 {
+	color: #000000;
+	font-size: 18px;
+	text-transform: capitalize;
+	font-weight: 600;
+	margin-bottom: 5px;
+	margin-top: 2px;
+}
+
+.user-name span {
+	color: #b2b2b2;
+	font-size: 14px;
+}
+
+.user-name img {
+	margin-top: 4px;
+	margin-right: 6px;
+}
+
+.user-name .bklink img {
+	margin-top: 1px;
+	margin-right: 6px;
+}
+
+
+
+.bid-tab {
+	margin-bottom: 20px;
+}
+
+.epi-sec {
+	float: left;
+	width: 100%;
+	padding: 0;
+}
+
+.user-name .bklink {
+	float: left;
+	margin-top: 5px !important;
+	margin-bottom: 15px;
+}
+
+.descp {
+	float: left;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.descp li {
+	display: inline-block;
+	margin-right: 15px;
+}
+
+.descp li span {
+	color: #b2b2b2;
+	font-size: 14px;
+	float: left;
+}
+
+.descp li i {
+	margin-right: 5px;
+}
+
+.bk-links {
+	float: right;
+}
+
+.bk-links li {
+	display: inline-block;
+	margin-right: 7px;
+}
+
+.bk-links li:last-child {
+	margin-right: 0;
+}
+
+.bk-links li i {
+	color: var(--text-white);
+	width: 33px;
+	height: 30px;
+	padding-left: 0px;
+	background-color: #0e9d80;
+	border-radius: 3px;
+	text-align: center;
+	line-height: 30px;
+}
+
+.bid_now {
+	color: var(--text-white);
+	background-color: var(--bg-dark);
+	text-transform: capitalize;
+	display: inline-block;
+	height: 30px;
+	border-radius: 3px;
+	padding: 0 10px;
+	line-height: 30px;
+	position: relative;
+}
+
+.bid_now:hover {
+	color: #fff;
+}
+
+
+.job_descp {
+	float: left;
+	width: 100%;
+}
+
+.job_descp h3 {
+	color: #333;
+	font-size: 16px;
+	font-weight: 600;
+	margin-bottom: 15px;
+}
+
+.job-dt {
+	float: left;
+	width: 100%;
+	margin-bottom: 22px;
+}
+
+.job-dt li {
+	display: inline-block;
+	margin-right: 15px;
+}
+
+.job-dt li a {
+	color: #fff;
+	background-color: #53d690;
+	text-transform: capitalize;
+	padding: 5px 13px;
+
+	border-radius: 3px;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.job-dt li span {
+	color: #333;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.job_descp>p {
+	color: #666666;
+	font-size: 15px;
+	line-height: 24px;
+	margin-bottom: 20px;
+}
+
+.job_descp>p a {
+	color: #0d6efd;
+	font-weight: 600;
+}
+
+
+.skill-tags {
+	float: left;
+	width: 100%;
+	margin-bottom: 15px;
+
+}
+
+.skill-tags li {
+	display: inline-block;
+	margin-right: 6px;
+	margin-bottom: 10px;
+}
+
+.skill-tags li a {
+	display: inline-block;
+	color: #b2b2b2;
+	font-size: 14px;
+	background-color: #f1f1f1;
+
+	border-radius: 30px;
+	padding: 7px 15px;
+	font-weight: 500;
+}
+
+.job-status-bar {
+	float: left;
+	width: 100%;
+}
+
+.job-status-bar>a {
+	float: right;
+	color: #b2b2b2 !important;
+	font-size: 14px;
+	margin-top: 29px;
+	cursor: pointer;
+}
+
+.job-status-bar>a:hover {
+	color: #e44d3a !important;
+}
+
+.job-status-bar>a i {
+	font-size: 14px;
+	margin-right: 7px;
+	position: relative;
+	top: 1px;
+}

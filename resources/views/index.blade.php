@@ -12,7 +12,7 @@
                         ratione
                         obcaecati
                         quas quis, atque facere porro veritatis magnam!</p>
-                    <a href="login.html" class="btn al-btn mt-5">Get Freelancers</a>
+                    <a href="{{ url('login') }}" class="btn al-btn mt-5">Get Freelancers</a>
                 </div>
                 <div class="col-md-6 d-none d-md-block">
                     <div class="container">

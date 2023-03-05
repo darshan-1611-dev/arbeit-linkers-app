@@ -1,0 +1,41 @@
+.skills li{
+    background-color: var(--bg-blue-gray);
+}
+
+.custom-tooltip{
+    --bs-tooltip-bg: var(--text-dark);
+    --bs-tooltip-color:var(--text-white);
+    --bs-tooltip-font-size:1.2rem;
+    --bs-tooltip-arrow-height: 1.5rem;
+    --bs-tooltip-arrow-width: 2.5rem;
+    --bs-tooltip-padding-y:1rem;
+    --bs-tooltip-padding-x:1rem;
+}
+
+.login-box{
+    background-color: var(--bg-features-4);
+    padding: 3rem;
+    border-radius: 1rem;
+}
+
+.line-heading::before{
+    background-color: #8f8e8e;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 45%;
+    right: 10px;
+}
+
+.line-heading::after{
+    background-color: #8f8e8e;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 45%;
+    left: 10px;
+}

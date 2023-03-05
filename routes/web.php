@@ -50,6 +50,17 @@ Route::post('/user-detail/rate/store', [\App\Http\Controllers\Auth\AuthControlle
 Route::get('/user-detail/final_overview', [\App\Http\Controllers\Auth\AuthController::class, "finalOverview"]);
 Route::post('/user-detail/final_overview/store', [\App\Http\Controllers\Auth\AuthController::class, "finalOverviewStore"]);
 
-// log out
-Route::get('/logout', [\App\Http\Controllers\Auth\AuthController::class, "logOut"]);
+// auth middleware
+Route::middleware(['auth'])->group(function () {
 
+    // log out
+    Route::get('/logout', [\App\Http\Controllers\Auth\AuthController::class, "logOut"]);
+
+    // post job
+    Route::get('/create-job', [\App\Http\Controllers\JobController::class, "createJob"]);
+    Route::post('/store-job', [\App\Http\Controllers\JobController::class, "storeJob"]);
+    Route::get('/list-job', [\App\Http\Controllers\JobController::class, "listJob"]);
+    Route::get('/detail-view-job/{id}', [\App\Http\Controllers\JobController::class, "detailJob"]);
+
+
+});

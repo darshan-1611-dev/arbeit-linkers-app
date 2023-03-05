@@ -105,7 +105,10 @@
     <div class="user-menu-toggler shadow-lg" style="display: none;">
         <ul>
             <li><a href="#">Profile</a></li>
-            <li><a href="#">Find Jobs</a></li>
+            <li><a href="{{ url('list-job') }}">Find Jobs</a></li>
+            @if(auth()->user()->user_type == 1)
+                <li><a href="{{ url("/create-job") }}">Post Jobs</a></li>
+            @endif
             <li><a href="{{ url('logout') }}">Logout</a></li>
         </ul>
     </div>
