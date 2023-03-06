@@ -49,73 +49,89 @@
 
     <!-- Form Start -->
     <section class="container">
-        <form action="{{ url("/user-detail/final_overview/store") }}" method="post" class="row" enctype="multipart/form-data">
+        <form action="{{ url('/company-detail/store') }}" method="post" class="row" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <div class="">
                     <div class="my-5">
-                        <p class="fs-5 text-muted mb-4">7/10</p>
-                        <h2 class="mb-0">A few last details, then you can check and publish
+                        <h2 class="mb-0">A few details, then you can check and publish
                             your profile.</h2>
                         <p>A professional photo helps you build trust with your clients. To keep things safe and simple,
-                            they'll pay you through us - which is why we need your personal information.</p>
+                            you'll pay them through us - which is why we need your personal information.</p>
                     </div>
                     <div class="" style="margin-top: 5rem !important;">
 
+                        <div class="mb-5 col-12">
+                            <label class="fw-semibold fs-4 mb-3">Company Name *</label>
+                            <input type="text" class="form-control fs-4 py-3" name="company_name"
+                                   value="{{ old("company_name") }}">
+                            @error('company_name')
+                            <span class="text-danger fs-5"><i
+                                    class="fas fa-exclamation-circle"></i> {{ $message }}</span>
+                            @enderror
+                        </div>
                         <div class="mb-5 col-4">
                             <label class="fw-semibold fs-4 mb-3">Country *</label>
-                            <input type="text" class="form-control fs-4 py-3" name="country" value="{{ old("country") }}">
+                            <input type="text" class="form-control fs-4 py-3" name="country"
+                                   value="{{ old("country") }}">
                             @error('country')
-                            <span class="text-danger fs-5"><i class="fas fa-exclamation-circle"></i> {{ $message }}</span>
+                            <span class="text-danger fs-5"><i
+                                    class="fas fa-exclamation-circle"></i> {{ $message }}</span>
                             @enderror
                         </div>
                         <div class="mb-5 col-4">
                             <label class="fw-semibold fs-4 mb-3">State *</label>
-                            <input type="text" class="form-control fs-4 py-3" name="state" value="{{ old("state") }}">
+                            <input type="text" class="form-control fs-4 py-3" name="state"
+                                   value="{{ old("state") }}">
                             @error('state')
-                            <span class="text-danger fs-5"><i class="fas fa-exclamation-circle"></i> {{ $message }}</span>
+                            <span class="text-danger fs-5"><i
+                                    class="fas fa-exclamation-circle"></i> {{ $message }}</span>
                             @enderror
                         </div>
                         <div class="mb-5 col-4">
                             <label class="fw-semibold fs-4 mb-3">City *</label>
                             <input type="text" class="form-control fs-4 py-3" name="city" value="{{ old("city") }}">
                             @error('city')
-                            <span class="text-danger fs-5"><i class="fas fa-exclamation-circle"></i> {{ $message }}</span>
+                            <span class="text-danger fs-5"><i
+                                    class="fas fa-exclamation-circle"></i> {{ $message }}</span>
                             @enderror
                         </div>
                         <div class="mb-5 col-8">
                             <label class="fw-semibold fs-4 mb-3">Street Address</label>
-                            <input type="text" class="form-control fs-4 py-3" name="street_address" value="{{ old("street_address") }}">
+                            <input type="text" class="form-control fs-4 py-3" name="street_address"
+                                   value="{{ old("street_address") }}">
                         </div>
                         <div class="mb-5 col-4">
                             <label class="fw-semibold fs-4 mb-3">ZIP/Postal code</label>
-                            <input type="text" class="form-control fs-4 py-3" name="postal_code" value="{{ old("postal_code") }}">
+                            <input type="text" class="form-control fs-4 py-3" name="postal_code"
+                                   value="{{ old("postal_code") }}">
                         </div>
                         <div class="mb-5 col-6">
-                            <label class="fw-semibold fs-4 mb-3">Profile Photo *</label>
+                            <label class="fw-semibold fs-4 mb-3">Photo *</label>
                             <input type="file" class="form-control fs-4" name="profile_photo_path" accept="image/*">
                             @error('profile_photo_path')
-                            <span class="text-danger fs-5"><i class="fas fa-exclamation-circle"></i> {{ $message }}</span>
+                            <span class="text-danger fs-5"><i
+                                    class="fas fa-exclamation-circle"></i> {{ $message }}</span>
                             @enderror
                         </div>
-
                         <div class="mb-5">
-                            <label class="fw-semibold fs-4 mb-3">About Yourself</label>
-                            <textarea class="form-control fs-4 py-3" name="user_description" placeholder="" rows="5"
-                                      style="resize: none;">{{ old("user_description") }}</textarea>
+                            <label class="fw-semibold fs-4 mb-3">Description</label>
+                            <textarea class="form-control fs-4 py-3" name="company_description"
+                                      placeholder="Write About Company" rows="5"
+                                      style="resize: none;">{{ old("company_description") }}</textarea>
                         </div>
-
                     </div>
                 </div>
-            </div>
             </div>
             <div class="mt-5">
                 <div class="d-flex justify-content-between">
                     <div>
-                        <a href="{{ url("/user-detail/rate") }}" class="btn al-btn al-btn-light">Back</a>
+                        <a href="{{ url("/user-detail/introduction") }}"
+                           class="btn al-btn al-btn-light">Back</a>
                     </div>
                     <div>
-                       <input type="submit" value="Submit" class="btn al-btn">
+                        <input type="submit" value="Complate Your Profile"
+                                                                       class="btn al-btn">
                     </div>
                 </div>
             </div>

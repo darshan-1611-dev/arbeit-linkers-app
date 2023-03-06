@@ -104,7 +104,7 @@
     </header>
     <div class="user-menu-toggler shadow-lg" style="display: none;">
         <ul>
-            <li><a href="#">Profile</a></li>
+            <li><a href="{{ auth()->user()->user_type == 0 ? url('user-profile') : url('company-profile')}}">Profile</a></li>
             <li><a href="{{ url('list-job') }}">Find Jobs</a></li>
             @if(auth()->user()->user_type == 1)
                 <li><a href="{{ url("/create-job") }}">Post Jobs</a></li>

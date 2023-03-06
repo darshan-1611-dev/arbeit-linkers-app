@@ -50,17 +50,28 @@ Route::post('/user-detail/rate/store', [\App\Http\Controllers\Auth\AuthControlle
 Route::get('/user-detail/final_overview', [\App\Http\Controllers\Auth\AuthController::class, "finalOverview"]);
 Route::post('/user-detail/final_overview/store', [\App\Http\Controllers\Auth\AuthController::class, "finalOverviewStore"]);
 
+//get company detail
+Route::get('/company-detail', [\App\Http\Controllers\Auth\AuthController::class, "company"]);
+Route::post('/company-detail/store', [\App\Http\Controllers\Auth\AuthController::class, "companyStore"]);
+
 // auth middleware
 Route::middleware(['auth'])->group(function () {
 
     // log out
     Route::get('/logout', [\App\Http\Controllers\Auth\AuthController::class, "logOut"]);
 
-    // post job
+    // job controller
     Route::get('/create-job', [\App\Http\Controllers\JobController::class, "createJob"]);
     Route::post('/store-job', [\App\Http\Controllers\JobController::class, "storeJob"]);
     Route::get('/list-job', [\App\Http\Controllers\JobController::class, "listJob"]);
     Route::get('/detail-view-job/{id}', [\App\Http\Controllers\JobController::class, "detailJob"]);
+
+    // user profile
+    Route::get('/user-profile', [\App\Http\Controllers\ProfileController::class, "userProfile"]);
+    Route::post('/user-profile/update', [\App\Http\Controllers\ProfileController::class, "userProfileUpdate"]);
+
+    Route::get('/company-profile', [\App\Http\Controllers\ProfileController::class, "companyProfile"]);
+    Route::post('/company-profile/update', [\App\Http\Controllers\ProfileController::class, "companyProfileUpdate"]);
 
 
 });

@@ -78,7 +78,7 @@
                 </div>
 
                 <div>
-                    <a href="{{ url('/user-detail/title') }}" class="btn al-btn">Get Started</a>
+                    <a href="{{ $user_type == 1 ? url('/company-detail') : url('/user-detail/title') }}" class="btn al-btn">Get Started</a>
                     <p class="fs-5 ms-5 text-muted d-none d-md-inline-block">It only takes 5-10 minutes and you can edit
                         it later. We'll save as you go.</p>
                 </div>

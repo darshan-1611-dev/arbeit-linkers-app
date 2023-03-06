@@ -102,13 +102,15 @@ class AuthController extends Controller
 
     /**
      * Log Out
-    */
-    public function logOut() {
+     */
+    public function logOut()
+    {
         Session::flush();
         Auth::logout();
 
         return Redirect('login');
     }
+
     /**
      * get user data(name) from new register id.
      *
@@ -129,7 +131,57 @@ class AuthController extends Controller
     {
         $user_name = $this->getDataOnUserId(Session::get('register_user_id'));
 
-        return view('auth.user_details.introduction', compact("user_name"));
+        // to check user either freelancer or client
+        $user_type = User::query()->find(Session::get('register_user_id'), "user_type")->user_type;
+
+        return view('auth.user_details.introduction', compact("user_name", "user_type"));
+    }
+
+    /**
+     * Company detail form
+     */
+    public function company()
+    {
+        $user_name = $this->getDataOnUserId(Session::get('register_user_id'));
+
+        return view('auth.company_details.company_details', compact("user_name"));
+    }
+
+    /**
+     * Store Company detail
+     *
+     * @param Request $request
+     */
+    public function companyStore(Request $request)
+    {
+        $request->validate([
+            "company_name" => 'required',
+            "country" => 'required',
+            "state" => 'required',
+            "city" => 'required',
+            "profile_photo_path" => 'required',
+        ]);
+
+        $user_id = Session::get('register_user_id');
+
+        // store image
+        $image_path = $request->file('profile_photo_path')->store('user_profiles', 'public');
+
+        UserDetail::query()->where("user_id", '=', $user_id)->update([
+            "company_name" => $request->post('company_name'),
+            "country" => $request->post('country'),
+            "state" => $request->post('state'),
+            "city" => $request->post('city'),
+            "profile_photo_path" => $image_path,
+            "street_address" => $request->post('street_address'),
+            "postal_code" => $request->post('postal_code'),
+            "company_description" => $request->post('company_description'),
+        ]);
+
+        // auth user with id
+        Auth::loginUsingId($user_id);
+
+        return redirect('/');
     }
 
     public function title()
@@ -358,6 +410,7 @@ class AuthController extends Controller
             "profile_photo_path" => $image_path,
             "street_address" => $request->post('street_address'),
             "postal_code" => $request->post('postal_code'),
+            "user_description" => $request->post("user_description")
         ]);
 
         // auth user with id
