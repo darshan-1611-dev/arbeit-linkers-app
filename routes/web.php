@@ -60,18 +60,28 @@ Route::middleware(['auth'])->group(function () {
     // log out
     Route::get('/logout', [\App\Http\Controllers\Auth\AuthController::class, "logOut"]);
 
+    // user profile
+    Route::get('/user-profile', [\App\Http\Controllers\ProfileController::class, "userProfile"]);
+    Route::post('/user-profile/update', [\App\Http\Controllers\ProfileController::class, "userProfileUpdate"]);
+    Route::get('/user-profile/bid', [\App\Http\Controllers\ProfileController::class, "viewUserBid"]);
+
+    // company profile
+    Route::get('/company-profile', [\App\Http\Controllers\ProfileController::class, "companyProfile"]);
+    Route::post('/company-profile/update', [\App\Http\Controllers\ProfileController::class, "companyProfileUpdate"]);
+    Route::get('/company-profile/project', [\App\Http\Controllers\ProfileController::class, "viewCompanyProject"]);
+    Route::get('/company-profile/project/bid-detail/{project_id}', [\App\Http\Controllers\ProfileController::class, "viewUserBidOnProject"]);
+    Route::get('/company-profile/project/bid/assign/{user_id}/{project_id}', [\App\Http\Controllers\ProfileController::class, "approveBidProject"]);
+
     // job controller
     Route::get('/create-job', [\App\Http\Controllers\JobController::class, "createJob"]);
     Route::post('/store-job', [\App\Http\Controllers\JobController::class, "storeJob"]);
     Route::get('/list-job', [\App\Http\Controllers\JobController::class, "listJob"]);
     Route::get('/detail-view-job/{id}', [\App\Http\Controllers\JobController::class, "detailJob"]);
 
-    // user profile
-    Route::get('/user-profile', [\App\Http\Controllers\ProfileController::class, "userProfile"]);
-    Route::post('/user-profile/update', [\App\Http\Controllers\ProfileController::class, "userProfileUpdate"]);
+    // bid jobs
+    Route::post('/bid-job',  [\App\Http\Controllers\JobController::class, "bid"]);
 
-    Route::get('/company-profile', [\App\Http\Controllers\ProfileController::class, "companyProfile"]);
-    Route::post('/company-profile/update', [\App\Http\Controllers\ProfileController::class, "companyProfileUpdate"]);
+
 
 
 });

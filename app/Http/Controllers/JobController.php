@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bid;
 use App\Models\Job;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -61,17 +62,49 @@ class JobController extends Controller
      */
     public function listJob()
     {
-        $jobs = Job::query()->where("is_bid_done", '=', 0)->latest()->paginate(4);
+        $jobs = Job::query()->where("is_bid_done", '=', 0)->latest()->paginate(6);
 
         return view('job.list_job', compact('jobs'));
     }
 
-
+    /**
+     * View detail job by project id.
+     */
     public function detailJob($id)
     {
         $job = Job::query()->find($id);
 
-        return view('job.job_detail',compact('job'));
+        $is_bid = Bid::query()
+            ->where("job_id", '=', $job->id)
+            ->where("user_id",'=', auth()->user()->id)
+            ->exists();
+
+        return view('job.job_detail', compact('job','is_bid'));
+    }
+
+    /**
+     * Bid project.
+     *
+     * @param Request $request
+     * @return RedirectResponse|Redirector
+     */
+    public function bid(Request $request)
+    {
+        $request->validate([
+            "price" => "required",
+            "time_duration" => "required",
+            "description" => "required",
+        ]);
+
+        Bid::query()->create([
+            'user_id' => auth()->user()->id,
+            'job_id' => $request->post('job_id'),
+            'price' => $request->post('price'),
+            'time_duration' => $request->post('time_duration'),
+            'description' => $request->post('description')
+        ]);
+
+        return redirect('/user-profile/bid');
     }
 
     /**

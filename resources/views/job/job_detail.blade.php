@@ -14,9 +14,81 @@
                     <div class="d-flex justify-content-between">
                         <h2>{{ $job->project_title }}</h2>
                         <div>
-                            <form action="">
-                                <input type="submit" value="Bid Now" class="btn fs-4 al-btn">
-                            </form>
+                            <!-- Button trigger modal -->
+
+                            @if($is_bid)
+                                <button type="button" class="btn al-btn disabled" data-bs-toggle="modal"
+                                        data-bs-target="#bidModel">Already Bidden.
+                                </button>
+                            @else
+                                <button type="button" class="btn al-btn" data-bs-toggle="modal"
+                                        data-bs-target="#bidModel">Bid Now
+                                </button>
+                            @endif
+
+                        <!-- Modal -->
+                            <div class="modal fade" id="bidModel" tabindex="-1" aria-labelledby="bidModel"
+                                 aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <form action="{{ url('/bid-job') }}" method="post" class="row"
+                                          enctype="multipart/form-data">
+                                        @csrf
+
+                                        <input type="hidden" name="job_id" value="{{ $job->id }}">
+
+                                        <div class="modal-content">
+                                            <div class="modal-header px-5 py-4">
+                                                <h1 class="modal-title fs-3" id="exampleModalLabel">Bid Now</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body px-5">
+
+                                                <div class="mb-5 col-md-12">
+                                                    <label class="fw-semibold fs-4 mb-3">Price *</label>
+                                                    <input type="text" class="form-control fs-4 py-3"
+                                                           value="" name="price" placeholder="0.00 $">
+                                                    @error('price')
+                                                    <span class="text-danger fs-5"><i
+                                                            class="fas fa-exclamation-circle"></i> {{ $message }}</span>
+                                                    @enderror
+                                                </div>
+                                                <div class="mb-5 col-md-12">
+                                                    <label class="fw-semibold fs-4 mb-3">Time Duration *</label>
+                                                    <input type="text" class="form-control fs-4 py-3"
+                                                           name="time_duration"
+                                                           value="" placeholder="Job Duration in weeks">
+                                                    @error('time_duration')
+                                                    <span class="text-danger fs-5"><i
+                                                            class="fas fa-exclamation-circle"></i> {{ $message }}</span>
+                                                    @enderror
+                                                </div>
+
+                                                <div class="mb-5">
+                                                    <label class="fw-semibold fs-4 mb-3">About YourWork *</label>
+                                                    <textarea class="form-control fs-4 py-3" name="description"
+                                                              placeholder="Write About your work, which will help you to get job faster"
+                                                              rows="5"
+                                                              style="resize: none;"></textarea>
+                                                    @error('description')
+                                                    <span class="text-danger fs-5"><i
+                                                            class="fas fa-exclamation-circle"></i> {{ $message }}</span>
+                                                    @enderror
+                                                </div>
+
+                                            </div>
+                                            <div class="modal-footer mx-4">
+                                                <button type="button" class="btn al-btn al-btn-light"
+                                                        data-bs-dismiss="modal">Close
+                                                </button>
+                                                <input type="submit" class="btn al-btn" value="Submit Application">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            {{-- End Model --}}
+
                         </div>
                     </div>
 
@@ -141,15 +213,16 @@
                     <hr class="my-5">
 
                     <div>
-                        <h4 class="d-inline-block">About the client</h4> <span class="fs-5 ms-5 text-muted">Member since {{ $job->user->created_at->format('M d, Y') }}</span>
+                        <h4 class="d-inline-block">About the client</h4> <span
+                            class="fs-5 ms-5 text-muted">Member since {{ $job->user->created_at->format('M d, Y') }}</span>
                         <div class="mt-5 row">
                             <div class="col-5 col-sm-4 ">
                                 <div>
                                     <span class="fs-4">{{ $job->user->name }}</span>
                                 </div>
-{{--                                <div>--}}
-{{--                                    <p class="fs-4 text-muted d-inline-block">Scotts Valley, California</p>--}}
-{{--                                </div>--}}
+                                {{--                                <div>--}}
+                                {{--                                    <p class="fs-4 text-muted d-inline-block">Scotts Valley, California</p>--}}
+                                {{--                                </div>--}}
                             </div>
                             <div class="col-5 col-sm-4 ">
                                 <div>

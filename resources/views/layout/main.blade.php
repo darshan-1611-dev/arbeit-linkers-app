@@ -12,14 +12,14 @@
 </head>
 
 <body>
-    @include("layout.header")
+@include("layout.header")
 
-    @yield("body")
+@yield("body")
 
-    @include("layout.footer")
+@include("layout.footer")
 </body>
 
-<script>
-    @include("layout.js")
-</script>
+
+@include("layout.js")
+
 </html>
