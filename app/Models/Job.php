@@ -43,4 +43,20 @@ class Job extends Model
         return $this->belongsTo(User::class);
     }
 
+    /**
+     * Get Job Detail
+     */
+    public function user_details()
+    {
+        return $this->belongsTo(UserDetail::class, 'user_id', "user_id");
+    }
+
+//    /**
+//     * Get Bid Detail
+//     */
+//    public function bids()
+//    {
+//        return $this->belongsTo(Bid::class, 'is_bid_done', 'user_id')->whereRaw('bids.job_id = jobs.id');
+//    }
+
 }

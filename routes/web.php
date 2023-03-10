@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PaymentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -72,6 +73,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/company-profile/project/bid-detail/{project_id}', [\App\Http\Controllers\ProfileController::class, "viewUserBidOnProject"]);
     Route::get('/company-profile/project/bid/assign/{user_id}/{project_id}', [\App\Http\Controllers\ProfileController::class, "approveBidProject"]);
 
+    // list project list and payment status
+    Route::get('/project-list',[\App\Http\Controllers\ProfileController::class, "listUserApprovedProject"]);
+
     // job controller
     Route::get('/create-job', [\App\Http\Controllers\JobController::class, "createJob"]);
     Route::post('/store-job', [\App\Http\Controllers\JobController::class, "storeJob"]);
@@ -82,6 +86,10 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/bid-job',  [\App\Http\Controllers\JobController::class, "bid"]);
 
 
+
+    // payment
+    Route::get('razorpay-payment', [PaymentController::class, 'index']);
+    Route::post('razorpay-payment', [PaymentController::class, 'store'])->name('razorpay.payment.store');
 
 
 });

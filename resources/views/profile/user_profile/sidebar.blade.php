@@ -22,7 +22,7 @@
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="/Freelancer/projects.html">
+                    <a href="{{ url('/project-list') }}">
                         <i class="fas fa-briefcase icon fs-3"></i>
                         <span class="text nav-text">Projects</span>
                     </a>

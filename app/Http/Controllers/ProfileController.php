@@ -180,4 +180,28 @@ class ProfileController extends Controller
         return redirect('/company-profile/project');
 
     }
+
+    /**
+     * View Project List of user, which is being approved by company.
+     */
+    public function listUserApprovedProject()
+    {
+        $data = Job::query()
+            ->where('is_bid_done', auth()->user()->id)
+            ->with(['user', 'user_details'])
+            ->get();
+
+        foreach ($data as $key => $item) {
+
+            $bid_detail = Bid::query()
+                ->where("bid_status", '=', 1)
+                ->where("user_id", '=', auth()->user()->id)
+                ->where("job_id", '=', $item->id)
+                ->first();
+
+            $data[$key]["bid_details"] = $bid_detail;
+        }
+
+        return view('profile.user_profile.project_list', compact('data'));
+    }
 }
