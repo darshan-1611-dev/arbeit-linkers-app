@@ -15,18 +15,16 @@
             <!-- Main Content Start -->
 
             @php
-
                 function check_payment_status($bid)
                 {
                     $status = null;
-
 
                     if($bid == 0){
                         $status = "<button type='button' class='btn btn-warning'>Pending </button>";
                     }
 
                      if($bid == 1){
-                        $status = "<button type='button' class='btn btn-success'>Success </button>";
+                        $status = "<button type='button' class='btn btn-success'>Done </button>";
                     }
 
                      if($bid == 2){
@@ -41,26 +39,6 @@
                 <div>
                     <h2>Your All Projects</h2>
                 </div>
-                <div class="filters mb-5 d-flex justify-content-between align-items-center">
-                    <h5 class="">Filters: </h5>
-                    <div class="">
-                        <form action="" method="post" class="row">
-                            <div class="col-8">
-                                <select name="search" id="" class="form-select fs-4 py-3">
-                                    <option value="" selected>Select Bids type</option>
-                                    <option value="Total Projects">Total Bids</option>
-                                    <option value="Ongoing Projects">Pendding Bids</option>
-                                    <option value="Completed Projects">Approved Bids</option>
-                                    <option value="Completed Projects">Rejected Bids</option>
-                                </select>
-                            </div>
-                            <div class="col-3">
-                                <button type="submit" class="btn al-btn"><i class="fas fa-search"></i></button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
 
                 {{-- Table start --}}
                 <div class="data-table">
@@ -72,7 +50,7 @@
                             <th scope="col">Company Name</th>
                             <th scope="col">Job Created at</th>
                             <th scope="col">Job Price</th>
-                            <th scope="col">Job Duration</th>
+                            <th scope="col">Job Duration(in weeks)</th>
                             <th scope="col">Payment Status</th>
                         </tr>
                         </thead>
@@ -85,10 +63,7 @@
                                 <td>{{ $item->created_at->format('d M Y') }}</td>
                                 <td>{{ $item->bid_details->price }}</td>
                                 <td>{{ $item->bid_details->time_duration }}</td>
-                                <td>{{ $item->created_at->format('d M Y') }}</td>
-{{--                                <td>{!!  check_bid_status($item->bid_status)  !!}</td>--}}
-{{--                                <td><a href="{{ url('/detail-view-job/'. $item->job_id .'') }}" class="text-primary">Project Details</a>--}}
-{{--                                </td>--}}
+                                <td>{!!  check_payment_status($item->payment_status)  !!}</td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -97,13 +72,11 @@
                 {{-- Table End --}}
 
             </section>
-
             <!-- Main Content End -->
         </div>
 
     </div>
 @endsection
-
 
 @push('js')
 

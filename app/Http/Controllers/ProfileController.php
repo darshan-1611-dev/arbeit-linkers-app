@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bid;
 use App\Models\Job;
+use App\Models\Payment;
 use App\Models\User;
 use App\Models\UserDetail;
 use Illuminate\Contracts\View\Factory;
@@ -135,6 +136,16 @@ class ProfileController extends Controller
             ->where('user_id', auth()->user()->id)
             ->get();
 
+        foreach ($Job_detail as $key => $item) {
+
+            $bid_detail = Bid::query()->where("bid_status", '=', 1)
+                ->where("user_id", '=', $item->is_bid_done)
+                ->where("job_id", '=', $item->id)
+                ->first();
+
+            $Job_detail[$key]["bid_details"] = $bid_detail;
+        }
+
         return view('profile.company_profile.project', compact('Job_detail'));
     }
 
@@ -204,4 +215,51 @@ class ProfileController extends Controller
 
         return view('profile.user_profile.project_list', compact('data'));
     }
+
+    /**
+     * User Transaction.
+     */
+    public function usersTransaction()
+    {
+        $payment_detail = Payment::query()
+            ->where("receiver_id", '=', auth()->user()->id)
+            ->with(['job_detail'])
+            ->get();
+
+        foreach ($payment_detail as $key => $item) {
+
+            $company_detail = UserDetail::query()
+                ->where("user_id", '=', $item->job_detail->user_id)
+                ->select(["user_id","company_name"])
+                ->first();
+
+            $payment_detail[$key]["company_detail"] = $company_detail;
+        }
+
+        return view('profile.user_profile.transaction', compact('payment_detail'));
+    }
+
+    /**
+     * Company Transaction.
+     */
+    public function companyTransaction()
+    {
+        $payment_detail = Payment::query()
+            ->where("sender_id", '=', auth()->user()->id)
+            ->with(['job_detail'])
+            ->get();
+
+        foreach ($payment_detail as $key => $item) {
+
+            $user_detail = User::query()
+                ->where("id", '=', $item->receiver_id)
+                ->select(["id","name"])
+                ->first();
+
+            $payment_detail[$key]["user_detail"] = $user_detail;
+        }
+
+        return view('profile.company_profile.transaction', compact('payment_detail'));
+    }
+
 }

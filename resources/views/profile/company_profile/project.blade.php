@@ -26,14 +26,16 @@
 
                 return $status;
             }
+
         @endphp
 
-            <!-- Main Content Start -->
+        <!-- Main Content Start -->
             <section class="container" style="margin: auto;">
                 <div>
                     <div>
                         <h2>Project Name</h2>
                     </div>
+
                     <div class="data-table">
                         <table class="table table-responsive-lg table-bordered" style="overflow: hidden;">
                             <thead class="table-light">
@@ -44,6 +46,7 @@
                                 <th scope="col">Time Duration(In week)</th>
                                 <th scope="col">Created At</th>
                                 <th scope="col">Project Status</th>
+                                <th scope="col">Payment Status</th>
                                 <th scope="col">Detail</th>
                             </tr>
                             </thead>
@@ -56,7 +59,18 @@
                                     <td>{{ $item->job_duration }}</td>
                                     <td>{{ $item->created_at->format('d M Y') }}</td>
                                     <td>{!!  check_project_status($item->is_bid_done)  !!}</td>
-                                    <td><a href="{{ url('/company-profile/project/bid-detail/'. $item->id .'') }}" class="text-primary">Bid Details</a>
+                                    <td> @if($item->payment_status == 0 && $item->is_bid_done != 0)
+                                            @include('payment_view',[ "amount" => ($item->bid_details->price * 100) ,
+                                            "payment_text" => "pay now",
+                                            "job_id" => $item->bid_details->job_id,
+                                            "receiver_id" => $item->is_bid_done])
+                                        @elseif($item->payment_status == 1)
+                                            <span class="text-center">Payment Done!</span>
+                                        @else
+                                            <span class="text-center">Nil</span>
+                                        @endif</td>
+                                    <td><a href="{{ url('/company-profile/project/bid-detail/'. $item->id .'') }}"
+                                           class="text-primary">Bid Details</a>
                                     </td>
                                 </tr>
                             @endforeach

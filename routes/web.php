@@ -65,6 +65,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/user-profile', [\App\Http\Controllers\ProfileController::class, "userProfile"]);
     Route::post('/user-profile/update', [\App\Http\Controllers\ProfileController::class, "userProfileUpdate"]);
     Route::get('/user-profile/bid', [\App\Http\Controllers\ProfileController::class, "viewUserBid"]);
+    Route::get('/user-profile/transaction', [\App\Http\Controllers\ProfileController::class, "usersTransaction"]);
 
     // company profile
     Route::get('/company-profile', [\App\Http\Controllers\ProfileController::class, "companyProfile"]);
@@ -72,6 +73,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/company-profile/project', [\App\Http\Controllers\ProfileController::class, "viewCompanyProject"]);
     Route::get('/company-profile/project/bid-detail/{project_id}', [\App\Http\Controllers\ProfileController::class, "viewUserBidOnProject"]);
     Route::get('/company-profile/project/bid/assign/{user_id}/{project_id}', [\App\Http\Controllers\ProfileController::class, "approveBidProject"]);
+    Route::get('/company-profile/transaction', [\App\Http\Controllers\ProfileController::class, "companyTransaction"]);
 
     // list project list and payment status
     Route::get('/project-list',[\App\Http\Controllers\ProfileController::class, "listUserApprovedProject"]);
@@ -85,11 +87,7 @@ Route::middleware(['auth'])->group(function () {
     // bid jobs
     Route::post('/bid-job',  [\App\Http\Controllers\JobController::class, "bid"]);
 
-
-
     // payment
-    Route::get('razorpay-payment', [PaymentController::class, 'index']);
-    Route::post('razorpay-payment', [PaymentController::class, 'store'])->name('razorpay.payment.store');
-
+    Route::post('/payment', [PaymentController::class, 'payment'])->name('razorpay.payment.store');
 
 });

@@ -34,7 +34,7 @@
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="#">
+                    <a href="{{ url('/user-profile/transaction') }}">
                         <i class="fas fa-wallet icon fs-3"></i>
                         <span class="text nav-text">Transactions</span>
                     </a>

@@ -23,6 +23,7 @@ class Job extends Model
         'job_duration',
         'experience_level',
         'is_bid_done',
+        'payment_status',
         'created_at',
         'updated_at',
         'deleted_at'
@@ -50,13 +51,5 @@ class Job extends Model
     {
         return $this->belongsTo(UserDetail::class, 'user_id', "user_id");
     }
-
-//    /**
-//     * Get Bid Detail
-//     */
-//    public function bids()
-//    {
-//        return $this->belongsTo(Bid::class, 'is_bid_done', 'user_id')->whereRaw('bids.job_id = jobs.id');
-//    }
 
 }
