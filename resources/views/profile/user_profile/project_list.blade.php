@@ -58,8 +58,10 @@
                         @foreach($data as $item)
                             <tr class="fs-4">
                                 <th scope="row">{{ $loop->iteration }}</th>
-                                <td>{{ $item->project_title }}</td>
-                                <td>{{ $item->user_details->company_name }}</td>
+                                <td><a href="{{ url('detail-view-job/'.$item->id.'') }}">{{ $item->project_title }}</a></td>
+                                <td>
+                                    <a href="{{ url('company/'.$item->user_details->user_id.'') }}">{{ $item->user_details->company_name }}</a>
+                                </td>
                                 <td>{{ $item->created_at->format('d M Y') }}</td>
                                 <td>{{ $item->bid_details->price }}</td>
                                 <td>{{ $item->bid_details->time_duration }}</td>

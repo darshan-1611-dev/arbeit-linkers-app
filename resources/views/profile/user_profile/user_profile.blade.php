@@ -7,9 +7,9 @@
 @section("body")
     <div class="d-flex">
 
-        @include('profile.user_profile.sidebar')
+    @include('profile.user_profile.sidebar')
 
-        <!-- Main Section Start -->
+    <!-- Main Section Start -->
         <div class="home">
             <!-- Main Content Start -->
             <section class="container">
@@ -77,6 +77,76 @@
                                 </div>
                             </div>
                         </div>
+                        {{-- Experience --}}
+                        <div class="company-detail mb-5">
+                            <h3>Experience</h3>
+                            <hr>
+                            @if($user_detail->user_detail->is_experience == 1)
+                                <div class="row mt-5 px-5 align-items-center">
+                                    <div class="col-md-4">
+                                        <h6 class="d-inline-block me-2">Job Title:</h6>
+                                        <p class="d-inline-block">{{ $user_detail->user_detail->job_title }}</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h6 class="d-inline-block me-2">Company Name:</h6>
+                                        <p class="d-inline-block">{{ $user_detail->user_detail->job_company }}</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h6 class="d-inline-block me-2">Job Location:</h6>
+                                        <p class="d-inline-block">{{ $user_detail->user_detail->job_location }}</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h6 class="d-inline-block me-2">Country:</h6>
+                                        <p class="d-inline-block">{{ $user_detail->user_detail->job_country }}</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h6 class="d-inline-block me-2">Job Start Date:</h6>
+                                        <p class="d-inline-block">{{ $user_detail->user_detail->job_start_date }}</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h6 class="d-inline-block me-2">Job End Date:</h6>
+                                        <p class="d-inline-block">{{ $user_detail->user_detail->is_working == 0 ? $user_detail->user_detail->job_end_date : "Present" }}
+                                        </p>
+                                    </div>
+                                </div>
+                            @else
+                                <p>Nill</p>
+                            @endif
+                        </div>
+                        {{-- End Experience --}}
+
+                        {{-- Education --}}
+                        <div class="company-detail mb-5">
+                            <h3>Education</h3>
+                            <hr>
+                            @if($user_detail->user_detail->is_education == 1)
+                                <div class="row mt-5 px-5 align-items-center">
+                                    <div class="col-md-4">
+                                        <h6 class="d-inline-block me-2">School:</h6>
+                                        <p class="d-inline-block">{{ $user_detail->user_detail->school_name }}</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h6 class="d-inline-block me-2">Degree:</h6>
+                                        <p class="d-inline-block">{{ $user_detail->user_detail->degree_title }}</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h6 class="d-inline-block me-2">Field Of Study:</h6>
+                                        <p class="d-inline-block">{{ $user_detail->user_detail->field_of_study }}</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h6 class="d-inline-block me-2">Start From:</h6>
+                                        <p class="d-inline-block">{{ $user_detail->user_detail->education_start_date }}</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h6 class="d-inline-block me-2">End Date:</h6>
+                                        <p class="d-inline-block">{{ $user_detail->user_detail->education_end_date }}</p>
+                                    </div>
+                                </div>
+                            @else
+                                <p>Nill</p>
+                            @endif
+                        </div>
+                        {{-- End Education --}}
                     </div>
                     <div class="update-btn">
 
@@ -89,7 +159,8 @@
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                              aria-hidden="true">
                             <div class="modal-dialog">
-                                <form action="{{ url('/user-profile/update') }}" method="post" class="row" enctype="multipart/form-data">
+                                <form action="{{ url('/user-profile/update') }}" method="post" class="row"
+                                      enctype="multipart/form-data">
                                     @csrf
                                     <div class="modal-content">
                                         <div class="modal-header px-5 py-4">

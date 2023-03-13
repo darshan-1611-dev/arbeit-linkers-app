@@ -35,10 +35,14 @@
                             <tr class="fs-4">
                                 <th scope="row">{{ $loop->iteration }}</th>
                                 <td>{{ $item->payment_id }}</td>
-                                <td>{{ $item->job_detail->project_title }}</td>
-                                <td>{{ $item->company_detail->company_name }}</td>
+                                <td>
+                                    <a href="{{ url('detail-view-job/'.$item->job_detail->id.'') }}">{{ $item->job_detail->project_title }}</a>
+                                </td>
+                                <td>
+                                    <a href="{{ url('company/'.$item->company_detail->user_id.'') }}">{{ $item->company_detail->company_name }}</a>
+                                </td>
                                 <td>₹{{ $item->amount }}</td>
-                                <td><span class="btn btn-success">Credited</span>  </td>
+                                <td><span class="btn btn-success">Credited</span></td>
                                 <td>{{ $item->created_at->format('d M Y') }}</td>
                             </tr>
                         @endforeach

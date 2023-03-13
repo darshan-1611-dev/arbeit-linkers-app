@@ -76,7 +76,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/company-profile/transaction', [\App\Http\Controllers\ProfileController::class, "companyTransaction"]);
 
     // list project list and payment status
-    Route::get('/project-list',[\App\Http\Controllers\ProfileController::class, "listUserApprovedProject"]);
+    Route::get('/project-list', [\App\Http\Controllers\ProfileController::class, "listUserApprovedProject"]);
 
     // job controller
     Route::get('/create-job', [\App\Http\Controllers\JobController::class, "createJob"]);
@@ -85,9 +85,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/detail-view-job/{id}', [\App\Http\Controllers\JobController::class, "detailJob"]);
 
     // bid jobs
-    Route::post('/bid-job',  [\App\Http\Controllers\JobController::class, "bid"]);
+    Route::post('/bid-job', [\App\Http\Controllers\JobController::class, "bid"]);
 
     // payment
     Route::post('/payment', [PaymentController::class, 'payment'])->name('razorpay.payment.store');
+
+    //user general view
+    Route::get('/user/{user_id}', [\App\Http\Controllers\ProfileController::class, "userGeneralView"]);
+    Route::get('/company/{company_id}', [\App\Http\Controllers\ProfileController::class, "companyGeneralView"]);
 
 });

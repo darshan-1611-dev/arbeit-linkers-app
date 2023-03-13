@@ -34,12 +34,15 @@
                             @foreach($data as $item)
                                 <tr class="fs-4">
                                     <th scope="row">{{ $loop->iteration }}</th>
-                                    <td>{{ $item->user_detail->name }}</td>
+                                    <td>
+                                        <a href="{{ url('user/'.$item->user_detail->id.'') }}">{{ $item->user_detail->name }}</a>
+                                    </td>
                                     <td>${{ $item->price }}</td>
                                     <td>{{ $item->time_duration }}</td>
                                     <td title="{{ $item->description }}">{{ substr($item->description,0,10) }}...</td>
                                     <td>{{ $item->created_at->format('d M Y') }}</td>
-                                    <td><a href="{{ url('/company-profile/project/bid/assign/'. $item->user_detail->id .'/'. $item->job_detail->id.'') }}"
+                                    <td>
+                                        <a href="{{ url('/company-profile/project/bid/assign/'. $item->user_detail->id .'/'. $item->job_detail->id.'') }}"
                                            class="btn btn-success">Approve</a>
                                     </td>
                                 </tr>

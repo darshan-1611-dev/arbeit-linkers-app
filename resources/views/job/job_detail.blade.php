@@ -218,18 +218,7 @@
                         <div class="mt-5 row">
                             <div class="col-5 col-sm-4 ">
                                 <div>
-                                    <span class="fs-4">{{ $job->user->name }}</span>
-                                </div>
-                                {{--                                <div>--}}
-                                {{--                                    <p class="fs-4 text-muted d-inline-block">Scotts Valley, California</p>--}}
-                                {{--                                </div>--}}
-                            </div>
-                            <div class="col-5 col-sm-4 ">
-                                <div>
-                                    <span class="fs-4">120 jobs posted</span>
-                                </div>
-                                <div>
-                                    <p class="fs-4 text-muted d-inline-block">78% hire rate, 5 jobs open</p>
+                                    <a href="{{ url('company/'.$job->user->id.'') }}"><span class="fs-4">{{ $job->user->name }}</span></a>
                                 </div>
                             </div>
                         </div>

@@ -13,7 +13,6 @@
             <section class="container">
                 <div>
                     <h2>Your All Transaction</h2>
-                    <h3>Total balance : <span style="color: green">₹{{ auth()->user()->revenue }}</span></h3>
                 </div>
 
                 {{-- Table start --}}
@@ -35,8 +34,8 @@
                             <tr class="fs-4">
                                 <th scope="row">{{ $loop->iteration }}</th>
                                 <td>{{ $item->payment_id }}</td>
-                                <td>{{ $item->job_detail->project_title }}</td>
-                                <td>{{ $item->user_detail->name }}</td>
+                                <td><a href="{{ url('detail-view-job/'.$item->job_detail->id .'') }}">{{ $item->job_detail->project_title }}</a></td>
+                                <td><a href="{{ url('user/'.$item->user_detail->id .'') }}">{{ $item->user_detail->name }}</a></td>
                                 <td>₹{{ $item->amount }}</td>
                                 <td><span class="btn btn-danger">Debited</span>  </td>
                                 <td>{{ $item->created_at->format('d M Y') }}</td>

@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use SebastianBergmann\CodeCoverage\Report\Xml\Project;
 use Yajra\DataTables\Facades\DataTables;
+use function Symfony\Component\Process\findArguments;
 
 class ProfileController extends Controller
 {
@@ -230,7 +231,7 @@ class ProfileController extends Controller
 
             $company_detail = UserDetail::query()
                 ->where("user_id", '=', $item->job_detail->user_id)
-                ->select(["user_id","company_name"])
+                ->select(["user_id", "company_name"])
                 ->first();
 
             $payment_detail[$key]["company_detail"] = $company_detail;
@@ -253,13 +254,46 @@ class ProfileController extends Controller
 
             $user_detail = User::query()
                 ->where("id", '=', $item->receiver_id)
-                ->select(["id","name"])
+                ->select(["id", "name"])
                 ->first();
 
             $payment_detail[$key]["user_detail"] = $user_detail;
         }
 
         return view('profile.company_profile.transaction', compact('payment_detail'));
+    }
+
+    /**
+     * For General view of user profile.
+     *
+     * @param $user_id
+     * @return Factory|View
+     */
+    public function userGeneralView($user_id)
+    {
+        $user_detail = User::query()
+            ->where("id", '=', $user_id)
+            ->with(["user_detail"])
+            ->first();
+
+        return view('user_details', compact('user_detail'));
+    }
+
+    /**
+     * For General view of company profile.
+     *
+     * @param $company_id
+     * @return Factory|View
+     */
+    public function companyGeneralView($company_id)
+    {
+        $company_detail = User::query()
+            ->where("id", '=', $company_id)
+            ->with(["user_detail"])
+            ->first();
+
+        return view('company_details', compact('company_detail'));
+
     }
 
 }

@@ -54,7 +54,9 @@
                             @foreach($Job_detail as $item)
                                 <tr class="fs-4">
                                     <th scope="row">#00{{ $item->id }}</th>
-                                    <td>{{ $item->project_title }}</td>
+                                    <td>
+                                        <a href="{{ url('detail-view-job/'.$item->id .'') }}">{{ $item->project_title }}</a>
+                                    </td>
                                     <td>${{ $item->min_salary }} - ${{ $item->max_salary }}</td>
                                     <td>{{ $item->job_duration }}</td>
                                     <td>{{ $item->created_at->format('d M Y') }}</td>
