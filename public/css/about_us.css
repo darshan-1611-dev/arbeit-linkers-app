@@ -1,0 +1,44 @@
+.card-body h6{
+    font-size: 1.8rem;
+}
+
+.card-body .card-text{
+    font-size: 1.2rem;
+}
+
+/* Media Query */
+
+/* Applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+
+    /* General CSS */
+    .card{
+        width: 300px;
+        margin: auto;
+    }
+}
+
+/* Applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+    /* General CSS */
+    .card{
+        width: 250px;
+        margin: auto;
+    }
+
+}
+
+/* Applies to small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+    .card{
+        width: 250px;
+        margin: auto;
+    }
+    .card img{
+        height: 300px;
+    }
+
+
+}

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Bid;
 use App\Models\Job;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
@@ -59,10 +61,24 @@ class JobController extends Controller
 
     /**
      * list all job.
+     *
+     * @param Request $request
+     * @return Factory|View
      */
-    public function listJob()
+    public function listJob(Request $request)
     {
-        $jobs = Job::query()->where("is_bid_done", '=', 0)->latest()->paginate(6);
+        if ($request->has('job_search')) {
+//            $jobs = Job::search($request->get('job_search'))->where("is_bid_done", 0)
+//                ->paginate(6);
+            $jobs = Job::search($request->get('job_search'))
+                ->paginate(6);
+        } else {
+            $jobs = Job::query()
+//                ->where("is_bid_done", '=', 0)
+                ->latest()
+                ->paginate(6);
+        }
+
 
         return view('job.list_job', compact('jobs'));
     }
@@ -76,10 +92,10 @@ class JobController extends Controller
 
         $is_bid = Bid::query()
             ->where("job_id", '=', $job->id)
-            ->where("user_id",'=', auth()->user()->id)
+            ->where("user_id", '=', auth()->user()->id)
             ->exists();
 
-        return view('job.job_detail', compact('job','is_bid'));
+        return view('job.job_detail', compact('job', 'is_bid'));
     }
 
     /**

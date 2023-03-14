@@ -1,0 +1,46 @@
+.faq_wrapper .faq_subtitle{
+    color: var(--text-dark-gray);
+}
+
+.faq_wrapper .accordion-button:hover,
+.faq_wrapper .accordion-button:focus{
+    box-shadow: none;
+    color:var(--text-green);
+}
+
+.faq_wrapper .accordion-item{
+    border:0;
+}
+
+.faq_wrapper .accordion-button{
+    font-size: 1.8rem;
+    background-color: var(--bg-white);
+    border-radius: 0;
+    padding: 0 0 1.5rem 0;
+    border-bottom: 1px solid var(--text-dark-gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.8rem;
+}
+
+.faq_wrapper .accordion-button::after{
+    content:'\002B';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    display: inline-block;
+    background-image: none;
+}
+
+.faq_wrapper .accordion-button:not(.collapsed)::after{
+    content:"\2212";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    display: inline-block;
+    background-image: none;
+    transform:unset;
+}
+
+.faq_wrapper .accordion-body{
+    padding-bottom: 2.5rem;
+}

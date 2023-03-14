@@ -5,10 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Laravel\Scout\Searchable;
 
 class Job extends Model
 {
     use HasFactory, SoftDeletes;
+    use Searchable;
 
     protected $table = "jobs";
 
@@ -52,4 +54,20 @@ class Job extends Model
         return $this->belongsTo(UserDetail::class, 'user_id', "user_id");
     }
 
+    /**
+     * Searchable column for job list.
+    */
+    public function toSearchableArray()
+    {
+        return [
+            'project_title' => $this->project_title,
+            'project_description' => $this->project_description,
+            'job_type' => $this->job_type,
+            'skills' => $this->skills,
+            'min_salary' => $this->min_salary,
+            'max_salary' => $this->max_salary,
+            'job_duration' => $this->job_duration,
+            'experience_level' => $this->experience_level,
+        ];
+    }
 }

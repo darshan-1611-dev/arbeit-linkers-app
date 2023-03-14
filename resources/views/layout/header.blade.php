@@ -14,17 +14,17 @@
                     <div class="collapse navbar-collapse mt-4 mt-lg-0" id="navbarNav">
                         <ul class="navbar-nav mx-auto">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                                <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Find Talent
+                                <a class="nav-link" href="{{ url('/about-us') }}">About Us
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="job.html">Find Work</a>
+                                <a class="nav-link" href="{{ url('/faqs') }}">Faq</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="about.html">About</a>
+                                <a class="nav-link" href="{{ url('/contact-us') }}">Contact Us</a>
                             </li>
                         </ul>
                         <div class="nav-right">
@@ -84,17 +84,17 @@
                     <div class="collapse navbar-collapse mt-4 mt-lg-0" id="navbarNav">
                         <ul class="navbar-nav mx-auto">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                                <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Find Talent
+                                <a class="nav-link" href="{{ url('/about-us') }}">About Us
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="job.html">Find Work</a>
+                                <a class="nav-link" href="{{ url('/faqs') }}">Faq</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="about.html">About</a>
+                                <a class="nav-link" href="{{ url('/contact-us') }}">Contact Us</a>
                             </li>
                         </ul>
                     </div>
