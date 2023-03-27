@@ -60,6 +60,7 @@
 .sidebar li {
     height: 5rem;
     margin-top: 1rem;
+    padding: 0;
 }
 
 .sidebar li .icon {

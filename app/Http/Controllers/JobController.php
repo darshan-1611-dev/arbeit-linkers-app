@@ -68,13 +68,13 @@ class JobController extends Controller
     public function listJob(Request $request)
     {
         if ($request->has('job_search')) {
-//            $jobs = Job::search($request->get('job_search'))->where("is_bid_done", 0)
-//                ->paginate(6);
-            $jobs = Job::search($request->get('job_search'))
-                ->paginate(6);
+           $jobs = Job::search($request->get('job_search'))->where("is_bid_done", 0)
+               ->paginate(6);
+            // $jobs = Job::search($request->get('job_search'))
+            //     ->paginate(6);
         } else {
             $jobs = Job::query()
-//                ->where("is_bid_done", '=', 0)
+               ->where("is_bid_done", '=', 0)
                 ->latest()
                 ->paginate(6);
         }

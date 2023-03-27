@@ -229,6 +229,15 @@ section {
     margin: 5rem 0;
 }
 
+input[type="file"]::file-selector-button{
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+.modal-dialog{
+    --bs-modal-width:80vw !important;  
+}
+
 
 /* ========== Navbar CSS ========== */
 .header {

@@ -59,7 +59,7 @@
                         <p>A professional photo helps you build trust with your clients. To keep things safe and simple,
                             you'll pay them through us - which is why we need your personal information.</p>
                     </div>
-                    <div class="" style="margin-top: 5rem !important;">
+                    <div class="row" style="margin-top: 5rem !important;">
 
                         <div class="mb-5 col-12">
                             <label class="fw-semibold fs-4 mb-3">Company Name *</label>
@@ -106,7 +106,7 @@
                             <input type="text" class="form-control fs-4 py-3" name="postal_code"
                                    value="{{ old("postal_code") }}">
                         </div>
-                        <div class="mb-5 col-6">
+                        <div class="mb-5">
                             <label class="fw-semibold fs-4 mb-3">Photo *</label>
                             <input type="file" class="form-control fs-4" name="profile_photo_path" accept="image/*">
                             @error('profile_photo_path')
@@ -123,7 +123,7 @@
                     </div>
                 </div>
             </div>
-            <div class="mt-5">
+            <div class="mt-5 row">
                 <div class="d-flex justify-content-between">
                     <div>
                         <a href="{{ url("/user-detail/introduction") }}"

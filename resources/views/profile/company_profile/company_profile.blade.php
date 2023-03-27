@@ -80,7 +80,7 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                         </div>
-                                        <div class="modal-body px-5">
+                                        <div class="modal-body px-5 row">
                                             <div class="mb-5 col-md-4">
                                                 <label class="fw-semibold fs-4 mb-3">City *</label>
                                                 <input type="text" class="form-control fs-4 py-3"

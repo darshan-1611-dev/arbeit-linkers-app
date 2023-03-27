@@ -181,7 +181,7 @@ class AuthController extends Controller
         // auth user with id
         Auth::loginUsingId($user_id);
 
-        return redirect('/');
+        return redirect('/company-profile');
     }
 
     public function title()
@@ -416,7 +416,7 @@ class AuthController extends Controller
         // auth user with id
         Auth::loginUsingId($user_id);
 
-        return redirect('/');
+        return redirect('/user-profile');
     }
 
 }

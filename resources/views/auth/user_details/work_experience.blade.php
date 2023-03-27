@@ -58,7 +58,7 @@
                     <p>Freelancers who add their experience are twice as likely to win work. But if you're just starting
                         out, you can still create a great profile. Just head on to the next page.</p>
                 </div>
-                <div class="col-sm-8" style="margin-top: 5rem !important;">
+                <div class="col-sm-8 row" style="margin-top: 5rem !important;">
 
                     <div class="mb-5">
                         <label class="fw-semibold fs-4 mb-3">Title *</label>
@@ -351,13 +351,6 @@
                         @enderror
                     </div>
 
-                    <div class="mb-5">
-                        <input type="checkbox" name="is_working" id="" class="form-check-input me-2 mt-0 mt-sm-1"
-                               style="width: 2rem; height: 2rem;" value="1">
-                        <label for="form-check-lable" class="fs-4 me-2 me-sm-4">I am currently working in this
-                            role</label>
-                    </div>
-
                     <div class="mb-5 col-sm-6">
                         <label class="fw-semibold fs-4 mb-3">End Date</label>
                         <div class="row">
@@ -424,6 +417,15 @@
                         <span class="text-danger fs-5"><i class="fas fa-exclamation-circle"></i> {{ $message }}</span>
                         @enderror
                     </div>
+
+                    <div class="mb-5">
+                        <input type="checkbox" name="is_working" id="" class="form-check-input me-2 mt-0 mt-sm-1"
+                               style="width: 2rem; height: 2rem;" value="1">
+                        <label for="form-check-lable" class="fs-4 me-2 me-sm-4">I am currently working in this
+                            role</label>
+                    </div>
+
+                    
 
 
                     <div class="mb-5">
