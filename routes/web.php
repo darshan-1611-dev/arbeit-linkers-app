@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get("/admin", [\App\Http\Controllers\AdminController::class, "index"]);
+
 
 Route::get('/', function () {
     return view('index');
@@ -56,13 +58,13 @@ Route::get('/company-detail', [\App\Http\Controllers\Auth\AuthController::class,
 Route::post('/company-detail/store', [\App\Http\Controllers\Auth\AuthController::class, "companyStore"]);
 
 //extra pages
-Route::get('about-us',[\App\Http\Controllers\PageController::class, "aboutUs"]);
-Route::get('contact-us',[\App\Http\Controllers\PageController::class, "contactUs"]);
-Route::post('contact-us/store',[\App\Http\Controllers\PageController::class, "contactUsStore"]);
-Route::get('faqs',[\App\Http\Controllers\PageController::class, "faqs"]);
-Route::get('privacy-policy',[\App\Http\Controllers\PageController::class, "privacyPolicy"]);
-Route::get('terms-condition',[\App\Http\Controllers\PageController::class, "termsCondition"]);
-Route::get('copyright-policy',[\App\Http\Controllers\PageController::class, "copyrightPolicy"]);
+Route::get('about-us', [\App\Http\Controllers\PageController::class, "aboutUs"]);
+Route::get('contact-us', [\App\Http\Controllers\PageController::class, "contactUs"]);
+Route::post('contact-us/store', [\App\Http\Controllers\PageController::class, "contactUsStore"]);
+Route::get('faqs', [\App\Http\Controllers\PageController::class, "faqs"]);
+Route::get('privacy-policy', [\App\Http\Controllers\PageController::class, "privacyPolicy"]);
+Route::get('terms-condition', [\App\Http\Controllers\PageController::class, "termsCondition"]);
+Route::get('copyright-policy', [\App\Http\Controllers\PageController::class, "copyrightPolicy"]);
 
 // auth middleware
 Route::middleware(['auth'])->group(function () {
