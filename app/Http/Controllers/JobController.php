@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\JobRecommendationEmail;
 use App\Models\Bid;
 use App\Models\Job;
+use App\Models\JobSearchKeyword;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -44,7 +46,7 @@ class JobController extends Controller
         $user_id = auth()->user()->id;
 
         //insert data on job table
-        Job::query()->create([
+        $inserted_job = Job::query()->create([
             "user_id" => $user_id,
             'project_title' => $request->post('project_title'),
             'project_description' => $request->post('project_description'),
@@ -55,6 +57,9 @@ class JobController extends Controller
             'job_duration' => $request->post('job_duration'),
             'experience_level' => $request->post('experience_level'),
         ]);
+
+        // check new job which is suitable for users
+        $this->checkJobDetailWithRecentSearch($inserted_job->id);
 
         return redirect('/');
     }
@@ -68,19 +73,86 @@ class JobController extends Controller
     public function listJob(Request $request)
     {
         if ($request->has('job_search')) {
-           $jobs = Job::search($request->get('job_search'))->where("is_bid_done", 0)
-               ->paginate(6);
-            // $jobs = Job::search($request->get('job_search'))
-            //     ->paginate(6);
+
+            $jobs = Job::search($request->get('job_search'))->where("is_bid_done", 0)
+                ->paginate(6);
+
+            // check job found or not
+            if ($jobs->count() == 0 && !empty($request->get('job_search'))) {
+                $this->jobNotFindInSearch($request->get('job_search'));
+            }
+
         } else {
             $jobs = Job::query()
-               ->where("is_bid_done", '=', 0)
+                ->where("is_bid_done", '=', 0)
                 ->latest()
                 ->paginate(6);
         }
 
-
         return view('job.list_job', compact('jobs'));
+    }
+
+    /**
+     * if user didn't find any job matching search criteria,
+     * we'll send you an email as soon as a company posts a job that matches user's search
+     *
+     * @param $search_keyword
+     */
+    public function jobNotFindInSearch($search_keyword)
+    {
+        $user_id = auth()->user()->id;
+        $user_email = auth()->user()->email;
+
+        // add search data to table
+        JobSearchKeyword::query()->create([
+            "user_id" => $user_id,
+            "user_email" => $user_email,
+            "search_text" => $search_keyword
+        ]);
+
+    }
+
+    /**
+     * check job whether match with search preferences and send mail.
+     *
+     * @param $job_id
+     */
+    public function checkJobDetailWithRecentSearch($job_id)
+    {
+        $search_data = JobSearchKeyword::query()->get();
+
+        $result = array();
+
+        foreach ($search_data as $item) {
+
+            $jobs = Job::search($item->search_text)->where("id", $job_id)
+                ->get();
+
+            if ($jobs->count() > 0) {
+                $result[$item->id]["job_detail"] = $jobs;
+                $result[$item->id]["user_id"] = $item->user_id;
+                $result[$item->id]["user_email"] = $item->user_email;
+                $result[$item->id]["search_text"] = $item->search_text;
+            }
+        }
+
+        // send mail
+        $this->sendMailForJobRecommendation($result);
+    }
+
+    /**
+     * Send Mail.
+     *
+     * @param $data
+     */
+    public function sendMailForJobRecommendation($data)
+    {
+        if (!empty($data)) {
+            foreach ($data as $item) {
+
+                dispatch(new JobRecommendationEmail($item));
+            }
+        }
     }
 
     /**
@@ -121,13 +193,5 @@ class JobController extends Controller
         ]);
 
         return redirect('/user-profile/bid');
-    }
-
-    /**
-     * Search job data.
-     */
-    public function searchJob()
-    {
-
     }
 }

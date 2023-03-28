@@ -62,7 +62,6 @@ class Job extends Model
         return [
             'project_title' => $this->project_title,
             'project_description' => $this->project_description,
-            'job_type' => $this->job_type,
             'skills' => $this->skills,
             'min_salary' => $this->min_salary,
             'max_salary' => $this->max_salary,

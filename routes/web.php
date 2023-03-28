@@ -14,9 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get("/admin", [\App\Http\Controllers\AdminController::class, "index"]);
-
-
 Route::get('/', function () {
     return view('index');
 });
@@ -106,3 +103,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/company/{company_id}', [\App\Http\Controllers\ProfileController::class, "companyGeneralView"]);
 
 });
+
+//admin route
+Route::get("/admin-i", [\App\Http\Controllers\AdminController::class, "index"]);

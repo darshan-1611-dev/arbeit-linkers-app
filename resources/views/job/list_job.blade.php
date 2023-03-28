@@ -17,7 +17,8 @@
                         <form action="{{ url('/list-job') }}">
                             <div class="form-group">
                                 <input type="search" name="job_search" class="form-control fs-5 py-3" autofocus
-                                      value="{{ request()->get('job_search') }}" placeholder="Search by keywords...">
+                                       value="{{ request()->get('job_search') }}"
+                                       placeholder="Search by keywords... | press Enter to search">
                             </div>
                         </form>
                     </div>
@@ -51,57 +52,70 @@
                     @endphp
 
                     <!-- ***************** -->
-                        @foreach($jobs as $job)
-                            <div class="col-lg-6">
-                                <div class="job-section">
-                                    <div class="post-bar">
-                                        <div class="job_topbar">
-                                        </div>
-                                        <div class="epi-sec">
-                                            <ul class="descp">
-                                                <li><h3>{{ $job->project_title }}</h3></li>
-                                            </ul>
-                                            <ul class="bk-links">
-                                                <li><a href="{{ url('/detail-view-job/'.$job->id.'') }}" title=""
-                                                       class="bid_now">See More</a></li>
-                                            </ul>
+                        @if($jobs->count() > 0)
+                            @foreach($jobs as $job)
+                                <div class="col-lg-6">
+                                    <div class="job-section">
+                                        <div class="post-bar">
+                                            <div class="job_topbar">
+                                            </div>
+                                            <div class="epi-sec">
+                                                <ul class="descp">
+                                                    <li><h3>{{ $job->project_title }}</h3></li>
+                                                </ul>
+                                                <ul class="bk-links">
+                                                    <li><a href="{{ url('/detail-view-job/'.$job->id.'') }}" title=""
+                                                           class="bid_now">See More</a></li>
+                                                </ul>
 
-                                        </div>
-                                        <div class="job_descp">
-                                            <ul class="job-dt">
-                                                <li><span>${{ $job->min_salary }} - ${{ $job->max_salary }}</span>
-                                                </li>
-                                            </ul>
-                                            <i class="" style="font-size: 15px;"></i><span
-                                                style="font-size: 15px;color: #000000;">{{ getJobType($job->job_type) }}</span>
+                                            </div>
+                                            <div class="job_descp">
+                                                <ul class="job-dt">
+                                                    <li><span>${{ $job->min_salary }} - ${{ $job->max_salary }}</span>
+                                                    </li>
+                                                </ul>
+                                                <i class="" style="font-size: 15px;"></i><span
+                                                    style="font-size: 15px;color: #000000;">{{ getJobType($job->job_type) }}</span>
 
-                                            <p>{{ substr($job->project_description,0,100) }}...</p>
-                                            <ul class="skill-tags">
-                                                @php
-                                                    $skills = explode(',', $job->skills);
-                                                @endphp
+                                                <p>{{ substr($job->project_description,0,100) }}...</p>
+                                                <ul class="skill-tags">
+                                                    @php
+                                                        $skills = explode(',', $job->skills);
+                                                    @endphp
 
-                                                @foreach($skills as $skill)
-                                                    <li><a href="#" title="">{{ $skill }}</a></li>
-                                                @endforeach
+                                                    @foreach($skills as $skill)
+                                                        <li><a href="#" title="">{{ $skill }}</a></li>
+                                                    @endforeach
 
-                                            </ul>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        @endforeach
-                    <!-- ***************** -->
+                            @endforeach
+                        @else
 
-                        {{-- Pagination link --}}
-                        {{ $jobs->links('vendor.pagination.custom') }}
-                        {{-- End Pagination link --}}
-
+                            <h4 class="text-center">Sorry, no results found.
+                            </h4>
+                            <p class="text-center">Don't worry if you didn't find any job matching your search criteria,
+                                we'll send you an
+                                email as soon as a company posts a job
+                                that matches your search. Don't forget to check your inbox regularly so you don't miss
+                                out on any new opportunities!</p>
                     </div>
-                </div>
-                <!-- Display Jobs Section End -->
 
+                @endif
+                <!-- ***************** -->
+
+                    {{-- Pagination link --}}
+                    {{ $jobs->links('vendor.pagination.custom') }}
+                    {{-- End Pagination link --}}
+
+                </div>
             </div>
+            <!-- Display Jobs Section End -->
+
+        </div>
         </div>
     </section>
     <!-- Find Jobs Section End -->

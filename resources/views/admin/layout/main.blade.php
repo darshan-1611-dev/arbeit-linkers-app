@@ -1,4 +1,6 @@
-<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed" dir="ltr" data-theme="theme-default">
+<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed" dir="ltr" data-theme="theme-default"
+      data-assets-path="{{ asset('admin') }}"
+      data-template="admin">
 
 <head>
     <meta charset="utf-8"/>
