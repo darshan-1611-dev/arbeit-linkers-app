@@ -151,6 +151,7 @@ class AuthController extends Controller
      * Store Company detail
      *
      * @param Request $request
+     * @return RedirectResponse|Redirector
      */
     public function companyStore(Request $request)
     {

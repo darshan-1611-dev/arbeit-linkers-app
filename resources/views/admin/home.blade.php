@@ -1,202 +1,109 @@
 @extends('admin.layout.main')
 
 @section("body")
-    <div>
-        <!-- Statistics Cards -->
-        <div class="row">
-            <div class="col-6 col-md-3 mb-4">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <div class="avatar mx-auto mb-2">
-                            <span class="avatar-initial rounded-circle bg-label-success"><i class="bx bx-current-location fs-4"></i></span>
-                        </div>
-                        <span class="d-block text-nowrap">Total Visites</span>
-                        <h2 class="mb-0">6500</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-md-3 mb-4">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <div class="avatar mx-auto mb-2">
-                            <span class="avatar-initial rounded-circle bg-label-danger"><i class="bx bx-cabinet fs-4"></i></span>
-                        </div>
-                        <span class="d-block text-nowrap">Trending Job</span>
-                        <h6 class="mb-0">Web Development</h6>
-                        <h3>500</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-md-3 mb-4">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <div class="avatar mx-auto mb-2">
-                          <span class="avatar-initial rounded-circle bg-label-info"><i class="bx bx-user-plus fs-4"></i
-                              ></span>
-                        </div>
-                        <span class="d-block text-nowrap">Top Client</span>
-                        <h6 class="mb-0">Avadh Rakholiya</h6>
-                        <h3>500</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-md-3 mb-4">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <div class="avatar mx-auto mb-2">
-                          <span class="avatar-initial rounded-circle bg-label-primary"><i class="bx bx-user fs-4"></i
-                              ></span>
-                        </div>
-                        <span class="d-block text-nowrap">Top Freelancer</span>
-                        <h6 class="mb-0">Gautam Savsaviya</h6>
-                        <h3>500</h3>
-                    </div>
-                </div>
+    <main>
+        <div class="head-title">
+            <div class="left">
+                <h4 class="mb-4 ps-3">Dashboard</h4>
             </div>
         </div>
-        <!--/ Statistics Cards -->
-    </div>
-    <div class="row">
-        <!-- Referral, conversion, impression & income charts -->
-        <div class="col-lg-3 col-md-12">
-            <!-- Growth Chart-->
-            <div class="row h-100">
-                <div class="col-12 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between">
-                                <div class="d-flex align-items-center gap-3">
-                                    <div class="avatar">
-                                    <span
-                                        class="avatar-initial bg-label-primary rounded-circle"
-                                    ><i class='bx bx-credit-card'></i></span>
-                                    </div>
-                                    <div class="card-info">
-                                        <h5 class="card-title mb-0 me-2">
-                                            $38,566
-                                        </h5>
-                                        <small class="text-muted">Total Transaction</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="" id="conversationChart"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between">
-                                <div class="d-flex align-items-center gap-3">
-                                    <div class="avatar">
-                                    <span
-                                        class="avatar-initial bg-label-warning rounded-circle"
-                                    ><i class="bx bx-dollar fs-4"></i
-                                        ></span>
-                                    </div>
-                                    <div class="card-info">
-                                        <h5 class="card-title mb-0 me-2">
-                                            $53,659
-                                        </h5>
-                                        <small class="text-muted">Total Income</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="incomeChart"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--/ Referral, conversion, impression & income charts -->
 
-        <!-- Activity -->
-        <!-- Latest Update -->
-        <div class="col-md-6 col-lg-6 col-xl-4 col-xl-4 mb-4">
-            <div class="card">
-                <div class="card-header d-flex align-items-center justify-content-between mb-3">
-                    <h5 class="card-title mb-0">Latest Update</h5>
-                </div>
-                <div class="card-body">
-                    <ul class="p-0 m-0">
-                        <li class="d-flex mb-4">
-                            <div class="avatar avatar-sm flex-shrink-0 me-3">
-                              <span class="avatar-initial rounded-circle bg-label-primary"><i class="bx bx-user fs-4"></i
-                                  ></span>
-                            </div>
-                            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                <div class="me-2">
-                                    <p class="mb-0 lh-1">Total Registration</p>
-                                </div>
-                                <div class="item-progress">10k</div>
-                            </div>
-                        </li>
-                        <li class="d-flex mb-4">
-                            <div class="avatar avatar-sm flex-shrink-0 me-3">
-                                <span class="avatar-initial rounded-circle bg-label-info"><i class='bx bx-pie-chart-alt'></i></span>
-                            </div>
-                            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                <div class="me-2">
-                                    <p class="mb-0 lh-1">Total Projects</p>
-                                </div>
-                                <div class="item-progress">26M</div>
-                            </div>
-                        </li>
-                        <li class="d-flex mb-4">
-                            <div class="avatar avatar-sm flex-shrink-0 me-3">
-                                <span class="avatar-initial rounded-circle bg-label-danger"><i class='bx bx-credit-card'></i></span>
-                            </div>
-                            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                <div class="me-2">
-                                    <p class="mb-0 lh-1">Total Bids</p>
-                                </div>
-                                <div class="item-progress">15M</div>
-                            </div>
-                        </li>
-                        <li class="d-flex">
-                            <div class="avatar avatar-sm flex-shrink-0 me-3">
-                                <span class="avatar-initial rounded-circle bg-label-success"><i class='bx bx-dollar'></i></span>
-                            </div>
-                            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                <div class="me-2">
-                                    <p class="mb-0 lh-1">Total Accepted Bids</p>
-                                </div>
-                                <div class="item-progress">2B</div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!--/ Latest Update -->
-        <!--/ Activity -->
+        {{-- Total Numbers --}}
+        <ul class="box-info">
+            {{-- Total user --}}
+            <li>
+                <i class='bx bxs-group'></i>
+                <span class="text">
+						<h3>{{ $data['total_users'] }}</h3>
+						<p>Total Users</p>
+					</span>
+            </li>
+            {{-- End total user --}}
+            {{-- Total jobs --}}
+            <li>
+                <i class='bx bxs-calendar-check'></i>
+                <span class="text">
+						<h3>{{ $data['total_jobs'] }}</h3>
+						<p>Total Jobs</p>
+					</span>
+            </li>
+            {{-- End total jobs--}}
+            {{-- Total Transaction --}}
+            <li>
+                <i class='bx bxs-dollar-circle'></i>
+                <span class="text">
+						<h3>₹{{ $data['total_transaction'] }}</h3>
+						<p>Total Transactions</p>
+					</span>
+            </li>
+            {{-- End total transaction --}}
+        </ul>
+        {{-- End Total Numbers --}}
 
-        <!-- Profit Report & Registration -->
-        <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-5">
-            <div class="col-12 col-sm-6 col-md-12 mb-4">
-                <div class="card">
-                    <div class="card-header pb-2">
-                        <h5 class="card-title mb-0">Registration</h5>
-                    </div>
-                    <div class="card-body pb-2">
-                        <div
-                            class="d-flex justify-content-between align-items-end gap-3"
-                        >
-                            <div class="mb-3">
-                                <div class="d-flex align-content-center">
-                                    <h5 class="mb-1">58.4k</h5>
-                                    <i class="bx bx-chevron-up text-success"></i>
-                                </div>
-                                <small class="text-success">12.8%</small>
-                            </div>
-                            <div id="registrationsBarChart"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--/ Profit Report & Registration -->
 
-    </div>
-    <!-- / Content -->
+        {{-- Recent Users --}}
+        <div class="table-data">
+            <div class="order">
+                <div class="head">
+                    <h3>Recent Users</h3>
+                </div>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Created at</th>
+                        <th>User Type</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($data['recent_user'] as $item)
+                        <tr>
+                            <td>
+                                <p>{{ $item->name }}</p>
+                            </td>
+                            <td>{{ $item->created_at->format('d M y') }}</td>
+                            @if($item->user_type == 0)
+                                <td><span class="status completed">Freelancer</span></td>
+                            @else
+                                <td><span class="status pending">Company</span></td>
+                            @endif
+
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+            {{-- End recent users --}}
+
+{{--            <div class="todo">--}}
+{{--                <div class="head">--}}
+{{--                    <h3>Todos</h3>--}}
+{{--                    <i class='bx bx-plus'></i>--}}
+{{--                    <i class='bx bx-filter'></i>--}}
+{{--                </div>--}}
+{{--                <ul class="todo-list">--}}
+{{--                    <li class="completed">--}}
+{{--                        <p>Todo List</p>--}}
+{{--                        <i class='bx bx-dots-vertical-rounded'></i>--}}
+{{--                    </li>--}}
+{{--                    <li class="completed">--}}
+{{--                        <p>Todo List</p>--}}
+{{--                        <i class='bx bx-dots-vertical-rounded'></i>--}}
+{{--                    </li>--}}
+{{--                    <li class="not-completed">--}}
+{{--                        <p>Todo List</p>--}}
+{{--                        <i class='bx bx-dots-vertical-rounded'></i>--}}
+{{--                    </li>--}}
+{{--                    <li class="completed">--}}
+{{--                        <p>Todo List</p>--}}
+{{--                        <i class='bx bx-dots-vertical-rounded'></i>--}}
+{{--                    </li>--}}
+{{--                    <li class="not-completed">--}}
+{{--                        <p>Todo List</p>--}}
+{{--                        <i class='bx bx-dots-vertical-rounded'></i>--}}
+{{--                    </li>--}}
+{{--                </ul>--}}
+{{--            </div>--}}
+        </div>
+    </main>
 @endsection

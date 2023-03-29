@@ -105,4 +105,9 @@ Route::middleware(['auth'])->group(function () {
 });
 
 //admin route
-Route::get("/admin-i", [\App\Http\Controllers\AdminController::class, "index"]);
+Route::prefix("dashboard")->group(function (){
+
+    Route::get("/", [\App\Http\Controllers\AdminController::class, "index"]);
+    Route::get("/contact-details", [\App\Http\Controllers\AdminController::class, "contactInquiry"]);
+
+});
