@@ -7,3 +7,5 @@
 
 <!-- My CSS -->
 <link rel="stylesheet" href="{{ asset('admin/style.css') }}">
+
+@stack('css')

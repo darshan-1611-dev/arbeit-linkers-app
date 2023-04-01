@@ -21,8 +21,8 @@
                 <span class="text">Transaction List</span>
             </a>
         </li>
-        <li>
-            <a href="userlist.html">
+        <li class="{{ request()->is('dashboard/users') ? 'active' : ''}} ">
+            <a href="{{ url('dashboard/users') }}">
                 <i class='bx bx-user fs-5'></i>
                 <span class="text">User's List</span>
             </a>
@@ -37,14 +37,6 @@
             <a href="blog_list.html">
                 <i class="bx bxl-blogger fs-5"></i>
                 <span class="text">Blog List</span>
-            </a>
-        </li>
-    </ul>
-    <ul class="side-menu">
-        <li>
-            <a href="#" class="logout">
-                <i class='bx bx-log-out-circle fs-5'></i>
-                <span class="text">Logout</span>
             </a>
         </li>
     </ul>

@@ -109,5 +109,8 @@ Route::prefix("dashboard")->group(function (){
 
     Route::get("/", [\App\Http\Controllers\AdminController::class, "index"]);
     Route::get("/contact-details", [\App\Http\Controllers\AdminController::class, "contactInquiry"]);
+    Route::get("/users", [\App\Http\Controllers\AdminController::class, "users"]);
+    Route::get("/user-details/{user_id}", [\App\Http\Controllers\AdminController::class, "userDetails"]);
+    Route::get("/users-datatable-list", [\App\Http\Controllers\AdminController::class, "usersData"]);
 
 });

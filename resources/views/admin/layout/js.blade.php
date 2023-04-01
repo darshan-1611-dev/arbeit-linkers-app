@@ -8,3 +8,5 @@
 
 <!-- Custom JS -->
 <script src="{{ asset('admin/script.js') }}"></script>
+
+@stack('js')
