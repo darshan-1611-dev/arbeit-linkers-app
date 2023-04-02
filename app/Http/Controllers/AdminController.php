@@ -71,8 +71,9 @@ class AdminController extends Controller
     public function userDetails($user_id)
     {
         $user_details = User::query()->where('id', $user_id)->with(['user_detail'])->first();
+        $projects = Job::query()->where('is_bid_done', $user_id)->get();
 
-        return view('admin.user-details', compact('user_details'));
+        return view('admin.user-details', compact('user_details', 'projects'));
     }
 
     /**
