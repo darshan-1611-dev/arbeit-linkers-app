@@ -71,9 +71,11 @@ class AdminController extends Controller
     public function userDetails($user_id)
     {
         $user_details = User::query()->where('id', $user_id)->with(['user_detail'])->first();
-        $projects = Job::query()->where('is_bid_done', $user_id)->get();
+        $projects = Job::query()->where('is_bid_done', $user_id)->with(['payments'])->get(); // projects user
+        $company_projects = Job::query()->where('user_id', $user_id)->with(['payments'])->paginate(10);
+        $company_transaction_amount = Payment::query()->where("sender_id", $user_id)->sum("amount");
 
-        return view('admin.user-details', compact('user_details', 'projects'));
+        return view('admin.user-details', compact('user_details', 'projects', 'company_projects' , 'company_transaction_amount'));
     }
 
     /**

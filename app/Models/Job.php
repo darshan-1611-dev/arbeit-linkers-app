@@ -55,6 +55,14 @@ class Job extends Model
     }
 
     /**
+     * Get Payment Detail
+    */
+    public function payments()
+    {
+        return $this->belongsTo(Payment::class, 'id', "job_id");
+    }
+
+    /**
      * Searchable column for job list.
     */
     public function toSearchableArray()
