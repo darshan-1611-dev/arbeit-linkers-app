@@ -107,10 +107,25 @@ Route::middleware(['auth'])->group(function () {
 //admin route
 Route::prefix("dashboard")->group(function (){
 
+    // dashboard home page
     Route::get("/", [\App\Http\Controllers\AdminController::class, "index"]);
+
+    // contact-us page
     Route::get("/contact-details", [\App\Http\Controllers\AdminController::class, "contactInquiry"]);
+
+    // users data
     Route::get("/users", [\App\Http\Controllers\AdminController::class, "users"]);
     Route::get("/user-details/{user_id}", [\App\Http\Controllers\AdminController::class, "userDetails"]);
     Route::get("/users-datatable-list", [\App\Http\Controllers\AdminController::class, "usersData"]);
 
+    // payment
+    Route::get("transactions", [\App\Http\Controllers\AdminController::class, "transaction"]);
+    Route::get("transactions-datatable-data", [\App\Http\Controllers\AdminController::class, "transactionData"]);
+
+    // blog
+    Route::get('blogs', [\App\Http\Controllers\BlogController::class, 'listBlogs']);
+    Route::get('blogs-datatable-data', [\App\Http\Controllers\BlogController::class, 'listBlogsDatatable']);
+
+    Route::get('create-blog', [\App\Http\Controllers\BlogController::class, 'create']);
+    Route::post('store-blog', [\App\Http\Controllers\BlogController::class, 'store']);
 });

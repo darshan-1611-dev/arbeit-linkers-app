@@ -15,8 +15,8 @@
                 <span class="text">Contact details</span>
             </a>
         </li>
-        <li>
-            <a href="transactionlist.html">
+        <li class="{{ request()->is('dashboard/transactions') ? 'active' : ''}} ">
+            <a href="{{ url('dashboard/transactions') }}">
                 <i class='bx bx-food-menu fs-5'></i>
                 <span class="text">Transaction List</span>
             </a>
@@ -27,14 +27,14 @@
                 <span class="text">User's List</span>
             </a>
         </li>
-        <li>
-            <a href="add-blog.html">
+        <li class="{{ request()->is('dashboard/create-blog') ? 'active' : ''}} ">
+            <a href="{{ url('dashboard/create-blog') }}">
                 <i class="bx bx-message-square-add fs-5"></i>
                 <span class="text">Add Blog</span>
             </a>
         </li>
-        <li>
-            <a href="blog_list.html">
+        <li class="{{ request()->is('dashboard/blogs') ? 'active' : ''}} ">
+            <a href="{{ url('dashboard/blogs') }}">
                 <i class="bx bxl-blogger fs-5"></i>
                 <span class="text">Blog List</span>
             </a>

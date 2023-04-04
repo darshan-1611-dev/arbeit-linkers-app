@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Payment extends Model
 {
-    use HasFactory;
+    use HasFactory,SoftDeletes;
 
     protected $table = "payments";
 
@@ -28,5 +29,15 @@ class Payment extends Model
     public function job_detail()
     {
         return $this->belongsTo(Job::class, 'job_id', "id");
+    }
+
+    public function payment_sender_details()
+    {
+        return $this->belongsTo(User::class, 'sender_id', "id");
+    }
+
+    public function payment_receiver_details()
+    {
+        return $this->belongsTo(User::class, 'receiver_id', "id");
     }
 }

@@ -75,7 +75,7 @@ class AdminController extends Controller
         $company_projects = Job::query()->where('user_id', $user_id)->with(['payments'])->paginate(10);
         $company_transaction_amount = Payment::query()->where("sender_id", $user_id)->sum("amount");
 
-        return view('admin.user-details', compact('user_details', 'projects', 'company_projects' , 'company_transaction_amount'));
+        return view('admin.user-details', compact('user_details', 'projects', 'company_projects', 'company_transaction_amount'));
     }
 
     /**
@@ -100,6 +100,50 @@ class AdminController extends Controller
                 return $view_btn;
             })
             ->rawColumns(['action', 'user_type', 'created_at'])
+            ->make(true);
+    }
+
+    /**
+     * All Users Transaction.
+     */
+    public function transaction()
+    {
+        $total_transaction_count = Payment::query()->count();
+        $total_amount = Payment::query()->sum('amount');
+
+        return view('admin.transaction', compact('total_transaction_count', 'total_amount'));
+    }
+
+    public function transactionData()
+    {
+        $data = Payment::query()->with(["job_detail",
+            "payment_sender_details",
+            "payment_receiver_details"])
+            ->get();
+
+        return Datatables::of($data)->addIndexColumn()
+            ->editColumn('id', function ($row) {
+                return "#". $row->id;
+            })
+            ->addColumn('sender_name', function ($row) {
+                $html = '<a class="link-primary" href="' . url('dashboard/user-details/' . $row->payment_sender_details->id . '') . '">' . $row->payment_sender_details->name . '</a>';
+                return $html;
+            })
+            ->addColumn('receiver_name', function ($row) {
+                $html = '<a class="link-primary" href="' . url('dashboard/user-details/' . $row->payment_receiver_details->id . '') . '">' . $row->payment_receiver_details->name . '</a>';
+                return $html;
+            })
+            ->addColumn('job_details', function ($row) {
+                $html = '<a class="link-primary" href="' . url('detail-view-job/' . $row->job_detail->id .'').'">View Job</a>';
+                return $html;
+            })
+            ->editColumn('amount', function ($row) {
+                return '₹'. $row->amount;
+            })
+            ->editColumn('created_at', function ($row) {
+                return date('d M y', strtotime($row->created_at));
+            })
+            ->rawColumns(['id', 'sender_name', 'receiver_name', 'job_details', 'amount', 'created_at'])
             ->make(true);
     }
 
