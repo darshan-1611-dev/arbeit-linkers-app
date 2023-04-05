@@ -94,7 +94,7 @@
 
                         <div class="mb-3 mt-5">
                             <input type="submit" value="Post Job" class="btn al-btn me-2">
-                            <a href="{{ url("/") }}">
+                            <a href="{{ url("/company-profile/project") }}">
                                 <button type="button" class="btn al-btn al-btn-danger">Cancel</button>
                             </a>
                         </div>

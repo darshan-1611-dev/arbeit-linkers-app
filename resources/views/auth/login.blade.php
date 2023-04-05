@@ -58,9 +58,6 @@
                                    placeholder="Password">
                             <!-- <span class="text-danger fs-5">* Please Enter your Password</span> -->
                         </div>
-                        <div class="text-end">
-                            <a href="#" class="fw-bold text-decoration-none">Forget Password?</a>
-                        </div>
                         <button type="submit" class="btn al-btn w-100 my-4">Log In</button>
                         <div class="mb-4 text-center my-5">
                             <p class="line-heading my-5  text-muted">You don't have acoount?</p>

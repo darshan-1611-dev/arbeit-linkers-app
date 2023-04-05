@@ -14,17 +14,20 @@
                     <div class="collapse navbar-collapse mt-4 mt-lg-0" id="navbarNav">
                         <ul class="navbar-nav mx-auto">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
+                                <a class="nav-link {{ request()->is('/') ? 'active' : ''}}" aria-current="page" href="{{ url('/') }}">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/about-us') }}">About Us
+                                <a class="nav-link {{ request()->is('/about-us') ? 'active' : ''}}" href="{{ url('/about-us') }}">About Us
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/faqs') }}">Faq</a>
+                                <a class="nav-link {{ request()->is('/faqs') ? 'active' : ''}}" href="{{ url('/faqs') }}">Faq</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/contact-us') }}">Contact Us</a>
+                                <a class="nav-link {{ request()->is('/blogs') ? 'active' : ''}}" href="{{ url('/blogs') }}">Blogs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ request()->is('/contact-us') ? 'active' : ''}}" href="{{ url('/contact-us') }}">Contact Us</a>
                             </li>
                         </ul>
                         <div class="nav-right">
@@ -84,17 +87,20 @@
                     <div class="collapse navbar-collapse mt-4 mt-lg-0" id="navbarNav">
                         <ul class="navbar-nav mx-auto">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
+                                <a class="nav-link {{ request()->is('/') ? 'active' : ''}}" aria-current="page" href="{{ url('/') }}">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/about-us') }}">About Us
+                                <a class="nav-link {{ request()->is('/about-us') ? 'active' : ''}}" href="{{ url('/about-us') }}">About Us
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/faqs') }}">Faq</a>
+                                <a class="nav-link {{ request()->is('/faqs') ? 'active' : ''}}" href="{{ url('/faqs') }}">Faq</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/contact-us') }}">Contact Us</a>
+                                <a class="nav-link {{ request()->is('/blogs') ? 'active' : ''}}" href="{{ url('/blogs') }}">Blogs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ request()->is('/contact-us') ? 'active' : ''}}" href="{{ url('/contact-us') }}">Contact Us</a>
                             </li>
                         </ul>
                     </div>

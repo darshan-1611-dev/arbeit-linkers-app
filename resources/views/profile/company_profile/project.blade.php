@@ -21,7 +21,7 @@
                 if($bid == 0){
                     $status = "<button type='button' class='btn btn-warning'>Pending </button>";
                 } else {
-                    $status = "<button type='button' class='btn btn-success'>Assigned </button>";
+                    $status = "<a href=". url('user/'.$bid.'')." title='tap to view assigned user detail'><button type='button' class='btn btn-success'>Assigned</button></a>";
                 }
 
                 return $status;
