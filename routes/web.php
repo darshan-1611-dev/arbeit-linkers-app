@@ -63,6 +63,10 @@ Route::get('privacy-policy', [\App\Http\Controllers\PageController::class, "priv
 Route::get('terms-condition', [\App\Http\Controllers\PageController::class, "termsCondition"]);
 Route::get('copyright-policy', [\App\Http\Controllers\PageController::class, "copyrightPolicy"]);
 
+//blog
+Route::get('blogs', [\App\Http\Controllers\BlogController::class, "index"]);
+Route::get('blog/{slug}', [\App\Http\Controllers\BlogController::class, "detailView"]);
+
 // auth middleware
 Route::middleware(['auth'])->group(function () {
 
@@ -125,7 +129,9 @@ Route::prefix("dashboard")->group(function (){
     // blog
     Route::get('blogs', [\App\Http\Controllers\BlogController::class, 'listBlogs']);
     Route::get('blogs-datatable-data', [\App\Http\Controllers\BlogController::class, 'listBlogsDatatable']);
-
     Route::get('create-blog', [\App\Http\Controllers\BlogController::class, 'create']);
     Route::post('store-blog', [\App\Http\Controllers\BlogController::class, 'store']);
+    Route::get('edit-blog/{id}', [\App\Http\Controllers\BlogController::class, 'edit']);
+    Route::post('update-blog', [\App\Http\Controllers\BlogController::class, 'update']);
+    Route::get('delete-blog/{id}', [\App\Http\Controllers\BlogController::class, 'delete']);
 });
