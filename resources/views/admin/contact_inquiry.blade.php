@@ -32,7 +32,10 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->first_name }} {{ $item->last_name }}</td>
-                                    <td>{{ $item->email }}</td>
+                                    <td><a class="link link-primary" href = "mailto:{{ $item->email }}?subject = Reply">
+                                            {{ $item->email }}
+                                        </a>
+                                       </td>
                                     <td>{{ $item->message }}
                                     </td>
                                     <td style="color: #404145;">{{ $item->created_at->format('d M y') }}</td>

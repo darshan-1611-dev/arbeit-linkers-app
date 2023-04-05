@@ -36,7 +36,7 @@
                                         <p class="mb-2"><span
                                                 class="text-muted fs-5"> {{ $post->created_at->format('M d, Y') }}</span>
                                         </p>
-                                        <p class="card-text">{{ substr($post->blog_content, 0, 100) }}</p>
+                                        <p class="card-text">{{ substr($post->blog_content, 0, 100) }}...</p>
 
                                     </div>
                                 </div>

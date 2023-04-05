@@ -56,7 +56,7 @@
                                 <th>id</th>
                                 <th>Sender Name</th>
                                 <th>Receiver Name</th>
-                                <th>Job Detail</th>
+{{--                                <th>Job Detail</th>--}}
                                 <th>Payment Id</th>
                                 <th>Amount</th>
                                 <th>Payment At</th>
@@ -86,7 +86,7 @@
                     {data: 'id', name: 'id'},
                     {data: 'sender_name', name: 'sender_name'},
                     {data: 'receiver_name', name: 'receiver_name'},
-                    {data: 'job_details', name: 'job_details'},
+                    // {data: 'job_details', name: 'job_details'},
                     {data: 'payment_id', name: 'payment_id'},
                     {data: 'amount', name: 'amount'},
                     {data: 'created_at', name: 'created_at'},

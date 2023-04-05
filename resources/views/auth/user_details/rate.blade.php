@@ -73,43 +73,43 @@
                                 </div>
                                 <div class="col-3">
                                     <input type="number" class="form-control fs-4 py-3" name="hourly_rate"
-                                           placeholder="0.00 $/hr">
+                                           placeholder="0.00 ₹/hr">
                                 </div>
                             </div>
                         </div>
-                        <hr>
-                        <div class="mb-5">
-                            <div class="row align-items-end justify-content-between">
-                                <div class="col-9">
-                                    <p class="fw-semibold fs-3 m-0">Service fee</p>
-                                    <span class="fs-4 text-muted d-block">This helps us run the platform and provide
-                                        services like payment protection and customer support.</span>
-                                </div>
-                                <div class="col-3">
-                                    <input type="text" class="form-control fs-4 py-3" name="" placeholder="0.00 $/hr"
-                                           readonly style="background-color: var( --bg-light-2);">
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="mb-5">
-                            <div class="row align-items-end justify-content-between">
-                                <div class="col-9">
-                                    <p class="fw-semibold fs-3 m-0">You'll get</p>
-                                    <span class="fs-4 text-muted d-block">The estimated amount you'll get paid after service fees.</span>
-                                </div>
-                                <div class="col-3">
-                                    <input type="text" class="form-control fs-4 py-3" name="" placeholder="0.00 $/hr">
-                                </div>
-                            </div>
-                        </div>
+{{--                        <hr>--}}
+{{--                        <div class="mb-5">--}}
+{{--                            <div class="row align-items-end justify-content-between">--}}
+{{--                                <div class="col-9">--}}
+{{--                                    <p class="fw-semibold fs-3 m-0">Service fee</p>--}}
+{{--                                    <span class="fs-4 text-muted d-block">This helps us run the platform and provide--}}
+{{--                                        services like payment protection and customer support.</span>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-3">--}}
+{{--                                    <input type="text" class="form-control fs-4 py-3" name="" placeholder="0.00 ₹/hr"--}}
+{{--                                           readonly style="background-color: var( --bg-light-2);">--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <hr>--}}
+{{--                        <div class="mb-5">--}}
+{{--                            <div class="row align-items-end justify-content-between">--}}
+{{--                                <div class="col-9">--}}
+{{--                                    <p class="fw-semibold fs-3 m-0">You'll get</p>--}}
+{{--                                    <span class="fs-4 text-muted d-block">The estimated amount you'll get paid after service fees.</span>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-3">--}}
+{{--                                    <input type="text" class="form-control fs-4 py-3" name="" placeholder="0.00 ₹/hr">--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
                 <div class="mt-5">
                     <div class="rounded-3 p-5 mx-auto" style="background-color: var(--bg-green);">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="">
-                                <h5>Upwork service fees can be as low as 5%</h5>
+                                <h5>ArbeitLinkers service fees can be as nil as 0%</h5>
                             </div>
                             <div>
                                 <img src="{{ asset('images/service-fees-chart.svg') }}" alt="">

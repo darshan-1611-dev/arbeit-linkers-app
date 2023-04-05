@@ -57,7 +57,7 @@
                                     <td>
                                         <a href="{{ url('detail-view-job/'.$item->id .'') }}">{{ $item->project_title }}</a>
                                     </td>
-                                    <td>${{ $item->min_salary }} - ${{ $item->max_salary }}</td>
+                                    <td>₹{{ $item->min_salary }} - ₹{{ $item->max_salary }}</td>
                                     <td>{{ $item->job_duration }}</td>
                                     <td>{{ $item->created_at->format('d M Y') }}</td>
                                     <td>{!!  check_project_status($item->is_bid_done)  !!}</td>

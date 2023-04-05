@@ -9,7 +9,7 @@
                         <ul class="list-unstyled small">
                             <li class="mb-2">
                                 Designed and built with all the love in the world by the
-                                Bootstrap team with the help of our contributors.
+                                ArbeitLinkers team with the help of our contributors.
                             </li>
                             <li class="mb-2">Code licensed MIT, docs CC BY 3.0.</li>
                         </ul>

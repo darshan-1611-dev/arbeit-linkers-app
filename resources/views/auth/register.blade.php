@@ -317,7 +317,7 @@
                                    class="form-check-input me-2 mt-0 mt-sm-1"
                                    style="width: 1.5rem; height: 1.5rem;"><label for="form-check-lable"
                                                                                  class="fs-4 me-2 me-sm-4">Join as
-                                Client</label>
+                                Company</label>
                             <input type="radio" name="user_type" id="user_type" value="0"
                                    class="form-check-input me-2 mt-0 mt-sm-1"
                                    style="width: 1.5rem; height: 1.5rem;"><label for="form-check-lable" class="fs-4">Join

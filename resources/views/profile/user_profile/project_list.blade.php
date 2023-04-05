@@ -63,7 +63,7 @@
                                     <a href="{{ url('company/'.$item->user_details->user_id.'') }}">{{ $item->user_details->company_name }}</a>
                                 </td>
                                 <td>{{ $item->created_at->format('d M Y') }}</td>
-                                <td>{{ $item->bid_details->price }}</td>
+                                <td>₹{{ $item->bid_details->price }}</td>
                                 <td>{{ $item->bid_details->time_duration }}</td>
                                 <td>{!!  check_payment_status($item->payment_status)  !!}</td>
                             </tr>

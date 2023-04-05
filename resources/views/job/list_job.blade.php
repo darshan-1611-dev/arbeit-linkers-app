@@ -77,7 +77,7 @@
                                                 <i class="" style="font-size: 15px;"></i><span
                                                     style="font-size: 15px;color: #000000;">{{ getJobType($job->job_type) }}</span>
 
-                                                <p>{{ substr($job->project_description,0,100) }}...</p>
+                                                <p style="overflow-wrap: break-word;">{{ substr($job->project_description,0,100) }}...</p>
                                                 <ul class="skill-tags">
                                                     @php
                                                         $skills = explode(',', $job->skills);

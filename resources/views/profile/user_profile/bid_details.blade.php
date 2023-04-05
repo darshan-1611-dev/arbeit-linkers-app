@@ -80,7 +80,7 @@
                             <tr class="fs-4">
                                 <th scope="row">{{ $loop->iteration }}</th>
                                 <td>{{ $item->job_detail->project_title }}</td>
-                                <td>${{ $item->price }}</td>
+                                <td>₹{{ $item->price }}</td>
                                 <td>{{ $item->time_duration }}</td>
                                 <td>{{ $item->created_at->format('d M Y') }}</td>
                                 <td>{!!  check_bid_status($item->bid_status)  !!}</td>

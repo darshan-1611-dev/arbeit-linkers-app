@@ -20,6 +20,7 @@
                                 <button type="button" class="btn al-btn disabled" data-bs-toggle="modal"
                                         data-bs-target="#bidModel">Already Bidden.
                                 </button>
+                            @elseif(auth()->user()->id == $job->user_id)
                             @else
                                 <button type="button" class="btn al-btn" data-bs-toggle="modal"
                                         data-bs-target="#bidModel">Bid Now
@@ -99,7 +100,7 @@
 
                     <hr class="my-5">
 
-                    <div>
+                    <div style="overflow-wrap: break-word;">
                         <p>
                             {{ $job->project_description }}
                         </p>
@@ -218,7 +219,8 @@
                         <div class="mt-5 row">
                             <div class="col-5 col-sm-4 ">
                                 <div>
-                                    <a href="{{ url('company/'.$job->user->id.'') }}"><span class="fs-4">{{ $job->user->name }}</span></a>
+                                    <a href="{{ url('company/'.$job->user->id.'') }}"><span
+                                            class="fs-4">{{ $job->user->name }}</span></a>
                                 </div>
                             </div>
                         </div>
@@ -268,29 +270,29 @@
                 </div>
             </div>
 
-            <!-- Login ad box  -->
-            <div class="col-lg-4 d-none d-lg-inline-block" style="margin-top: 15rem;">
-                <div class="login-box">
-                    <h3>Create a free profile to find work like this</h3>
-                    <div class="my-5 row">
-                        <div class="mb-4 mt-5">
-                            <input type="email" name="email" id="email" class="form-control fs-4 py-3"
-                                   placeholder="Enter Email Address">
+            {{--            <!-- Login ad box  -->--}}
+            {{--            <div class="col-lg-4 d-none d-lg-inline-block" style="margin-top: 15rem;">--}}
+            {{--                <div class="login-box">--}}
+            {{--                    <h3>Create a free profile to find work like this</h3>--}}
+            {{--                    <div class="my-5 row">--}}
+            {{--                        <div class="mb-4 mt-5">--}}
+            {{--                            <input type="email" name="email" id="email" class="form-control fs-4 py-3"--}}
+            {{--                                   placeholder="Enter Email Address">--}}
 
-                        </div>
-                        <div class="mb-4 mt-4">
-                            <a href="sign_up.html" class="btn al-btn w-100">Sign Up</a>
-                        </div>
-                    </div>
-                    <p class="line-heading my-5 text-center  text-muted w-100">or</p>
-                    <div class="my-5 row">
-                        <h4>Hiring for similar work?</h4>
-                        <div class="mb-4 mt-5">
-                            <a href="sign_up.html" class="btn al-btn al-btn-light w-100">Post a Job Like This</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {{--                        </div>--}}
+            {{--                        <div class="mb-4 mt-4">--}}
+            {{--                            <a href="sign_up.html" class="btn al-btn w-100">Sign Up</a>--}}
+            {{--                        </div>--}}
+            {{--                    </div>--}}
+            {{--                    <p class="line-heading my-5 text-center  text-muted w-100">or</p>--}}
+            {{--                    <div class="my-5 row">--}}
+            {{--                        <h4>Hiring for similar work?</h4>--}}
+            {{--                        <div class="mb-4 mt-5">--}}
+            {{--                            <a href="sign_up.html" class="btn al-btn al-btn-light w-100">Post a Job Like This</a>--}}
+            {{--                        </div>--}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
         </div>
     </section>
     <!-- Job Detail Section Start -->

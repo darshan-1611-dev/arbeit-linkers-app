@@ -8,10 +8,9 @@
                 <div class="col-12 col-md-6">
                     <h2 class="">We are always available for 24*7</h2>
                     <h3 class="">For Your Business</h3>
-                    <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam dolorum doloribus
-                        ratione
-                        obcaecati
-                        quas quis, atque facere porro veritatis magnam!</p>
+                    <p class="">You can contact us by filling out the form on our website, and we will respond to your
+                        inquiry as soon as possible. Alternatively, you can email us directly at info@arbitelinkers.com,
+                        or reach out to us on social media.</p>
                     <a href="{{ url('/') }}" class="btn al-btn mt-5">Get Freelancers</a>
                 </div>
                 <div class="col-md-6 d-none d-md-block">
@@ -58,17 +57,17 @@
                             @if(\Illuminate\Support\Facades\Session::has("success"))
                                 <p class="text-success">{{ \Illuminate\Support\Facades\Session::get("success") }}</p>
                             @endif
-                                @if ($errors->any())
-                                    <div class="alert alert-danger">
-                                        <ul>
-                                            @foreach ($errors->all() as $error)
-                                                <li>
-                                                    <span class="text-danger fs-5">* {{ $error }}</span>
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                @endif
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>
+                                                <span class="text-danger fs-5">* {{ $error }}</span>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                         </div>
 
                         <form action="{{ url('contact-us/store') }}" method="post">

@@ -55,7 +55,7 @@
                 <div class="my-5">
                     <p class="fs-5 text-muted mb-4">4/10</p>
                     <h2 class="mb-0">Looking good. Next, tell us which languages you speak.</h2>
-                    <p>Upwork is global, so clients are often interested to know what languages you speak.
+                    <p>ArbeitLinkers is global, so clients are often interested to know what languages you speak.
                         <b>English</b> is a
                         must, but do you speak any other languages?
                     </p>

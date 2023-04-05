@@ -143,9 +143,10 @@
                                         @foreach($projects as $project)
                                             <tr>
                                                 <th scope="row">{{ $loop->iteration }}</th>
-                                                <td>
-                                                    <a href="{{ url('/detail-view-job/'.$project->id.'') }}">{{ $project->project_title }}</a>
-                                                </td>
+{{--                                                <td>--}}
+{{--                                                    <a href="{{ url('/detail-view-job/'.$project->id.'') }}">{{ $project->project_title }}</a>--}}
+{{--                                                </td>--}}
+                                                <td>{{ $project->project_title }}</td>
                                                 <td>{!!  $project->payment_status == 1 ? "<span class='badge badge-success'>Received</span>" : "<span class='badge badge-danger'>Not Received</span>" !!}</td>
                                                 <td>{{ $project->payment_status == 1 ? '₹'.$project->payments->amount : 'Nil' }}</td>
                                                 <td>{{ $project->payment_status == 1 ? $project->payments->payment_id : 'Nil' }}</td>
@@ -258,9 +259,10 @@
                                         @foreach($company_projects as $project)
                                             <tr>
                                                 <th scope="row">{{ ($company_projects->currentpage()-1) * $company_projects->perpage() + $loop->index + 1 }}</th>
-                                                <td>
-                                                    <a href="{{ url('/detail-view-job/'.$project->id.'') }}">{{ $project->project_title }}</a>
-                                                </td>
+{{--                                                <td>--}}
+{{--                                                    <a href="{{ url('/detail-view-job/'.$project->id.'') }}">{{ $project->project_title }}</a>--}}
+{{--                                                </td>--}}
+                                                <td>{{ $project->project_title }}</td>
                                                 <td>{!! $project->payment_status == 1 ? '<a href="'. url('dashboard/user-details/'.$project->payments->receiver_id.'').'">view more</a>'  : 'Nil' !!}</td>
                                                 <td>{!! $project->payment_status == 1 ? "<span class='badge badge-success'>Sent</span>" : "<span class='badge badge-danger'>Not Sent</span>" !!}</td>
                                                 <td>{{ $project->payment_status == 1 ? '₹'.$project->payments->amount : 'Nil' }}</td>

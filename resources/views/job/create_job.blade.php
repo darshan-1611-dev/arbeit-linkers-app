@@ -52,7 +52,7 @@
                         <div class="mb-3 col-lg-6">
                             <h6 class="pt-2">Min Salary:</h6>
                             <input type="number" class="form-control fs-4 py-3" name="min_salary"
-                                   value="{{ old('min_salary') }}" placeholder="0.00 $/hr">
+                                   value="{{ old('min_salary') }}" placeholder="0.00 ₹/hr">
                             @error("min_salary")
                             <span class="text-danger fs-5">* {{ $message }}</span>
                             @enderror
@@ -60,7 +60,7 @@
                         <div class="mb-3 col-lg-6">
                             <h6 class="pt-2">Max Salary:</h6>
                             <input type="number" class="form-control fs-4 py-3" name="max_salary"
-                                   value="{{ old('max_salary') }}" placeholder="0.00 $/hr">
+                                   value="{{ old('max_salary') }}" placeholder="0.00 ₹/hr">
                             @error("max_salary")
                             <span class="text-danger fs-5">* {{ $message }}</span>
                             @enderror

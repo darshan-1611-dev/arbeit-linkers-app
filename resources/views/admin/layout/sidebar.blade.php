@@ -1,6 +1,6 @@
 <section id="sidebar">
     <div class="brand px-3">
-        <img src="/img/logo-black-svg.svg" alt="ArbeitLinkers" class="logo">
+        <img src="{{ asset('/images/logo-black-svg.svg') }}" alt="ArbeitLinkers" class="logo">
     </div>
     <ul class="side-menu top ps-3">
         <li class="{{ request()->is('dashboard') ? 'active' : ''}} ">

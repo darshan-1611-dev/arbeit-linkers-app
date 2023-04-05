@@ -73,7 +73,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <h6 class="d-inline-block me-2">Service Rate :</h6>
-                                    <p class="d-inline-block">{{ $user_detail->user_detail->hourly_rate }} $/hr</p>
+                                    <p class="d-inline-block">{{ $user_detail->user_detail->hourly_rate }} ₹/hr</p>
                                 </div>
                             </div>
                         </div>
@@ -230,7 +230,7 @@
                                                 </h6>
                                                 <input type="text" class="form-control fs-4 py-3" name="hourly_rate"
                                                        value="{{ $user_detail->user_detail->hourly_rate }}"
-                                                       placeholder=" 0.00 $/hr">
+                                                       placeholder=" 0.00 ₹/hr">
                                                 @error('hourly_rate')
                                                 <span class="text-danger fs-5"><i class="fas fa-exclamation-circle"></i> {{ $message }}</span>
                                                 @enderror
