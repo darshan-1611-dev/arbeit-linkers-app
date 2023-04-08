@@ -171,8 +171,8 @@
                     <h2 class="pb-5">Our Automated Features</h2>
                 </div>
                 <div class="row">
-                    <div class="col-sm-6 col-lg-4 mb-5">
-                        <div class="ft-1">
+                    <div class="col-sm-6 col-lg-4" style="margin-bottom: 15px;">
+                        <div class="ft-1 h-100">
                             <h3>Pricing Model</h3>
                             <p class="features_text">The pricing model for a freelancing website is also an important
                                 factor to consider. Does the platform charge fees to freelancers or clients, or both?
@@ -180,8 +180,8 @@
                                 ensure it is fair and reasonable for all parties involved.</p>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-5">
-                        <div class="ft-2">
+                    <div class="col-lg-4 col-sm-6" style="margin-bottom: 15px;">
+                        <div class="ft-2 h-100">
                             <h3>Tech Solutions</h3>
                             <p class="features_text">One important aspect to consider when consulting for a freelancing
                                 website is the platform's features. This includes things like job posting, freelancer
@@ -190,8 +190,8 @@
                                 and freelancers.</p>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-5">
-                        <div class="ft-3">
+                    <div class="col-lg-4 col-sm-6" style="margin-bottom: 15px;">
+                        <div class="ft-3 h-100">
                             <h3>Customer Support</h3>
                             <p class="features_text">A reliable and responsive customer support team is crucial for any
                                 freelancing website. Evaluate the platform's customer support by reviewing their
@@ -199,24 +199,24 @@
                                 provides excellent customer support can help build trust and loyalty among users.</p>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-5">
-                        <div class="ft-4">
+                    <div class="col-lg-4 col-sm-6" style="margin-bottom: 15px;">
+                        <div class="ft-4 h-100">
                             <h3>User Experience</h3>
                             <p class="features_text">the platform's interface is ease of use for both clients and
                                 freelancers. Is it user-friendly and intuitive, or confusing and difficult to navigate?
                                 A positive user experience is crucial for retaining users and attracting new ones.</p>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-5">
-                        <div class="ft-5">
+                    <div class="col-lg-4 col-sm-6" style="margin-bottom: 15px;">
+                        <div class="ft-5 h-100">
                             <h3>Data Retrieval</h3>
                             <p class="features_text">The data retrieval for a freelancing website is also an important
                                 factor to consider. We provide payment system without charging.
                             </p>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-5">
-                        <div class="ft-6">
+                    <div class="col-lg-4 col-sm-6" style="margin-bottom: 15px;">
+                        <div class="ft-6 h-100">
                             <h3>Flexible System</h3>
                             <p class="features_text">flexible website is scalable and can adapt to changing needs and
                                 requirements. This means the website able to handle an increase in traffic or content

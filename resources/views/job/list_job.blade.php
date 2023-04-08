@@ -54,9 +54,9 @@
                     <!-- ***************** -->
                         @if($jobs->count() > 0)
                             @foreach($jobs as $job)
-                                <div class="col-lg-6">
-                                    <div class="job-section">
-                                        <div class="post-bar">
+                                <div class="col-lg-6" style="margin-bottom: 15px">
+                                    <div class="job-section h-100">
+                                        <div class="post-bar h-100">
                                             <div class="job_topbar">
                                             </div>
                                             <div class="epi-sec">

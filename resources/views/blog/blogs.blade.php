@@ -26,7 +26,7 @@
                     @if($posts->count() > 0)
                         @foreach($posts as $post)
                             <div class="col-12 col-sm-6 col-md-4">
-                                <div class="card shadow">
+                                <div class="card shadow h-100">
                                     <img src="{{ asset('storage/'.$post->featured_image.'') }}" class="card-img-top"
                                          alt="Web Design">
                                     <div class="card-body pt-4">
