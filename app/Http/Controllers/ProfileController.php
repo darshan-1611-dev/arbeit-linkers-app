@@ -13,6 +13,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
+use Illuminate\Support\Facades\Log;
 use SebastianBergmann\CodeCoverage\Report\Xml\Project;
 use Yajra\DataTables\Facades\DataTables;
 use function Symfony\Component\Process\findArguments;
@@ -31,26 +32,59 @@ class ProfileController extends Controller
         return view('profile.user_profile.user_profile', compact('user_detail'));
     }
 
+    public function userProfileEdit($id)
+    {
+        $user = User::query()->where("id", '=', $id)->with(['user_detail'])->first();
+
+        return view('profile.user_profile.user_profile_edit', compact('user'));
+    }
+
     public function userProfileUpdate(Request $request)
     {
-        $request->validate([
-            "city" => "required",
-            "state" => "required",
-            "country" => "required",
+        $validation_data = [
+            "name" => "required",
             "mobile_no" => "required",
-            "skills" => "required",
-            "hourly_rate" => "required"
-        ]);
+            "email" => "required",
+            "user_title" => "required|min:4",
+            'skills' => 'required',
+            'hourly_rate' => 'required|integer',
+            'country' => 'required',
+            'state' => 'required',
+            'city' => 'required'
+        ];
+
+        if (!$request->has('is_experience')) {
+
+            $validation_data = array_merge($validation_data, [
+                'job_title' => 'required',
+                'job_company' => 'required'
+            ]);
+
+        }
+
+        if (!$request->has('is_education')) {
+
+            $validation_data = array_merge($validation_data, [
+                'school_name' => 'required',
+                'degree_title' => 'required',
+                'field_of_study' => 'required'
+            ]);
+        }
+
+        // validate data
+        $request->validate($validation_data);
 
         $user_id = auth()->user()->id;
 
+        // user details
         $data_to_update = [
-            'city' => $request->post('city'),
-            'state' => $request->post('state'),
-            'country' => $request->post('country'),
+            'user_title' => $request->post('user_title'),
+            'user_description' => $request->post('user_description'),
             'skills' => $request->post('skills'),
             'hourly_rate' => $request->post('hourly_rate'),
-            'user_description' => $request->post('user_description')
+            'city' => $request->post('city'),
+            'state' => $request->post('state'),
+            'country' => $request->post('country')
         ];
 
         if ($request->file('profile_photo_path')) {
@@ -60,10 +94,48 @@ class ProfileController extends Controller
 
         }
 
+        // update user details data
         UserDetail::query()->where("user_id", '=', $user_id)->update($data_to_update);
 
+        // update education
+        if ($request->has('is_education')) {
+            UserDetail::query()->where("user_id", '=', $user_id)->update([
+                "is_education" => 0
+            ]);
+
+        } else {
+
+            UserDetail::query()->where("user_id", '=', $user_id)->update([
+                "is_education" => 1,
+                "school_name" => $request->post('school_name'),
+                "degree_title" => $request->post('degree_title'),
+                "field_of_study" => $request->post('field_of_study'),
+                "education_description" => $request->post('education_description')
+            ]);
+        }
+
+        // update users experience
+        if ($request->has('is_experience')) {
+            UserDetail::query()->where("user_id", '=', $user_id)->update([
+                "is_experience" => 0
+            ]);
+        } else {
+
+            UserDetail::query()->where("user_id", '=', $user_id)->update([
+                "is_experience" => 1,
+                "job_title" => $request->post('job_title'),
+                "job_company" => $request->post('job_company'),
+                "job_location" => $request->post('job_location'),
+                "job_country" => $request->post('job_country'),
+                "job_description" => $request->post('job_description')
+            ]);
+        }
+
+        // update user details
         User::query()->where("id", '=', $user_id)->update([
-            "mobile_no" => $request->post("mobile_no")
+            'name' => $request->post('name'),
+            'mobile_no' => $request->post('mobile_no'),
+            'email' => $request->post('email')
         ]);
 
         return redirect('user-profile');
@@ -83,6 +155,8 @@ class ProfileController extends Controller
     public function companyProfileUpdate(Request $request)
     {
         $request->validate([
+            "company_name" => "required",
+            "email" => "required",
             "city" => "required",
             "state" => "required",
             "country" => "required",
@@ -92,6 +166,7 @@ class ProfileController extends Controller
         $user_id = auth()->user()->id;
 
         $data_to_update = [
+            'company_name' => $request->post('company_name'),
             'city' => $request->post('city'),
             'state' => $request->post('state'),
             'country' => $request->post('country'),
@@ -108,7 +183,8 @@ class ProfileController extends Controller
         UserDetail::query()->where("user_id", '=', $user_id)->update($data_to_update);
 
         User::query()->where("id", '=', $user_id)->update([
-            "mobile_no" => $request->post("mobile_no")
+            "mobile_no" => $request->post("mobile_no"),
+            "email" => $request->post("email")
         ]);
 
         return redirect('company-profile');

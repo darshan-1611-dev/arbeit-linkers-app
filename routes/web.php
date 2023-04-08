@@ -75,9 +75,10 @@ Route::middleware(['auth'])->group(function () {
 
     // user profile
     Route::get('/user-profile', [\App\Http\Controllers\ProfileController::class, "userProfile"]);
-    Route::post('/user-profile/update', [\App\Http\Controllers\ProfileController::class, "userProfileUpdate"]);
     Route::get('/user-profile/bid', [\App\Http\Controllers\ProfileController::class, "viewUserBid"]);
     Route::get('/user-profile/transaction', [\App\Http\Controllers\ProfileController::class, "usersTransaction"]);
+    Route::get('user_profile/edit/{id}', [\App\Http\Controllers\ProfileController::class, "userProfileEdit"]);
+    Route::post('/user-profile/update', [\App\Http\Controllers\ProfileController::class, "userProfileUpdate"]);
 
     // company profile
     Route::get('/company-profile', [\App\Http\Controllers\ProfileController::class, "companyProfile"]);
@@ -109,7 +110,7 @@ Route::middleware(['auth'])->group(function () {
 });
 
 //admin route
-Route::prefix("dashboard")->group(function (){
+Route::prefix("dashboard")->group(function () {
 
     // dashboard home page
     Route::get("/", [\App\Http\Controllers\AdminController::class, "index"]);

@@ -81,6 +81,26 @@
                                                     aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body px-5 row">
+                                            <div class="mb-5 col-md-12">
+                                                <label class="fw-semibold fs-4 mb-3">Company Name *</label>
+                                                <input type="text" class="form-control fs-4 py-3"
+                                                       name="company_name"
+                                                       value="{{ $company_detail->user_detail->company_name }}">
+                                                @error('company_name')
+                                                <span class="text-danger fs-5"><i class="fas fa-exclamation-circle"></i> {{ $message }}</span>
+                                                @enderror
+                                            </div>
+
+                                            <div class="mb-5 col-md-12">
+                                                <label class="fw-semibold fs-4 mb-3">Email *</label>
+                                                <input type="text" class="form-control fs-4 py-3"
+                                                       name="email"
+                                                       value="{{ $company_detail->email }}">
+                                                @error('email')
+                                                <span class="text-danger fs-5"><i class="fas fa-exclamation-circle"></i> {{ $message }}</span>
+                                                @enderror
+                                            </div>
+
                                             <div class="mb-5 col-md-4">
                                                 <label class="fw-semibold fs-4 mb-3">City *</label>
                                                 <input type="text" class="form-control fs-4 py-3"

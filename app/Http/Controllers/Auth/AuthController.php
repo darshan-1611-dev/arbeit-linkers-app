@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
+    const ADMIN_EMAIL = "admin@arbeitlinkers.com";
+
     /**
      * view of login page.
      */
@@ -37,11 +39,27 @@ class AuthController extends Controller
 
         if (Auth::attempt(['email' => $request->get('email'), 'password' => $request->get('password')])) {
 
-            // Authentication passed...
-            return redirect('/');
+            // check is admin and redirect according to user.
+            return $this->checkIsAdminId($request->get('email')) ? redirect('/dashboard') : redirect('/');
+
         } else {
             return back()->withErrors(["success" => false, "message" => "email or password incorrect"]);
         }
+    }
+
+    /**
+     * Check it is Admin Credentials
+     *
+     * @param $email
+     * @return bool
+     */
+    public function checkIsAdminId($email)
+    {
+        if ($email == $this::ADMIN_EMAIL) {
+            return true;
+        }
+
+        return false;
     }
 
     // Register

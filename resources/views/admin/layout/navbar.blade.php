@@ -3,7 +3,7 @@
         <i class='bx bx-menu'></i>
     </div>
 
-{{--    <a href="#" class="profile">--}}
-{{--        <img src="img/people.png">--}}
-{{--    </a>--}}
+    <a href="{{ url('logout') }}" title="tap to logout" class="profile">
+        <button><img src="{{ asset('images/user_icon.jpeg') }}" alt="user profile" /></button>
+    </a>
 </nav>
