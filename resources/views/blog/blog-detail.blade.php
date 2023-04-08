@@ -12,7 +12,7 @@
                         <img src="{{ asset('storage/'.$post->featured_image.'') }}" class=""/>
                         <div class="mt-5">
                             <p>
-                                {{ $post->blog_content }}
+                                {!! $post->blog_content !!}
                             </p>
                         </div>
                     </div>

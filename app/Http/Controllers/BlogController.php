@@ -91,7 +91,7 @@ class BlogController extends Controller
                 return date('d M y', strtotime($row->created_at));
             })
             ->addColumn('action', function ($row) {
-                $html = '<a href="' . url('dashboard/edit-blog/' . $row->id . '') . '"><button>update</button></a> <a href="' . url('dashboard/delete-blog/' . $row->id . '') . '"><button>delete</button></a>';
+                $html = '<a href="' . url('dashboard/edit-blog/' . $row->id . '') . '"><button class="btn btn-sm btn-primary">update</button></a> <a  href="' . url('dashboard/delete-blog/' . $row->id . '') . '"><button class="btn btn-sm btn-danger">delete</button></a>';
                 return $html;
             })
             ->rawColumns(['id', 'slug', 'status', 'created_at', 'action'])
