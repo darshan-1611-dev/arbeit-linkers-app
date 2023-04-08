@@ -81,10 +81,10 @@
                     <h5 class="footer-title">Social Media</h5>
                     <div class="">
                         <p>
-                            <a href="/" class="footer-icon pe-3"><i class="fab fa-facebook-f"></i></a>
-                            <a href="/" class="footer-icon pe-3"><i class="fab fa-instagram"></i></a>
-                            <a href="/" class="footer-icon pe-3"><i class="fab fa-twitter"></i></a>
-                            <a href="/" class="footer-icon pe-3"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.facebook.com/avadh.rakholiya.775" class="footer-icon pe-3"><i class="fab fa-facebook-f"><i><a>
+                            <a href="https://instagram.com/arbeitlinkers?igshid=YmMyMTA2M2Y=" class="footer-icon pe-3"><i class="fab fa-instagram"></i></a>
+                            <a href="https://twitter.com/avadh_rakholiya?t=vqn2EqYP99L7DRizfJggSw&s=09" class="footer-icon pe-3"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.linkedin.com/in/avadh-rakholiya-726391220" class="footer-icon pe-3"><i class="fab fa-linkedin-in"></i></a>
                         </p>
                     </div>
                 </div>
