@@ -94,11 +94,15 @@ Route::middleware(['auth'])->group(function () {
     // job controller
     Route::get('/create-job', [\App\Http\Controllers\JobController::class, "createJob"]);
     Route::post('/store-job', [\App\Http\Controllers\JobController::class, "storeJob"]);
+    Route::get('/edit-job/{id}', [\App\Http\Controllers\JobController::class, "editJob"]);
+    Route::post('/update-job', [\App\Http\Controllers\JobController::class, "updateJob"]);
+    Route::get('/delete-job/{id}', [\App\Http\Controllers\JobController::class, "deleteJob"]);
     Route::get('/list-job', [\App\Http\Controllers\JobController::class, "listJob"]);
     Route::get('/detail-view-job/{id}', [\App\Http\Controllers\JobController::class, "detailJob"]);
 
     // bid jobs
     Route::post('/bid-job', [\App\Http\Controllers\JobController::class, "bid"]);
+    Route::get('/retract-bid-job/{id}', [\App\Http\Controllers\JobController::class, "retractBid"]);
 
     // payment
     Route::post('/payment', [PaymentController::class, 'payment'])->name('razorpay.payment.store');

@@ -61,7 +61,50 @@ class JobController extends Controller
         // check new job which is suitable for users
         $this->checkJobDetailWithRecentSearch($inserted_job->id);
 
-        return redirect('/');
+        return redirect('/company-profile/project');
+    }
+
+    public function editJob($id)
+    {
+        $job = Job::query()->find($id);
+
+        return view("job.update_job", compact('job'));
+    }
+
+    public function updateJob(Request $request)
+    {
+        $request->validate([
+            'project_title' => 'required',
+            'project_description' => 'required|min:100',
+            'job_type' => 'required',
+            'skills' => 'required',
+            'min_salary' => 'required',
+            'max_salary' => 'required',
+            'job_duration' => 'required',
+            'experience_level' => 'required',
+        ]);
+
+        $job_id = $request->post("job_id");
+
+        Job::query()->where("id", $job_id)->update([
+            'project_title' => $request->post('project_title'),
+            'project_description' => $request->post('project_description'),
+            'job_type' => $request->post('job_type'),
+            'skills' => $request->post('skills'),
+            'min_salary' => $request->post('min_salary'),
+            'max_salary' => $request->post('max_salary'),
+            'job_duration' => $request->post('job_duration'),
+            'experience_level' => $request->post('experience_level'),
+        ]);
+
+        return redirect('/company-profile/project');
+    }
+
+    public function deleteJob($id)
+    {
+        Job::query()->find($id)->delete();
+
+        return redirect('/company-profile/project');
     }
 
     /**
@@ -193,5 +236,18 @@ class JobController extends Controller
         ]);
 
         return redirect('/user-profile/bid');
+    }
+
+    /**
+     * Cancel Bid.
+     *
+     * @param $id
+     * @return RedirectResponse|Redirector
+     */
+    public function retractBid($id)
+    {
+        Bid::query()->find($id)->delete();
+
+        return redirect('user-profile/bid');
     }
 }

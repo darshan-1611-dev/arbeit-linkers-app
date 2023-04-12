@@ -37,7 +37,7 @@
                                     <td>
                                         <a href="{{ url('user/'.$item->user_detail->id.'') }}">{{ $item->user_detail->name }}</a>
                                     </td>
-                                    <td>${{ $item->price }}</td>
+                                    <td>₹{{ $item->price }}</td>
                                     <td>{{ $item->time_duration }}</td>
                                     <td title="{{ $item->description }}">{{ substr($item->description,0,10) }}...</td>
                                     <td>{{ $item->created_at->format('d M Y') }}</td>

@@ -13,6 +13,12 @@
             data-theme.color="#090B3D">
     </script>
 
+    <script>
+        // Hide default stripe button, be careful there
+        document.getElementsByClassName("razorpay-payment-button")[0].style.display = 'none';
+    </script>
+    <button type="submit" class="btn btn-danger">Pay Now</button>
+
     <input type="hidden" name="job_id" value="{{ $job_id }}">
     <input type="hidden" name="receiver_id" value="{{ $receiver_id }}">
 </form>

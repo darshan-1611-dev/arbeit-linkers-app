@@ -71,7 +71,7 @@
                                             </div>
                                             <div class="job_descp">
                                                 <ul class="job-dt">
-                                                    <li><span>${{ $job->min_salary }} - ${{ $job->max_salary }}</span>
+                                                    <li><span>₹{{ $job->min_salary }} - ₹{{ $job->max_salary }}</span>
                                                     </li>
                                                 </ul>
                                                 <i class="" style="font-size: 15px;"></i><span

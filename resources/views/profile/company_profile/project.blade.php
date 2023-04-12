@@ -48,6 +48,7 @@
                                 <th scope="col">Project Status</th>
                                 <th scope="col">Payment Status</th>
                                 <th scope="col">Detail</th>
+                                <th scope="col">Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -72,7 +73,16 @@
                                             <span class="text-center">Nil</span>
                                         @endif</td>
                                     <td><a href="{{ url('/company-profile/project/bid-detail/'. $item->id .'') }}"
-                                           class="text-primary">Bid Details</a>
+                                           class="text-primary">Bid Details ({{ $item->total_bid_on_job }})</a>
+                                    </td>
+                                    <td><a href="{{ url('edit-job/'.$item->id.'') }}" class="btn btn-primary">Edit</a>
+                                        @if($item->total_bid_on_job == 0)
+                                            <a href="{{ url('delete-job/'.$item->id.'') }}"
+                                               class="btn btn-danger">Delete</a>
+                                        @elseif($item->is_bid_done == 0)
+                                            <a href="{{ url('delete-job/'.$item->id.'') }}"
+                                               class="btn btn-danger">Delete</a>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach

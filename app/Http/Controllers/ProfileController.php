@@ -221,6 +221,11 @@ class ProfileController extends Controller
                 ->first();
 
             $Job_detail[$key]["bid_details"] = $bid_detail;
+
+            // count total bid on job
+            $total_bid_on_job = Bid::query()->where("job_id", $item->id)->count();
+
+            $Job_detail[$key]["total_bid_on_job"] = $total_bid_on_job;
         }
 
         return view('profile.company_profile.project', compact('Job_detail'));

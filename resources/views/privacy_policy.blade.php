@@ -77,6 +77,17 @@
             </div>
             <hr class="my-5">
             <div>
+                <h3 class="mb-5">Data Retention
+                </h3>
+                <p>At our company, we utilize the soft delete approach to maintain and preserve user data, including
+                    personal information, job details, bid data, and other relevant information, within our database.
+                    This methodology is implemented to improve our ability to perform thorough data analysis and ensure
+                    reliable data backup for our users. As a result, user data will not be erased from our system
+                    without prior notification or consent, as we recognize the significance of safeguarding user
+                    privacy.</p>
+            </div>
+            <hr class="my-5">
+            <div>
                 <h3 class="mb-5">To contact our Privacy Officer
                 </h3>
                 <p>If you have an enquiry or a complaint about the way we handle your personal information, or to seek

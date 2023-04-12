@@ -21,6 +21,9 @@
                                         data-bs-target="#bidModel">Already Bidden.
                                 </button>
                             @elseif(auth()->user()->id == $job->user_id)
+                                <a href="{{ url()->previous() }}"><button type="button" class="btn al-btn">Close
+                                </button></a>
+
                             @else
                                 <button type="button" class="btn al-btn" data-bs-toggle="modal"
                                         data-bs-target="#bidModel">Bid Now
@@ -48,7 +51,7 @@
                                                 <div class="mb-5 col-md-12">
                                                     <label class="fw-semibold fs-4 mb-3">Price *</label>
                                                     <input type="text" class="form-control fs-4 py-3"
-                                                           value="" name="price" placeholder="0.00 $">
+                                                           value="" name="price" placeholder="0.00 ₹">
                                                     @error('price')
                                                     <span class="text-danger fs-5"><i
                                                             class="fas fa-exclamation-circle"></i> {{ $message }}</span>
@@ -112,7 +115,7 @@
                         <div class="col-4">
                             <div>
                                 <span class="fs-4 d-none d-lg-inline-block"><i class="fas fa-tags me-3"></i></span>
-                                <span class="fs-4 fw-semibold">${{ $job->min_salary }} - ${{ $job->max_salary }}</span>
+                                <span class="fs-4 fw-semibold">₹{{ $job->min_salary }} - ₹{{ $job->max_salary }}</span>
                             </div>
                             <div>
                                 <p class="fs-4 text-muted ms-lg-5">Bid Price</p>

@@ -16,10 +16,13 @@
 
             @php
 
-                function check_bid_status($bid)
+                function check_bid_status($bid, $job_active)
                 {
                     $status = null;
 
+                    if ($job_active != null){
+                        return "<button type='button' title='Job Deleted By Company' class='btn btn-danger'> Job Deleted </button>";
+                    }
 
                     if($bid == 0){
                         $status = "<button type='button' class='btn btn-warning'>Pending </button>";
@@ -41,26 +44,6 @@
                 <div>
                     <h2>Your All Bids</h2>
                 </div>
-                <div class="filters mb-5 d-flex justify-content-between align-items-center">
-                    <h5 class="">Filters: </h5>
-                    <div class="">
-                        <form action="" method="post" class="row">
-                            <div class="col-8">
-                                <select name="search" id="" class="form-select fs-4 py-3">
-                                    <option value="" selected>Select Bids type</option>
-                                    <option value="Total Projects">Total Bids</option>
-                                    <option value="Ongoing Projects">Pendding Bids</option>
-                                    <option value="Completed Projects">Approved Bids</option>
-                                    <option value="Completed Projects">Rejected Bids</option>
-                                </select>
-                            </div>
-                            <div class="col-3">
-                                <button type="submit" class="btn al-btn"><i class="fas fa-search"></i></button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
 
                 <div class="data-table">
                     <table class="table table-responsive-lg table-bordered" style="overflow: hidden;">
@@ -73,6 +56,7 @@
                             <th scope="col">Bidding Date</th>
                             <th scope="col">Bidding Status</th>
                             <th scope="col">Details</th>
+                            <th scope="col">Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -83,9 +67,22 @@
                                 <td>₹{{ $item->price }}</td>
                                 <td>{{ $item->time_duration }}</td>
                                 <td>{{ $item->created_at->format('d M Y') }}</td>
-                                <td>{!!  check_bid_status($item->bid_status)  !!}</td>
-                                <td><a href="{{ url('/detail-view-job/'. $item->job_id .'') }}" class="text-primary">Project Details</a>
-                                </td>
+                                <td>{!!  check_bid_status($item->bid_status, $item->job_detail->deleted_at)  !!}</td>
+                                @if($item->job_detail->deleted_at == null)
+                                    <td><a href="{{ url('/detail-view-job/'. $item->job_id .'') }}"
+                                           class="text-primary">Project
+                                            Details</a>
+                                    </td>
+                                @else
+                                    <td></td>
+                                @endif
+
+                                @if($item->bid_status == 0 && $item->job_detail->deleted_at == null)
+                                    <td><a href="{{ url('/retract-bid-job/'. $item->id .'') }}"
+                                           class="btn btn-danger">Retract Bid</a></td> @else
+                                    <td></td>@endif
+
+
                             </tr>
                         @endforeach
                         </tbody>
