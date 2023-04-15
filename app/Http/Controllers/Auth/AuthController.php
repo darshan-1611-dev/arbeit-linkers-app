@@ -77,7 +77,7 @@ class AuthController extends Controller
             'first_name' => 'required',
             'last_name' => 'required',
             'email' => 'required',
-            'mobile_no' => 'required',
+            'mobile_no' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
             'user_type' => 'required',
             'password' => 'required',
             'confirm_password' => 'required'

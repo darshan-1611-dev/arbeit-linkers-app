@@ -63,8 +63,8 @@
                                    placeholder="name@example.com">
                             <!-- <span class="text-danger fs-5">* Please Enter your Email Id</span> -->
                         </div>
-                        <div class="mb-4 col-3 col-lg-2">
-                            <select name="country-code" id="" class="form-control fs-4 py-3">
+                        <!-- <div class="mb-4 col-3 col-lg-2">
+                             <select name="country-code" id="" class="form-control fs-4 py-3">
                                 <option value="+91" selected>+91</option>
                                 <option value="+93">+93</option>
                                 <option value="+355">+355</option>
@@ -306,8 +306,8 @@
                                 <option value="+260">+260</option>
                                 <option value="+263">+263</option>
                             </select>
-                        </div>
-                        <div class="mb-4 col-9 col-lg-10">
+                        </div> -->
+                        <div class="mb-4">
                             <input type="number" class="form-control fs-4 py-3" value="{{ old('mobile_no') }}"
                                    name="mobile_no" placeholder="Mobile No">
                             <!-- <span class="text-danger fs-5">* Please Enter your Mobile No</span> -->

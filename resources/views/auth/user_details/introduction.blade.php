@@ -95,7 +95,7 @@
 
                         <div class="mt-5">
                             <span class="fs-4">
-                                "ArbeitLinkers has enebles me to increase my rates. I know what I'm bringing to the table and love the feeling of being able to help a variety of clients."
+                                "We're thrilled to have you join our freelancer community! As a ArbeitLinkers website, we're dedicated to connecting talented professionals like you with clients who need your skills and expertise. We're here to help you grow your career and achieve your goals."
                             </span>
                         </div>
                     </div>
