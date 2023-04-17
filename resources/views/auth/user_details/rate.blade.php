@@ -54,7 +54,7 @@
             <div class="row">
                 <div class="">
                     <div class="my-5">
-                        <p class="fs-5 text-muted mb-4">6/10</p>
+                        <p class="fs-5 text-muted mb-4">6/7</p>
                         <h2 class="mb-0">Now, let's set your hourly rate.</h2>
                         <p>Clients will see this rate on your profile and in search results once you publish your
                             profile.

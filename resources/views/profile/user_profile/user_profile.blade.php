@@ -69,7 +69,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <h6 class="d-inline-block me-2">Languages Known:</h6>
-                                    <p class="d-inline-block">English, {{ $user_detail->user_detail->language }}</p>
+                                    <p class="d-inline-block">English {{ $user_detail->user_detail->language ? ','.$user_detail->user_detail->language : '' }}</p>
                                 </div>
                                 <div class="col-md-4">
                                     <h6 class="d-inline-block me-2">Service Rate :</h6>

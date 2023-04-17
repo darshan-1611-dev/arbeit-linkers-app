@@ -53,7 +53,7 @@
             @csrf
             <div class="">
                 <div class="my-5">
-                    <p class="fs-5 text-muted mb-4">2/10</p>
+                    <p class="fs-5 text-muted mb-4">2/7</p>
                     <h2 class="mb-0">If you have relevant work experience, add it here.</h2>
                     <p>Freelancers who add their experience are twice as likely to win work. But if you're just starting
                         out, you can still create a great profile. Just head on to the next page.</p>

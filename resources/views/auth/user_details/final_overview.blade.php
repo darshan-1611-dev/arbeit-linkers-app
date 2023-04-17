@@ -54,7 +54,7 @@
             <div class="row">
                 <div class="">
                     <div class="my-5">
-                        <p class="fs-5 text-muted mb-4">7/10</p>
+                        <p class="fs-5 text-muted mb-4">7/7</p>
                         <h2 class="mb-0">A few last details, then you can check and publish
                             your profile.</h2>
                         <p>A professional photo helps you build trust with your clients. To keep things safe and simple,

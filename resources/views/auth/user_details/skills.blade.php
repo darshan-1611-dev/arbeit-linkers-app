@@ -54,7 +54,7 @@
             <div class="row gx-5">
                 <div class="col-md-7">
                     <div class="my-5">
-                        <p class="fs-5 text-muted mb-4">5/10</p>
+                        <p class="fs-5 text-muted mb-4">5/7</p>
                         <h2 class="mb-0">Nearly there! What work are you here to do?</h2>
                         <p>Your skills show clients what you can offer, and help us choose which jobs to recommend to
                             you.

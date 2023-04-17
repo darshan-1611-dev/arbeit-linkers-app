@@ -50,7 +50,7 @@
             @csrf
             <div class="col-sm-8">
                 <div class="my-5">
-                    <p class="fs-5 text-muted mb-4">1/10</p>
+                    <p class="fs-5 text-muted mb-4">1/7</p>
                     <h2 class="mb-0">Add a title to tell the world what you do.</h2>
                     <p>It's the very first thing that client see, so make it count. stand out by describing
                         yourexpertise

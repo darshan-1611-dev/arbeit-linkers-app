@@ -53,7 +53,7 @@
             @csrf
             <div class="">
                 <div class="my-5">
-                    <p class="fs-5 text-muted mb-4">4/10</p>
+                    <p class="fs-5 text-muted mb-4">4/7</p>
                     <h2 class="mb-0">Looking good. Next, tell us which languages you speak.</h2>
                     <p>ArbeitLinkers is global, so clients are often interested to know what languages you speak.
                         <b>English</b> is a
@@ -226,9 +226,7 @@
                                     <option value="Chinese">Chinese</option>
                                     <option value="Zulu">Zulu</option>
                                 </select>
-                                @error('language')
-                                <span class="text-danger fs-5"><i class="fas fa-exclamation-circle"></i> {{ $message }}</span>
-                                @enderror
+                                <span class="text-muted fs-5"><i class="fas fa-exclamation-circle"></i> if you're not familiar with any other language, feel free to move</span>
                             </div>
                             <div class="col-6">
                                 <select name="language_proficiency" id="" class="form-select fs-4 py-3">
@@ -237,9 +235,6 @@
                                     <option value="Fluent">Fluent</option>
                                     <option value="Native or Bilingual">Native or Bilingual</option>
                                 </select>
-                                @error('language_proficiency')
-                                <span class="text-danger fs-5"><i class="fas fa-exclamation-circle"></i> {{ $message }}</span>
-                                @enderror
                             </div>
                         </div>
                     </div>

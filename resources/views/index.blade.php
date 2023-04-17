@@ -6,10 +6,9 @@
         <div class="container py-5 px-md-0">
             <div class="row align-items-center my-5 py-5">
                 <div class="col-12 col-md-6">
-                    <h1 class="">Hire the best freelancers for any job, online.</h1>
-                    <p class="">Join our community today and take your freelance career or business to the next
-                        level!</p>
-                    <a href="{{ url('login') }}" class="btn al-btn mt-5">Get Freelancers</a>
+                    <h1 class="">Find Your Next Freelance Gig with Ease</h1>
+                    <p class="">Connect with Top Talent and Grow Your Business Today</p>
+                    <a href="{{ url('login') }}" class="btn al-btn mt-5">Get Started</a>
                 </div>
                 <div class="col-md-6 d-none d-md-block">
                     <div class="container">

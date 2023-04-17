@@ -53,7 +53,7 @@
             @csrf
             <div class="">
                 <div class="my-5">
-                    <p class="fs-5 text-muted mb-4">3/10</p>
+                    <p class="fs-5 text-muted mb-4">3/7</p>
                     <h2 class="mb-0">Clients like to know what you know - add your education here.</h2>
                     <p>You don't have to have a degree. Adding any relevant education helps make your profile more
                         visible.
@@ -64,7 +64,7 @@
                             <label class="fw-semibold fs-4 mb-3">School *</label>
                             <input type="text" class="form-control fs-4 py-3" name="school_name"
                                    value="{{ old('school_name') }}"
-                                   placeholder="Ex: Boston Universityr">
+                                   placeholder="Ex: Boston University">
                             @error('school_name')
                             <span class="text-danger fs-5"><i class="fas fa-exclamation-circle"></i> {{ $message }}</span>
                             @enderror

@@ -341,11 +341,6 @@ class AuthController extends Controller
 
     public function languagesStore(Request $request)
     {
-        $request->validate([
-            'language' => 'required',
-            'language_proficiency' => 'required',
-        ]);
-
         $user_id = Session::get('register_user_id');
 
         UserDetail::query()->where("user_id", '=', $user_id)->update([
