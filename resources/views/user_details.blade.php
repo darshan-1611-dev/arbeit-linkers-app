@@ -59,7 +59,7 @@
                         </div>
                         <div class="col-md-4">
                             <h6 class="d-inline-block me-2">Service Rate :</h6>
-                            <p class="d-inline-block">{{ $user_detail->user_detail->hourly_rate }} $/hr</p>
+                            <p class="d-inline-block">{{ $user_detail->user_detail->hourly_rate }} ₹/hr</p>
                         </div>
                     </div>
                 </div>
