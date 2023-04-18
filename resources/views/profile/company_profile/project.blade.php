@@ -43,7 +43,7 @@
                                 <th scope="col">Project Id</th>
                                 <th scope="col">Project Name</th>
                                 <th scope="col">Price Range</th>
-                                <th scope="col">Time Duration(In week)</th>
+                                <th scope="col">Time(In week)</th>
                                 <th scope="col">Created At</th>
                                 <th scope="col">Project Status</th>
                                 <th scope="col">Payment Status</th>
