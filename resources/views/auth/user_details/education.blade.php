@@ -265,6 +265,7 @@
                                 <div class="col-6">
                                     <select name="education_end_date" id="" class="form-select fs-4 py-3">
                                         <option value="" selected>To (or expected graduation year)</option>
+                                        <option value="Present">Present</option>
                                         <option value="2023">2023</option>
                                         <option value="2022">2022</option>
                                         <option value="2021">2021</option>

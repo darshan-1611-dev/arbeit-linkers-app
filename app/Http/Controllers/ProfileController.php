@@ -199,7 +199,11 @@ class ProfileController extends Controller
      */
     public function viewUserBid(Request $request)
     {
-        $data = Bid::query()->where("user_id", '=', auth()->user()->id)->with(["job_detail"])->get();
+        $data = Bid::query()
+            ->where("user_id", '=', auth()->user()->id)
+            ->with(["job_detail"])
+            ->latest()
+            ->get();
 
         return view('profile.user_profile.bid_details', compact('data'));
     }
@@ -211,6 +215,7 @@ class ProfileController extends Controller
     {
         $Job_detail = Job::query()
             ->where('user_id', auth()->user()->id)
+            ->latest()
             ->get();
 
         foreach ($Job_detail as $key => $item) {
@@ -282,6 +287,7 @@ class ProfileController extends Controller
         $data = Job::query()
             ->where('is_bid_done', auth()->user()->id)
             ->with(['user', 'user_details'])
+            ->latest()
             ->get();
 
         foreach ($data as $key => $item) {
@@ -306,6 +312,7 @@ class ProfileController extends Controller
         $payment_detail = Payment::query()
             ->where("receiver_id", '=', auth()->user()->id)
             ->with(['job_detail'])
+            ->latest()
             ->get();
 
         foreach ($payment_detail as $key => $item) {
@@ -329,6 +336,7 @@ class ProfileController extends Controller
         $payment_detail = Payment::query()
             ->where("sender_id", '=', auth()->user()->id)
             ->with(['job_detail'])
+            ->latest()
             ->get();
 
         foreach ($payment_detail as $key => $item) {

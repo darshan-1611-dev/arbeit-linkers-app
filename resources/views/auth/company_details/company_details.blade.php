@@ -36,14 +36,6 @@
                 <span class="fs-4 text-muted">Freelancer</span>
             </div>
         </div>
-        <div class="mt-5">
-            <div>
-                <a href="#" class="text-dark"><i class="fas fa-cog me-3"></i>Close Account</a>
-            </div>
-            <div class="mt-2">
-                <a href="#" class="text-dark"><i class="fas fa-sign-out-alt me-3"></i>Logout</a>
-            </div>
-        </div>
     </div>
     <!-- Login Navbar Start -->
 
