@@ -11,6 +11,10 @@
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
+## Did You Know?
+
+Laravel, known for its expressive syntax and robust features, was originally created by Taylor Otwell and released in June 2011. What started as a personal project to streamline his own web development workflow quickly gained popularity in the PHP community and has since become one of the most widely used PHP frameworks worldwide
+
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
 - [Powerful dependency injection container](https://laravel.com/docs/container).
 - Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
