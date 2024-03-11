@@ -49,8 +49,4 @@ To use ArbeitLinkers, simply navigate to the website and register or log in. Onc
 
 Contributions to ArbeitLinkers are welcome! If you'd like to contribute, please fork the repository, make your changes, and submit a pull request. Be sure to follow the project's coding standards and guidelines.
 
-## License
-
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
-
 ---
