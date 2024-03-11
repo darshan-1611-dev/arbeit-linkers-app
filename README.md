@@ -50,3 +50,32 @@ To use ArbeitLinkers, simply navigate to the website and register or log in. Onc
 Contributions to ArbeitLinkers are welcome! If you'd like to contribute, please fork the repository, make your changes, and submit a pull request. Be sure to follow the project's coding standards and guidelines.
 
 ---
+## Explore the WebSite
+
+<div align="center">
+  <img src="https://github.com/darshan-1611-dev/arbeit-linkers-app/assets/104836099/c944026a-bc6d-48bd-b01d-9b640576d335" alt="Photo 1" style="width: 750px; height: 400px; margin: 5px;" title="Find your next project">
+
+  <br>
+</div>
+
+<div align="center">
+  <img src="https://github.com/darshan-1611-dev/arbeit-linkers-app/assets/104836099/54fb0f76-ec88-4fc8-a241-02f8b04db275" alt="Photo 1" style="width: 250px; height: 250px; margin: 5px;" title="Find your next project">
+  <img src="https://github.com/darshan-1611-dev/arbeit-linkers-app/assets/104836099/250ef26a-71bb-44a7-b5c4-125ac65580ef" alt="Photo 2" style="width: 250px; height: 250px; margin: 5px;" title="Unlock your potential">
+  <img src="https://github.com/darshan-1611-dev/arbeit-linkers-app/assets/104836099/23b06b3c-da2f-4f21-b784-2f692ad22546" alt="Photo 3" style="width: 250px; height: 250px; margin: 5px;" title="Connect with talent">
+  <br>
+</div>
+
+
+
+<div align="center">
+  <img src="https://github.com/darshan-1611-dev/arbeit-linkers-app/assets/104836099/5c325d2a-c06a-4436-b661-9b396e73f791" alt="Photo 5" style="width: 250px; height: 250px; margin: 5px;" title="Discover new skills">
+  <img src="https://github.com/darshan-1611-dev/arbeit-linkers-app/assets/104836099/308633da-5152-431e-a2e3-d7527edd7c37" alt="Photo 6" style="width: 250px; height: 250px; margin: 5px;" title="Shape your career">
+  <img src="https://github.com/darshan-1611-dev/arbeit-linkers-app/assets/104836099/0a2c3c14-ca4a-4f9a-b79a-95c96a77c585" alt="Photo 7" style="width: 250px; height: 250px; margin: 5px;" title="Empower your business">
+<br>
+</div>
+
+## Documentation
+
+For detailed documentation and setup instructions, please refer to the [Documentation](https://drive.google.com/file/d/15y88PM_WZkYmRSh8c7xA_gTBlCN5BF-R/view?usp=sharing) section.
+
+
